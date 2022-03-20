@@ -1,7 +1,7 @@
 ﻿
-namespace uidev.Control
+namespace uidev.Controls
 {
-    partial class FxSlider
+    partial class FxButton
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -31,10 +31,13 @@ namespace uidev.Control
         {
             this.SuspendLayout();
             // 
-            // FxSlider
+            // FxButton
             // 
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FxSlider_MouseDown);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FxSlider_MouseUp);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FxButton_Paint);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FxButton_MouseDown);
+            this.MouseEnter += new System.EventHandler(this.FxButton_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.FxButton_MouseLeave);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FxButton_MouseUp);
             this.ResumeLayout(false);
 
         }

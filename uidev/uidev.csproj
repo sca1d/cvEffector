@@ -45,23 +45,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\DrawManager.cs" />
     <Compile Include="Class\IpcRemoteObj.cs" />
-    <Compile Include="Control\FxSlider.cs">
+    <Compile Include="Controls\FxButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Control\FxSlider.Designer.cs">
+    <Compile Include="Controls\FxButton.Designer.cs">
+      <DependentUpon>FxButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FxSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FxSlider.Designer.cs">
       <DependentUpon>FxSlider.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\RemoteProcess.cs" />
-    <Compile Include="Interface\AlwaysMouse.cs">
+    <Compile Include="Forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\FxAlwaysMouse.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Class\uiCustoms.cs" />
+    <Compile Include="Interface\FxUiBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Control\FxSlider.resx">
+    <EmbeddedResource Include="Controls\FxButton.resx">
+      <DependentUpon>FxButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FxSlider.resx">
       <DependentUpon>FxSlider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

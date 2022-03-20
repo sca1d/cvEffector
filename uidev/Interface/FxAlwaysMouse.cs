@@ -10,18 +10,26 @@ using System.Windows.Forms;
 
 namespace uidev.Interface
 {
-    public class AlwaysMouse : System.Windows.Forms.Control
+    public class FxAlwaysMouse : System.Windows.Forms.Control
     {
 
         private Thread th;
 
         protected bool MouseDownNow = false;
-        private Point MousePoint { get; set; }
+        private Point _mousePoint { get; set; }
+
+        public Point MousePoint
+        {
+            get
+            {
+                return _mousePoint;
+            }
+        }
 
         public delegate void MouseMoveHandler(Point point);
         public MouseMoveHandler TheMouseMove;
 
-        public AlwaysMouse()
+        public FxAlwaysMouse()
         {
             this.SuspendLayout();
 
@@ -39,7 +47,7 @@ namespace uidev.Interface
 
             while (true)
             {
-                MousePoint = Cursor.Position;
+                _mousePoint = Cursor.Position;
                 Thread.Sleep(10);
             }
 
@@ -48,7 +56,7 @@ namespace uidev.Interface
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
-            if (MouseDownNow) TheMouseMove?.Invoke(MousePoint);
+            if (MouseDownNow) TheMouseMove?.Invoke(_mousePoint);
         }
 
         protected override void OnHandleDestroyed(EventArgs e)

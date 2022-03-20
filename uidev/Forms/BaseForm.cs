@@ -8,17 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using uidev.Class;
-using uidev.Forms;
-using uidev.Controls;
-
-namespace cvFxSuite
+namespace uidev.Forms
 {
-    public partial class MainForm : BaseForm
+    public partial class BaseForm : System.Windows.Forms.Form
     {
-        public MainForm()
+        public BaseForm()
         {
             InitializeComponent();
+            this.BackColor = Class.uiCustoms.BackColor;
         }
     }
 }
