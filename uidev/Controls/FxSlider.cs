@@ -55,7 +55,7 @@ namespace uidev.Controls
 
         public FxSlider() {
             InitializeComponent();
-            this.ThreadMainLoop += FxSlider_TheMouseMove;
+            this.ThreadMainLoop += FxSlider_ThreadMainLoop;
         }
 
         private void FxSlider_Paint(object sender, PaintEventArgs e)
@@ -93,11 +93,14 @@ namespace uidev.Controls
 
         }
 
-        private void FxSlider_TheMouseMove(Point point)
+        private void FxSlider_ThreadMainLoop(Point point)
         {
+
+            int futureX = point.X - this.FindForm().Location.X - this.Location.X - knobSize;
+
             if (MouseIsDown)
             {
-                knobPoint = point.X - this.FindForm().Location.X - this.Location.X - knobSize;
+                knobPoint = knobSize <= futureX ? (futureX <= (this.Width - knobSize) ? futureX : this.Width - knobSize) : knobSize;
             }
         }
 
@@ -110,12 +113,10 @@ namespace uidev.Controls
                 e.Y <= yp + this.knobSize)
             {
                 MouseIsEnter = true;
-                StartMeasurement();
             }
             else
             {
                 MouseIsEnter = false;
-                FinishMeasurement();
             }
             Refresh();
         }
@@ -129,14 +130,12 @@ namespace uidev.Controls
                 )
             {
                 MouseIsDown = true;
-                StartMeasurement();
             }
             Refresh();
         }
 
         private void FxSlider_MouseUp(object sender, MouseEventArgs e) {
             MouseIsDown = false;
-            FinishMeasurement();
             Refresh();
         }
 
