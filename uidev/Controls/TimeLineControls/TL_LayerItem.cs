@@ -122,6 +122,7 @@ namespace uidev.Controls.TimeLineControls
             {
                 _changingLayerSizeNow = value;
 
+                /*
                 if (value)
                 {
                     this.Cursor = Cursors.SizeWE;
@@ -130,6 +131,7 @@ namespace uidev.Controls.TimeLineControls
                 {
                     this.Cursor = Cursors.Default;
                 }
+                */
             }
         }
         private bool MovingLayerPointNow = true;
@@ -182,6 +184,19 @@ namespace uidev.Controls.TimeLineControls
         private void TL_LayerItem_Paint(object sender, PaintEventArgs e)
         {
 
+            int CornerSize = 3;
+            Color TriColor = Color.FromArgb(50, 50, 50);
+
+            Point[] STriP = new Point[3];
+            STriP[0] = new Point(e.ClipRectangle.X + CornerSize + 1, e.ClipRectangle.Y);
+            STriP[1] = new Point(e.ClipRectangle.X + 1, e.ClipRectangle.Y);
+            STriP[2] = new Point(e.ClipRectangle.X + 1, e.ClipRectangle.Y + CornerSize);
+
+            Point[] ETriP = new Point[3];
+            ETriP[0] = new Point(e.ClipRectangle.X + e.ClipRectangle.Width - 1 - CornerSize, e.ClipRectangle.Y + e.ClipRectangle.Height - 1);
+            ETriP[1] = new Point(e.ClipRectangle.X + e.ClipRectangle.Width - 1, e.ClipRectangle.Y + e.ClipRectangle.Height - 1);
+            ETriP[2] = new Point(e.ClipRectangle.X + e.ClipRectangle.Width - 1, e.ClipRectangle.Y + e.ClipRectangle.Height - 1 - CornerSize);
+
             if (MouseIsEnter)
             {
                 if (ChangingLayerSizeNow)
@@ -201,6 +216,22 @@ namespace uidev.Controls.TimeLineControls
             {
                 e.Graphics.Clear(color);
             }
+
+            e.Graphics.FillPolygon(
+                new SolidBrush(TriColor),
+                STriP
+                );
+            e.Graphics.FillPolygon(
+                new SolidBrush(TriColor),
+                ETriP
+                );
+            e.Graphics.DrawLine(
+                new Pen(TriColor, 1.2F),
+                e.Graphics.ClipBounds.X + e.Graphics.ClipBounds.Width - 1F - (CornerSize + 2),
+                e.Graphics.ClipBounds.Y + e.Graphics.ClipBounds.Height - 1F,
+                e.Graphics.ClipBounds.X + e.Graphics.ClipBounds.Width - 1F,
+                e.Graphics.ClipBounds.Y + e.Graphics.ClipBounds.Height - 1F - (CornerSize + 2)
+                );
 
             e.Graphics.DrawRectangle(uiCustoms.GrayPen, 0, 0, Width - 1, Height - 1);
 
@@ -224,6 +255,7 @@ namespace uidev.Controls.TimeLineControls
                 else
                 {
                     changingLayerSize_Start?.Invoke(new ChangeSizeEventArgs(cb));
+
                 }
                 MouseIsDown = true;
             }
@@ -266,9 +298,14 @@ namespace uidev.Controls.TimeLineControls
 
             cb = centerLoc ? ChangeSizeEventArgs.CenterBackward.Center : ChangeSizeEventArgs.CenterBackward.Backward;
 
-            if (centerLoc || backwardLoc)
+            if ((centerLoc || backwardLoc) && !MovingLayerPointNow)
             {
+                this.Cursor = Cursors.SizeWE;
                 ChangingLayerSizeNow = true;
+            }
+            else if (!MouseIsDown)
+            {
+                this.Cursor = Cursors.Default;
             }
             else
             {
