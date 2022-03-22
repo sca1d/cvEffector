@@ -95,7 +95,10 @@ namespace uidev.Controls
 
         private void FxSlider_TheMouseMove(Point point)
         {
-            if (MouseIsDown) knobPoint = point.X - this.FindForm().Location.X - this.Location.X - knobSize;
+            if (MouseIsDown)
+            {
+                knobPoint = point.X - this.FindForm().Location.X - this.Location.X - knobSize;
+            }
         }
 
         private void FxSlider_MouseMove(object sender, MouseEventArgs e)

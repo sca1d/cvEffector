@@ -14,8 +14,6 @@ namespace uidev.Interface
     {
 
         private Thread th;
-
-        protected bool MeasurementNow = false;
         private Point _mp;
         private Point _mousePoint 
         {
@@ -78,15 +76,6 @@ namespace uidev.Interface
         {
             base.OnHandleDestroyed(e);
             th.Abort();
-        }
-
-        public void StartMeasurement()
-        {
-            MeasurementNow = true;
-        }
-        public void FinishMeasurement()
-        {
-            MeasurementNow = false;
         }
 
     }
