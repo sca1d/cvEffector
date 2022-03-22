@@ -1,7 +1,7 @@
 ﻿
-namespace uidev.Controls
+namespace uidev.Controls.TimeLineControls
 {
-    partial class FxTreeView
+    partial class TL_LayerItem
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -31,17 +31,14 @@ namespace uidev.Controls
         {
             this.SuspendLayout();
             // 
-            // FxTreeView
+            // TL_LayerItem
             // 
-            this.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-            this.LineColor = System.Drawing.Color.Black;
-            this.DrawNode += new System.Windows.Forms.DrawTreeNodeEventHandler(this.FxTreeView_DrawNode);
-            this.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.FxTreeView_NodeMouseClick);
-            this.SizeChanged += new System.EventHandler(this.FxTreeView_SizeChanged);
-            this.Click += new System.EventHandler(this.FxTreeView_Click);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FxTreeView_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FxTreeView_MouseMove);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TL_LayerItem_Paint);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TL_LayerItem_MouseDown);
+            this.MouseEnter += new System.EventHandler(this.TL_LayerItem_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.TL_LayerItem_MouseLeave);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TL_LayerItem_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TL_LayerItem_MouseUp);
             this.ResumeLayout(false);
 
         }

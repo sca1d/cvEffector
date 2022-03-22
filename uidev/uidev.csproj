@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\DrawManager.cs" />
+    <Compile Include="Class\EventClass.cs" />
     <Compile Include="Class\IpcRemoteObj.cs" />
     <Compile Include="Controls\FxBaseControl.cs">
       <SubType>Component</SubType>
@@ -66,11 +67,11 @@
       <DependentUpon>FxSlider.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\RemoteProcess.cs" />
-    <Compile Include="Controls\FxTreeView.cs">
+    <Compile Include="Controls\TimeLineControls\TL_LayerItem.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\FxTreeView.Designer.cs">
-      <DependentUpon>FxTreeView.cs</DependentUpon>
+    <Compile Include="Controls\TimeLineControls\TL_LayerItem.Designer.cs">
+      <DependentUpon>TL_LayerItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\BaseForm.cs">
       <SubType>Form</SubType>
@@ -83,6 +84,7 @@
     </Compile>
     <Compile Include="Class\uiCustoms.cs" />
     <Compile Include="Interface\FxUiBase.cs" />
+    <Compile Include="Interface\TL_LayerItemBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
@@ -93,8 +95,8 @@
     <EmbeddedResource Include="Controls\FxSlider.resx">
       <DependentUpon>FxSlider.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FxTreeView.resx">
-      <DependentUpon>FxTreeView.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\TimeLineControls\TL_LayerItem.resx">
+      <DependentUpon>TL_LayerItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>

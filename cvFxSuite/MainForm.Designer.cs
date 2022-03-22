@@ -29,19 +29,15 @@ namespace cvFxSuite
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("c-0");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("p-0", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("p-1");
             this.fxButton1 = new uidev.Controls.FxButton();
             this.fxSlider1 = new uidev.Controls.FxSlider();
-            this.fxTreeView1 = new uidev.Controls.FxTreeView();
+            this.tL_LayerItem1 = new uidev.Controls.TimeLineControls.TL_LayerItem();
             this.SuspendLayout();
             // 
             // fxButton1
             // 
             this.fxButton1.Border = true;
-            this.fxButton1.Location = new System.Drawing.Point(78, 245);
+            this.fxButton1.Location = new System.Drawing.Point(12, 12);
             this.fxButton1.Name = "fxButton1";
             this.fxButton1.Size = new System.Drawing.Size(134, 36);
             this.fxButton1.TabIndex = 1;
@@ -51,7 +47,7 @@ namespace cvFxSuite
             // fxSlider1
             // 
             this.fxSlider1.Border = false;
-            this.fxSlider1.Location = new System.Drawing.Point(218, 245);
+            this.fxSlider1.Location = new System.Drawing.Point(12, 54);
             this.fxSlider1.MaximumValue = 100;
             this.fxSlider1.MinimumSize = new System.Drawing.Size(18, 14);
             this.fxSlider1.MinimumValue = 0;
@@ -61,32 +57,25 @@ namespace cvFxSuite
             this.fxSlider1.Text = "fxSlider1";
             this.fxSlider1.Value = 0;
             // 
-            // fxTreeView1
+            // tL_LayerItem1
             // 
-            this.fxTreeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.fxTreeView1.Border = true;
-            this.fxTreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.fxTreeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-            this.fxTreeView1.Location = new System.Drawing.Point(342, 287);
-            this.fxTreeView1.Name = "fxTreeView1";
-            treeNode1.Name = "c0";
-            treeNode1.Text = "c-0";
-            treeNode2.Name = "p0";
-            treeNode2.Text = "p-0";
-            treeNode3.Name = "p1";
-            treeNode3.Text = "p-1";
-            this.fxTreeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode3});
-            this.fxTreeView1.Size = new System.Drawing.Size(181, 135);
-            this.fxTreeView1.TabIndex = 3;
+            this.tL_LayerItem1.color = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.tL_LayerItem1.enterColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.tL_LayerItem1.frame_num = 60;
+            this.tL_LayerItem1.Location = new System.Drawing.Point(452, 303);
+            this.tL_LayerItem1.Name = "tL_LayerItem1";
+            this.tL_LayerItem1.selected = true;
+            this.tL_LayerItem1.Size = new System.Drawing.Size(156, 27);
+            this.tL_LayerItem1.srart_frame = 0;
+            this.tL_LayerItem1.TabIndex = 3;
+            this.tL_LayerItem1.Text = "tL_LayerItem1";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 562);
-            this.Controls.Add(this.fxTreeView1);
+            this.Controls.Add(this.tL_LayerItem1);
             this.Controls.Add(this.fxSlider1);
             this.Controls.Add(this.fxButton1);
             this.Name = "MainForm";
@@ -98,7 +87,7 @@ namespace cvFxSuite
         #endregion
         private uidev.Controls.FxButton fxButton1;
         private uidev.Controls.FxSlider fxSlider1;
-        private uidev.Controls.FxTreeView fxTreeView1;
+        private uidev.Controls.TimeLineControls.TL_LayerItem tL_LayerItem1;
     }
 }
 

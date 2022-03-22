@@ -58,6 +58,20 @@ namespace uidev.Class
             }
         }
 
+        private static Color _grayColor = Color.DimGray;
+        public static Color GrayColor
+        {
+            get
+            {
+                return _grayColor;
+            }
+            set
+            {
+                _grayColor = value;
+                PropertyChanged?.Invoke(null, new EventArgs());
+            }
+        }
+
         private static Color _darkColor = Color.FromArgb(24, 24, 24);
         public static Color DarkColor
         {
@@ -127,6 +141,21 @@ namespace uidev.Class
                 PropertyChanged?.Invoke(null, new EventArgs());
             }
         }
+
+        private static Pen _grayPen = new Pen(GrayColor);
+        public static Pen GrayPen
+        {
+            get
+            {
+                return _grayPen;
+            }
+            set
+            {
+                _grayPen = value;
+                PropertyChanged?.Invoke(null, new EventArgs());
+            }
+        }
+
         private static Pen _borderPen = new Pen(Class.uiCustoms.DashColor);
         public static Pen BorderPen
         {
@@ -138,6 +167,7 @@ namespace uidev.Class
             set
             {
                 _borderPen = value;
+                PropertyChanged?.Invoke(null, new EventArgs());
             }
         }
 
@@ -201,6 +231,19 @@ namespace uidev.Class
                 _smoothingMode = value;
                 PropertyChanged?.Invoke(null, new EventArgs());
             }
+        }
+
+        public static Color ToEnterColor(Color color)
+        {
+            int add = 0x14;
+            int r = color.R, g = color.G, b = color.B;
+
+            r += r + add <= 0xFF ? add : 0x00;
+            g += g + add <= 0xFF ? add : 0x00;
+            b += b + add <= 0xFF ? add : 0x00;
+
+            return Color.FromArgb(r, g, b);
+
         }
     }
 }

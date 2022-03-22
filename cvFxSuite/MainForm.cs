@@ -26,7 +26,6 @@ namespace cvFxSuite
         private void fxButton1_Click(object sender, EventArgs e)
         {
             Console.WriteLine("slider value : " + fxSlider1.Value);
-            fxTreeView1.Refresh();
         }
     }
 }
