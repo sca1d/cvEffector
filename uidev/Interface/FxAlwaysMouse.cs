@@ -15,8 +15,20 @@ namespace uidev.Interface
 
         private Thread th;
 
-        protected bool MouseDownNow = false;
-        private Point _mousePoint { get; set; }
+        protected bool MeasurementNow = false;
+        private Point _mp;
+        private Point _mousePoint 
+        {
+            get
+            {
+                return _mp;
+            }
+            set
+            {
+                _mp = value;
+                ThreadMainLoop?.Invoke(_mp);
+            }
+        }
 
         public Point MousePoint
         {
@@ -26,8 +38,8 @@ namespace uidev.Interface
             }
         }
 
-        public delegate void MouseMoveHandler(Point point);
-        public MouseMoveHandler TheMouseMove;
+        public delegate void ThreadMainLoopEvent(Point point);
+        public ThreadMainLoopEvent ThreadMainLoop;
 
         public FxAlwaysMouse()
         {
@@ -37,6 +49,10 @@ namespace uidev.Interface
             //this.MouseUp += am_MouseUp;
 
             this.ResumeLayout(false);
+
+            this.SetStyle(ControlStyles.DoubleBuffer, true);
+            this.SetStyle(ControlStyles.UserPaint, true);
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
 
             th = new Thread(new ThreadStart(GetMousePosition));
             th.Start();
@@ -56,7 +72,6 @@ namespace uidev.Interface
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
-            if (MouseDownNow) TheMouseMove?.Invoke(_mousePoint);
         }
 
         protected override void OnHandleDestroyed(EventArgs e)
@@ -67,11 +82,11 @@ namespace uidev.Interface
 
         public void StartMeasurement()
         {
-            MouseDownNow = true;
+            MeasurementNow = true;
         }
         public void FinishMeasurement()
         {
-            MouseDownNow = false;
+            MeasurementNow = false;
         }
 
     }

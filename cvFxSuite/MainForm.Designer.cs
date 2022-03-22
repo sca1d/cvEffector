@@ -29,18 +29,9 @@ namespace cvFxSuite
         /// </summary>
         private void InitializeComponent()
         {
-            this.fxSlider1 = new uidev.Controls.FxSlider();
             this.fxButton1 = new uidev.Controls.FxButton();
+            this.fxSlider1 = new uidev.Controls.FxSlider();
             this.SuspendLayout();
-            // 
-            // fxSlider1
-            // 
-            this.fxSlider1.Border = true;
-            this.fxSlider1.Location = new System.Drawing.Point(286, 150);
-            this.fxSlider1.Name = "fxSlider1";
-            this.fxSlider1.Size = new System.Drawing.Size(265, 160);
-            this.fxSlider1.TabIndex = 0;
-            this.fxSlider1.Text = "fxSlider1";
             // 
             // fxButton1
             // 
@@ -51,13 +42,22 @@ namespace cvFxSuite
             this.fxButton1.TabIndex = 1;
             this.fxButton1.Text = "fxButton1";
             // 
+            // fxSlider1
+            // 
+            this.fxSlider1.Border = false;
+            this.fxSlider1.Location = new System.Drawing.Point(521, 346);
+            this.fxSlider1.Name = "fxSlider1";
+            this.fxSlider1.Size = new System.Drawing.Size(75, 23);
+            this.fxSlider1.TabIndex = 2;
+            this.fxSlider1.Text = "fxSlider1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 562);
-            this.Controls.Add(this.fxButton1);
             this.Controls.Add(this.fxSlider1);
+            this.Controls.Add(this.fxButton1);
             this.Name = "MainForm";
             this.Text = "cvEffector";
             this.ResumeLayout(false);
@@ -65,9 +65,8 @@ namespace cvFxSuite
         }
 
         #endregion
-
-        private uidev.Controls.FxSlider fxSlider1;
         private uidev.Controls.FxButton fxButton1;
+        private uidev.Controls.FxSlider fxSlider1;
     }
 }
 
