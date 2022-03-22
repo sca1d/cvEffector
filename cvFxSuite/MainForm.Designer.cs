@@ -41,17 +41,20 @@ namespace cvFxSuite
             this.fxButton1.Size = new System.Drawing.Size(134, 36);
             this.fxButton1.TabIndex = 1;
             this.fxButton1.Text = "fxButton1";
+            this.fxButton1.Click += new System.EventHandler(this.fxButton1_Click);
             // 
             // fxSlider1
             // 
             this.fxSlider1.Border = false;
-            this.fxSlider1.Location = new System.Drawing.Point(545, 291);
+            this.fxSlider1.Location = new System.Drawing.Point(218, 245);
             this.fxSlider1.MaximumValue = 100;
+            this.fxSlider1.MinimumSize = new System.Drawing.Size(18, 14);
             this.fxSlider1.MinimumValue = 0;
             this.fxSlider1.Name = "fxSlider1";
-            this.fxSlider1.Size = new System.Drawing.Size(75, 23);
+            this.fxSlider1.Size = new System.Drawing.Size(134, 36);
             this.fxSlider1.TabIndex = 2;
             this.fxSlider1.Text = "fxSlider1";
+            this.fxSlider1.Value = 0;
             // 
             // MainForm
             // 

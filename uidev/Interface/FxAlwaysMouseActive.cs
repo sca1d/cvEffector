@@ -53,20 +53,24 @@ namespace uidev.Interface
             this.SetStyle(ControlStyles.UserPaint, true);
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
 
-            if (LicenseManager.UsageMode != LicenseUsageMode.Runtime) return;
             th = new Thread(new ThreadStart(GetMousePosition));
-            th.Start();
         }
 
         public void GetMousePosition()
         {
 
             while (true)
+            //while (LicenseManager.UsageMode == LicenseUsageMode.Runtime)
             {
                 _mousePoint = Cursor.Position;
                 Thread.Sleep(10);
             }
 
+        }
+
+        public void StartThread()
+        {
+            th.Start();
         }
 
         protected override void WndProc(ref Message m)

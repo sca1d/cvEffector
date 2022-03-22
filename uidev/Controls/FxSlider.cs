@@ -39,6 +39,22 @@ namespace uidev.Controls
         private Color mouseEnterColor = Color.FromArgb(170, 160, 226);
         private Color mouseClickColor = Color.GhostWhite;
 
+        private int _value;
+        public int Value
+        {
+            get
+            {
+                return _value;
+            }
+            set
+            {
+                int v = value < MinimumValue ? MinimumValue : MaximumValue < value ? MaximumValue : value;
+                _value = v;
+                SetValue(v);
+                Refresh();
+            }
+        }
+
         private int _minValue = 0;
         public int MinimumValue
         {
@@ -48,6 +64,7 @@ namespace uidev.Controls
             }
             set
             {
+                if (MaximumValue < value) return;
                 _minValue = value;
             }
         }
@@ -61,6 +78,7 @@ namespace uidev.Controls
             }
             set
             {
+                if (value < MinimumValue) return;
                 _maxValue = value;
             }
         }
@@ -79,15 +97,51 @@ namespace uidev.Controls
             }
         }
 
-        public FxSlider() {
+        public FxSlider()
+        {
+
             InitializeComponent();
+
+            this.MinimumSize = new Size(knobSize * 2 + knobMoveRange * 2, knobSize * 2);
+
             this.ThreadMainLoop += FxSlider_ThreadMainLoop;
         }
 
         public int GetValue()
         {
-            return (int)((knobPoint - knobSize) / ((this.Width - 1 - knobSize * 2)
-                / (MaximumValue - MinimumValue)) + MinimumValue);
+            int val = knobPoint - knobSize;
+            if (val == 0) return MinimumValue;
+
+            return (int)(val / ((this.Width - 1 - knobSize * 2)
+                / (float)(MaximumValue - MinimumValue)) + MinimumValue);
+        }
+        public float GetValueFloat()
+        {
+            int val = knobPoint - knobSize;
+            if (val == 0) return MinimumValue;
+
+            return ((float)val / ((float)(this.Width - 1 - knobSize * 2)
+                / (float)(MaximumValue - MinimumValue)) + (float)MinimumValue);
+        }
+
+        private int SetValue(int __value)
+        {
+            int v;
+
+            if (__value < MinimumValue) { v = MinimumValue; Console.WriteLine("min"); }
+            else if (MaximumValue < __value) { v = MaximumValue; Console.WriteLine("max"); }
+            else
+            {
+                v = (int)((__value - MinimumValue) * ((Width - 1 - knobSize * 2)
+              / (float)(MaximumValue - MinimumValue)) + knobSize);
+                Console.WriteLine("other:" + __value);
+            }
+
+            knobPoint = v;
+
+            Refresh();
+
+            return v;
         }
 
         private void FxSlider_Paint(object sender, PaintEventArgs e)
@@ -132,7 +186,7 @@ namespace uidev.Controls
 
             if (MouseIsDown)
             {
-                knobPoint = knobSize <= futureX ? (futureX <= (this.Width - knobSize) ? futureX : this.Width - knobSize) : knobSize;
+                knobPoint = knobSize < futureX ? (futureX < (this.Width - 1 - knobSize) ? futureX : this.Width - 1 - knobSize) : knobSize;
                // Console.WriteLine(GetValue());
             }
         }
@@ -159,7 +213,8 @@ namespace uidev.Controls
                 e.X >= this.knobPoint - this.knobSize &&
                 e.X <= this.knobPoint + this.knobSize &&
                 e.Y >= yp - this.knobSize &&
-                e.Y <= yp + this.knobSize
+                e.Y <= yp + this.knobSize &&
+                e.Button == MouseButtons.Left
                 )
             {
                 MouseIsDown = true;
