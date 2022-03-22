@@ -11,5 +11,7 @@ namespace uidev.Interface
 
         bool Border { get; set; }
 
+        void Init();
+
     }
 }

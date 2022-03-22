@@ -29,8 +29,13 @@ namespace cvFxSuite
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("c-0");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("p-0", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("p-1");
             this.fxButton1 = new uidev.Controls.FxButton();
             this.fxSlider1 = new uidev.Controls.FxSlider();
+            this.fxTreeView1 = new uidev.Controls.FxTreeView();
             this.SuspendLayout();
             // 
             // fxButton1
@@ -56,11 +61,32 @@ namespace cvFxSuite
             this.fxSlider1.Text = "fxSlider1";
             this.fxSlider1.Value = 0;
             // 
+            // fxTreeView1
+            // 
+            this.fxTreeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.fxTreeView1.Border = true;
+            this.fxTreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.fxTreeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
+            this.fxTreeView1.Location = new System.Drawing.Point(342, 287);
+            this.fxTreeView1.Name = "fxTreeView1";
+            treeNode1.Name = "c0";
+            treeNode1.Text = "c-0";
+            treeNode2.Name = "p0";
+            treeNode2.Text = "p-0";
+            treeNode3.Name = "p1";
+            treeNode3.Text = "p-1";
+            this.fxTreeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode2,
+            treeNode3});
+            this.fxTreeView1.Size = new System.Drawing.Size(181, 135);
+            this.fxTreeView1.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 562);
+            this.Controls.Add(this.fxTreeView1);
             this.Controls.Add(this.fxSlider1);
             this.Controls.Add(this.fxButton1);
             this.Name = "MainForm";
@@ -72,6 +98,7 @@ namespace cvFxSuite
         #endregion
         private uidev.Controls.FxButton fxButton1;
         private uidev.Controls.FxSlider fxSlider1;
+        private uidev.Controls.FxTreeView fxTreeView1;
     }
 }
 

@@ -21,11 +21,11 @@ namespace uidev.Class
 
         public static TextFormatFlags flags = TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.WordBreak;
 
-        public static void DrawText(Color color, Control control, IDeviceContext graphics)
+        public static void DrawTextCenter(string Text, Color color, Control control, IDeviceContext graphics)
         {
             TextRenderer.DrawText(
                 graphics,
-                control.Text,
+                Text,
                 uiCustoms.Font,
                 new Point(control.Width, control.Height / 2),
                 color,

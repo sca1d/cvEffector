@@ -31,14 +31,14 @@ namespace uidev.Controls
             if (DownMouse)
             {
                 e.Graphics.Clear(uiCustoms.ClickColor);
-                DrawManager.DrawText(uiCustoms.BackColor, this, e.Graphics);
+                DrawManager.DrawTextCenter(this.Text, uiCustoms.BackColor, this, e.Graphics);
                 return;
             }
 
             if (InMouse)
             {
                 e.Graphics.Clear(uiCustoms.DashColor);
-                DrawManager.DrawText(uiCustoms.BackColor, this, e.Graphics);
+                DrawManager.DrawTextCenter(this.Text, uiCustoms.BackColor, this, e.Graphics);
                 return;
             }
 
@@ -49,7 +49,7 @@ namespace uidev.Controls
 
             e.Graphics.Clear(uiCustoms.BackColor);
 
-            DrawManager.DrawText(uiCustoms.MainColor, this, e.Graphics);
+            DrawManager.DrawTextCenter(this.Text, uiCustoms.MainColor, this, e.Graphics);
 
             if (Border) e.Graphics.DrawRectangle(uiCustoms.BorderPen, 0, 0, Width - 1, Height - 1);
 

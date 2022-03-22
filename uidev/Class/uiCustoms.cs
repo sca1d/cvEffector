@@ -30,6 +30,34 @@ namespace uidev.Class
             }
         }
 
+        private static Color _enterColor = Color.FromArgb(50, 50, 50);
+        public static Color EnterColor
+        {
+            get
+            {
+                return _enterColor;
+            }
+            set
+            {
+                _enterColor = value;
+                PropertyChanged?.Invoke(null, new EventArgs());
+            }
+        }
+
+        private static Color _selectColor = Color.FromArgb(70, 70, 70);
+        public static Color SelectColor
+        {
+            get
+            {
+                return _selectColor;
+            }
+            set
+            {
+                _selectColor = value;
+                PropertyChanged?.Invoke(null, new EventArgs());
+            }
+        }
+
         private static Color _darkColor = Color.FromArgb(24, 24, 24);
         public static Color DarkColor
         {

@@ -35,10 +35,20 @@ namespace uidev.Controls
             }
         }
 
+        public void Init()
+        {
+            this.SetStyle(ControlStyles.DoubleBuffer, true);
+            this.SetStyle(ControlStyles.UserPaint, true);
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+
+            Class.uiCustoms.PropertyChanged += PropertiesChanged;
+        }
+
         public FxBaseControl()
         {
             InitializeComponent();
-            Class.uiCustoms.PropertyChanged += PropertiesChanged;
+
+            Init();
         }
 
         private bool GetDesignMode(Control control)

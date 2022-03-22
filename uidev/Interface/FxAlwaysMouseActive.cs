@@ -49,10 +49,6 @@ namespace uidev.Interface
 
             this.ResumeLayout(false);
 
-            this.SetStyle(ControlStyles.DoubleBuffer, true);
-            this.SetStyle(ControlStyles.UserPaint, true);
-            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-
             th = new Thread(new ThreadStart(GetMousePosition));
         }
 

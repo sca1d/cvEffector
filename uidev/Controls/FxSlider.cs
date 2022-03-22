@@ -15,6 +15,9 @@ namespace uidev.Controls
     public partial class FxSlider : Interface.FxAlwaysMouseActive, Interface.FxUiBase
     {
 
+        public delegate void SlideEvent(int value);
+        public SlideEvent Slide;
+
         const int knobMoveRange = 2;
 
         private int knobSize = 7;
@@ -188,6 +191,7 @@ namespace uidev.Controls
             {
                 knobPoint = knobSize < futureX ? (futureX < (this.Width - 1 - knobSize) ? futureX : this.Width - knobSize) : knobSize;
                 _value = GetValue();
+                Slide?.Invoke(_value);
                 // Console.WriteLine(GetValue());
             }
         }
