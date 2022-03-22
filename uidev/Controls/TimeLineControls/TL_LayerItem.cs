@@ -134,7 +134,7 @@ namespace uidev.Controls.TimeLineControls
                 */
             }
         }
-        private bool MovingLayerPointNow = true;
+        private bool MovingLayerPointNow = false;
 
         private bool MouseIsEnter = false;
         private bool MouseIsDown = false;
