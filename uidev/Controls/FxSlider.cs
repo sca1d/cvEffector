@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace uidev.Controls
 {
-    public partial class FxSlider : Interface.FxAlwaysMouse, Interface.FxUiBase
+    public partial class FxSlider : Interface.FxAlwaysMouseActive, Interface.FxUiBase
     {
 
         const int knobMoveRange = 2;

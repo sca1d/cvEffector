@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace uidev.Interface
 {
-    public class FxAlwaysMouse : Controls.FxBaseControl
+    public class FxAlwaysMouseActive : Controls.FxBaseControl
     {
 
         private Thread th;
@@ -40,7 +40,7 @@ namespace uidev.Interface
         public delegate void ThreadMainLoopEvent(Point point);
         public ThreadMainLoopEvent ThreadMainLoop;
 
-        public FxAlwaysMouse()
+        public FxAlwaysMouseActive()
         {
             this.SuspendLayout();
 
