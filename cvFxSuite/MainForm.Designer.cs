@@ -45,7 +45,9 @@ namespace cvFxSuite
             // fxSlider1
             // 
             this.fxSlider1.Border = false;
-            this.fxSlider1.Location = new System.Drawing.Point(521, 346);
+            this.fxSlider1.Location = new System.Drawing.Point(545, 291);
+            this.fxSlider1.MaximumValue = 100;
+            this.fxSlider1.MinimumValue = 0;
             this.fxSlider1.Name = "fxSlider1";
             this.fxSlider1.Size = new System.Drawing.Size(75, 23);
             this.fxSlider1.TabIndex = 2;

@@ -39,6 +39,32 @@ namespace uidev.Controls
         private Color mouseEnterColor = Color.FromArgb(170, 160, 226);
         private Color mouseClickColor = Color.GhostWhite;
 
+        private int _minValue = 0;
+        public int MinimumValue
+        {
+            get
+            {
+                return _minValue;
+            }
+            set
+            {
+                _minValue = value;
+            }
+        }
+
+        private int _maxValue = 100;
+        public int MaximumValue
+        {
+            get
+            {
+                return _maxValue;
+            }
+            set
+            {
+                _maxValue = value;
+            }
+        }
+
         private bool _border = false;
         public bool Border
         {
@@ -56,6 +82,12 @@ namespace uidev.Controls
         public FxSlider() {
             InitializeComponent();
             this.ThreadMainLoop += FxSlider_ThreadMainLoop;
+        }
+
+        public int GetValue()
+        {
+            return (int)((knobPoint - knobSize) / ((this.Width - 1 - knobSize * 2)
+                / (MaximumValue - MinimumValue)) + MinimumValue);
         }
 
         private void FxSlider_Paint(object sender, PaintEventArgs e)
@@ -101,6 +133,7 @@ namespace uidev.Controls
             if (MouseIsDown)
             {
                 knobPoint = knobSize <= futureX ? (futureX <= (this.Width - knobSize) ? futureX : this.Width - knobSize) : knobSize;
+               // Console.WriteLine(GetValue());
             }
         }
 

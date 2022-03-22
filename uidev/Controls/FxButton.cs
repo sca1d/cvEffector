@@ -12,25 +12,11 @@ using uidev.Class;
 
 namespace uidev.Controls
 {
-    public partial class FxButton : Control, Interface.FxUiBase
+    public partial class FxButton : FxBaseControl
     {
 
         private bool InMouse = false;
         private bool DownMouse = false;
-
-        private bool _border = true;
-        public bool Border
-        {
-            get
-            {
-                return _border;
-            }
-            set
-            {
-                _border = value;
-                Refresh();
-            }
-        }
 
         public FxButton()
         {

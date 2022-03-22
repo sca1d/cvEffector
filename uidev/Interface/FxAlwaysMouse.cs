@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace uidev.Interface
 {
-    public class FxAlwaysMouse : System.Windows.Forms.Control
+    public class FxAlwaysMouse : Controls.FxBaseControl
     {
 
         private Thread th;
@@ -52,6 +53,7 @@ namespace uidev.Interface
             this.SetStyle(ControlStyles.UserPaint, true);
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
 
+            if (LicenseManager.UsageMode != LicenseUsageMode.Runtime) return;
             th = new Thread(new ThreadStart(GetMousePosition));
             th.Start();
         }
@@ -78,5 +80,11 @@ namespace uidev.Interface
             th.Abort();
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            this.ResumeLayout(false);
+
+        }
     }
 }

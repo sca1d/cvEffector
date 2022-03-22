@@ -47,6 +47,12 @@
   <ItemGroup>
     <Compile Include="Class\DrawManager.cs" />
     <Compile Include="Class\IpcRemoteObj.cs" />
+    <Compile Include="Controls\FxBaseControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FxBaseControl.Designer.cs">
+      <DependentUpon>FxBaseControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FxButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\FxAlwaysMouse.resx">
+      <DependentUpon>FxAlwaysMouse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
