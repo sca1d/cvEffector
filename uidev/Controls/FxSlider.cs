@@ -186,8 +186,9 @@ namespace uidev.Controls
 
             if (MouseIsDown)
             {
-                knobPoint = knobSize < futureX ? (futureX < (this.Width - 1 - knobSize) ? futureX : this.Width - 1 - knobSize) : knobSize;
-               // Console.WriteLine(GetValue());
+                knobPoint = knobSize < futureX ? (futureX < (this.Width - 1 - knobSize) ? futureX : this.Width - knobSize) : knobSize;
+                _value = GetValue();
+                // Console.WriteLine(GetValue());
             }
         }
 
