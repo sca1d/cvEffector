@@ -1,5 +1,5 @@
 ﻿
-namespace uidev.Controls.TimeLineControls
+namespace uidev.TimeLineControls
 {
     partial class TL_LayerItem
     {

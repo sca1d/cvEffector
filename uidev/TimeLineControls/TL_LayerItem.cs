@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using uidev.Class;
 using uidev.Interface;
 
-namespace uidev.Controls.TimeLineControls
+namespace uidev.TimeLineControls
 {
     public partial class TL_LayerItem : Control, TL_LayerItemBase
     {
@@ -77,6 +77,7 @@ namespace uidev.Controls.TimeLineControls
             set
             {
                 _startFrame = value;
+                Refresh();
             }
         }
 
@@ -90,6 +91,7 @@ namespace uidev.Controls.TimeLineControls
             set
             {
                 _frameNum = value;
+                Refresh();
             }
         }
 
@@ -103,6 +105,7 @@ namespace uidev.Controls.TimeLineControls
             set
             {
                 _selected = value;
+                Refresh();
             }
         }
 
@@ -233,7 +236,14 @@ namespace uidev.Controls.TimeLineControls
                 e.Graphics.ClipBounds.Y + e.Graphics.ClipBounds.Height - 1F - (CornerSize + 2)
                 );
 
-            e.Graphics.DrawRectangle(uiCustoms.GrayPen, 0, 0, Width - 1, Height - 1);
+            if (selected)
+            {
+                e.Graphics.DrawRectangle(uiCustoms.BorderPen, 0, 0, Width - 1, Height - 1);
+            }
+            else
+            {
+                e.Graphics.DrawRectangle(uiCustoms.GrayPen, 0, 0, Width - 1, Height - 1);
+            }
 
         }
 

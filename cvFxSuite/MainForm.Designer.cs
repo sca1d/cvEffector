@@ -31,7 +31,7 @@ namespace cvFxSuite
         {
             this.fxButton1 = new uidev.Controls.FxButton();
             this.fxSlider1 = new uidev.Controls.FxSlider();
-            this.tL_LayerItem1 = new uidev.Controls.TimeLineControls.TL_LayerItem();
+            this.tL_LayerItem1 = new uidev.TimeLineControls.TL_LayerItem();
             this.SuspendLayout();
             // 
             // fxButton1
@@ -59,13 +59,14 @@ namespace cvFxSuite
             // 
             // tL_LayerItem1
             // 
+            this.tL_LayerItem1.clickColor = System.Drawing.Color.White;
             this.tL_LayerItem1.color = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
             this.tL_LayerItem1.enterColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.tL_LayerItem1.frame_num = 60;
-            this.tL_LayerItem1.Location = new System.Drawing.Point(452, 303);
+            this.tL_LayerItem1.Location = new System.Drawing.Point(352, 140);
             this.tL_LayerItem1.Name = "tL_LayerItem1";
             this.tL_LayerItem1.selected = true;
-            this.tL_LayerItem1.Size = new System.Drawing.Size(156, 27);
+            this.tL_LayerItem1.Size = new System.Drawing.Size(302, 31);
             this.tL_LayerItem1.srart_frame = 0;
             this.tL_LayerItem1.TabIndex = 3;
             this.tL_LayerItem1.Text = "tL_LayerItem1";
@@ -87,7 +88,7 @@ namespace cvFxSuite
         #endregion
         private uidev.Controls.FxButton fxButton1;
         private uidev.Controls.FxSlider fxSlider1;
-        private uidev.Controls.TimeLineControls.TL_LayerItem tL_LayerItem1;
+        private uidev.TimeLineControls.TL_LayerItem tL_LayerItem1;
     }
 }
 

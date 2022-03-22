@@ -48,6 +48,7 @@
     <Compile Include="Class\DrawManager.cs" />
     <Compile Include="Class\EventClass.cs" />
     <Compile Include="Class\IpcRemoteObj.cs" />
+    <Compile Include="Class\VideoStructs.cs" />
     <Compile Include="Controls\FxBaseControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -67,11 +68,26 @@
       <DependentUpon>FxSlider.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\RemoteProcess.cs" />
-    <Compile Include="Controls\TimeLineControls\TL_LayerItem.cs">
+    <Compile Include="TimeLineControls\Options\TL_AudioItemOptions.cs" />
+    <Compile Include="TimeLineControls\Options\TL_ItemOptions.cs" />
+    <Compile Include="TimeLineControls\Options\TL_VideoItemOptions.cs" />
+    <Compile Include="TimeLineControls\TL_LayerItem.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\TimeLineControls\TL_LayerItem.Designer.cs">
+    <Compile Include="TimeLineControls\TL_LayerItem.Designer.cs">
       <DependentUpon>TL_LayerItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeLineControls\TL_LayerStockItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TimeLineControls\TL_LayerStockItem.Designer.cs">
+      <DependentUpon>TL_LayerStockItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeLineControls\TL_LayerStocks.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TimeLineControls\TL_LayerStocks.Designer.cs">
+      <DependentUpon>TL_LayerStocks.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\BaseForm.cs">
       <SubType>Form</SubType>
@@ -84,7 +100,7 @@
     </Compile>
     <Compile Include="Class\uiCustoms.cs" />
     <Compile Include="Interface\FxUiBase.cs" />
-    <Compile Include="Interface\TL_LayerItemBase.cs" />
+    <Compile Include="TimeLineControls\TL_LayerItemBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
@@ -95,7 +111,7 @@
     <EmbeddedResource Include="Controls\FxSlider.resx">
       <DependentUpon>FxSlider.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TimeLineControls\TL_LayerItem.resx">
+    <EmbeddedResource Include="TimeLineControls\TL_LayerItem.resx">
       <DependentUpon>TL_LayerItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BaseForm.resx">
