@@ -49,7 +49,7 @@ namespace uidev.Controls
 
             e.Graphics.Clear(uiCustoms.BackColor);
 
-            DrawManager.DrawText(uiCustoms.DashColor, this, e.Graphics);
+            DrawManager.DrawText(uiCustoms.MainColor, this, e.Graphics);
 
             if (Border) e.Graphics.DrawRectangle(uiCustoms.BorderPen, 0, 0, Width - 1, Height - 1);
 

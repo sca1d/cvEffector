@@ -81,6 +81,7 @@ namespace uidev.Interface
         protected override void OnHandleDestroyed(EventArgs e)
         {
             base.OnHandleDestroyed(e);
+            
             th.Abort();
         }
 

@@ -31,9 +31,9 @@ namespace uidev.Controls
         private bool MouseIsEnter = false;
         private bool MouseIsDown = false;
 
-        private Color knobColor = Color.SlateBlue;
-        private Color mouseEnterKnobColor = Color.FromArgb(170, 160, 226);
-        private Color mouseClickKnobColor = Color.GhostWhite;
+        private Color knobColor = Class.uiCustoms.MainColor;
+        private Color mouseEnterKnobColor = Class.uiCustoms.MainEnterColor;
+        private Color mouseClickKnobColor = Class.uiCustoms.MainClickColor;
 
         private Color mainColor = Color.SlateBlue;
         private Color mouseEnterColor = Color.FromArgb(170, 160, 226);

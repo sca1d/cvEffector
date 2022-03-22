@@ -38,6 +38,7 @@ namespace uidev.Controls
         public FxBaseControl()
         {
             InitializeComponent();
+            Class.uiCustoms.PropertyChanged += PropertiesChanged;
         }
 
         private bool GetDesignMode(Control control)
@@ -47,6 +48,11 @@ namespace uidev.Controls
             bool mode = control.Site == null ? false : control.Site.DesignMode;
 
             return mode | GetDesignMode(control.Parent);
+        }
+
+        private void PropertiesChanged(object sender, EventArgs e)
+        {
+            Refresh();
         }
 
     }

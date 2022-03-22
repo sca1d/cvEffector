@@ -14,13 +14,9 @@ namespace uidev.Class
     {
 
         public delegate void PropertyChangedEvent(object sender, EventArgs e);
-        [Category("uiControl")]
-        [Description("uiControl独自のプロパティが変更された場合に発生します。")]
         public static event PropertyChangedEvent PropertyChanged;
 
         private static Color _backColor = Color.FromArgb(30, 30, 30);
-        [Category("色")]
-        [Description("背景の色を設定します。")]
         public static Color BackColor
         {
             get
@@ -35,8 +31,6 @@ namespace uidev.Class
         }
 
         private static Color _darkColor = Color.FromArgb(24, 24, 24);
-        [Category("色")]
-        [Description("暗めの色を設定します。")]
         public static Color DarkColor
         {
             get
@@ -49,10 +43,50 @@ namespace uidev.Class
                 PropertyChanged?.Invoke(null, new EventArgs()) ;
             }
         }
+        
+        private static Color _mainColor = Color.SlateBlue;
+        public static Color MainColor
+        {
+            get
+            {
+                return _mainColor;
+            }
+            set
+            {
+                _mainColor = value;
+                PropertyChanged?.Invoke(null, new EventArgs()) ;
+            }
+        }
 
-        private static Color _dashColor = Color.DimGray;
-        [Category("色")]
-        [Description("縁枠の色を設定します。")]
+        private static Color _mainEnterColor = Color.FromArgb(170, 160, 226);
+        public static Color MainEnterColor
+        {
+            get
+            {
+                return _mainEnterColor;
+            }
+            set
+            {
+                _mainEnterColor = value;
+                PropertyChanged?.Invoke(null, new EventArgs());
+            }
+        }
+
+        private static Color _mainClickColor = Color.GhostWhite;
+        public static Color MainClickColor
+        {
+            get
+            {
+                return _mainClickColor;
+            }
+            set
+            {
+                _mainClickColor = value;
+                PropertyChanged?.Invoke(null, new EventArgs());
+            }
+        }
+
+        private static Color _dashColor = Color.SlateBlue;
         public static Color DashColor
         {
             get
@@ -80,8 +114,6 @@ namespace uidev.Class
         }
 
         private static Color _clickColor = Color.LightGray;
-        [Category("色")]
-        [Description("コントロールがクリックされたときの色を設定します。")]
         public static Color ClickColor
         {
             get
@@ -102,8 +134,6 @@ namespace uidev.Class
             System.Drawing.GraphicsUnit.Point,
             ((byte)(128))
             );
-        [Category("フォント")]
-        [Description("コントロールのフォントを設定します。")]
         public static Font Font
         {
             get
@@ -118,8 +148,6 @@ namespace uidev.Class
         }
 
         private static float _penWidth = 1F;
-        [Category("グラフィック")]
-        [Description("線の太さを設定します。")]
         public static float PenWidth
         {
             get
@@ -134,8 +162,6 @@ namespace uidev.Class
         }
 
         private static SmoothingMode _smoothingMode = SmoothingMode.HighSpeed;
-        [Category("グラフィック")]
-        [Description("グラフィック描画のアンチエイリアス処理設定を行います。")]
         public static SmoothingMode SmoothingMode
         {
             get
