@@ -27,10 +27,5 @@ namespace cvFxSuite
         {
             Console.WriteLine("slider value : " + fxSlider1.Value);
         }
-
-        private void trackBar1_Scroll(object sender, EventArgs e)
-        {
-            fxSlider1.Value = this.trackBar1.Value;
-        }
     }
 }
