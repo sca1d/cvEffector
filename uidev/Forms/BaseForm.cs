@@ -35,6 +35,7 @@ namespace uidev.Forms
 
         private void BaseForm_MouseDown(object sender, MouseEventArgs e)
         {
+            ui_info info = new ui_info(this);
             this.ActiveControl = null;
             AllRefresh();
         }
@@ -47,9 +48,7 @@ namespace uidev.Forms
 
         private void BaseForm_Paint(object sender, PaintEventArgs e)
         {
-            
-            //ui_info info = new ui_info(this, e.Graphics);
-            //info.DoNoise();
+
         }
     }
 }
