@@ -30,10 +30,10 @@ namespace thetaSuite
         private void InitializeComponent()
         {
             this.fxButton1 = new uidev.Controls.FxButton();
-            this.fxSlider1 = new uidev.Controls.FxSlider();
-            this.fxCombo1 = new uidev.Controls.FxCombo();
             this.fxMenu1 = new uidev.Controls.FxMenu();
             this.test1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fxSlider1 = new uidev.Controls.FxSlider();
+            this.fxCombo1 = new uidev.Controls.FxCombo();
             this.tL_LayerItem2 = new uidev.TimeLineControls.TL_LayerItem();
             this.tL_LayerItem1 = new uidev.TimeLineControls.TL_LayerItem();
             this.fxMenu1.SuspendLayout();
@@ -43,12 +43,26 @@ namespace thetaSuite
             // 
             this.fxButton1.Border = true;
             this.fxButton1.Location = new System.Drawing.Point(12, 12);
-            this.fxButton1.Menu = null;
+            this.fxButton1.Menu = this.fxMenu1;
             this.fxButton1.Name = "fxButton1";
             this.fxButton1.Size = new System.Drawing.Size(134, 36);
             this.fxButton1.TabIndex = 1;
             this.fxButton1.Text = "fxButton1";
             this.fxButton1.Click += new System.EventHandler(this.fxButton1_Click);
+            // 
+            // fxMenu1
+            // 
+            this.fxMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.test1ToolStripMenuItem});
+            this.fxMenu1.Name = "fxMenu1";
+            this.fxMenu1.Size = new System.Drawing.Size(100, 26);
+            // 
+            // test1ToolStripMenuItem
+            // 
+            this.test1ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.test1ToolStripMenuItem.Name = "test1ToolStripMenuItem";
+            this.test1ToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.test1ToolStripMenuItem.Text = "test1";
             // 
             // fxSlider1
             // 
@@ -75,20 +89,6 @@ namespace thetaSuite
             this.fxCombo1.TabIndex = 5;
             this.fxCombo1.Text = "fxCombo1";
             // 
-            // fxMenu1
-            // 
-            this.fxMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.test1ToolStripMenuItem});
-            this.fxMenu1.Name = "fxMenu1";
-            this.fxMenu1.Size = new System.Drawing.Size(100, 26);
-            // 
-            // test1ToolStripMenuItem
-            // 
-            this.test1ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.test1ToolStripMenuItem.Name = "test1ToolStripMenuItem";
-            this.test1ToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
-            this.test1ToolStripMenuItem.Text = "test1";
-            // 
             // tL_LayerItem2
             // 
             this.tL_LayerItem2.clickColor = System.Drawing.Color.White;
@@ -96,6 +96,7 @@ namespace thetaSuite
             this.tL_LayerItem2.enterColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.tL_LayerItem2.frame_width = 60;
             this.tL_LayerItem2.Location = new System.Drawing.Point(704, 184);
+            this.tL_LayerItem2.Menu = null;
             this.tL_LayerItem2.Name = "tL_LayerItem2";
             this.tL_LayerItem2.selected = false;
             this.tL_LayerItem2.Size = new System.Drawing.Size(171, 23);
@@ -111,6 +112,7 @@ namespace thetaSuite
             this.tL_LayerItem1.enterColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.tL_LayerItem1.frame_width = 60;
             this.tL_LayerItem1.Location = new System.Drawing.Point(527, 184);
+            this.tL_LayerItem1.Menu = this.fxMenu1;
             this.tL_LayerItem1.Name = "tL_LayerItem1";
             this.tL_LayerItem1.selected = false;
             this.tL_LayerItem1.Size = new System.Drawing.Size(171, 23);

@@ -81,6 +81,20 @@ namespace uidev.TimeLineControls
             }
         }
 
+        private Controls.FxMenu _menu;
+        public Controls.FxMenu Menu
+        {
+            get
+            {
+                return _menu;
+            }
+            set
+            {
+                _menu = value;
+                Refresh();
+            }
+        }
+
         /*
         private string _text;
         public new string Text
@@ -356,6 +370,13 @@ namespace uidev.TimeLineControls
                 }
 
                 Refresh();
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                if (Menu != null)
+                {
+                    Menu.Show(PointToScreen(e.Location));
+                }
             }
 
         }

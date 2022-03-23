@@ -253,6 +253,11 @@ namespace uidev.Controls
             Refresh();
         }
 
+        private void FxSlider_Leave(object sender, EventArgs e)
+        {
+
+        }
+
         /*
         private void FxSlider_TheMouseMove(Point point)
         {
