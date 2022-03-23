@@ -42,11 +42,6 @@ namespace uidev.Controls
                 return;
             }
 
-            Size tSize = TextRenderer.MeasureText(
-                        this.Text,
-                        uiCustoms.Font
-                        );
-
             e.Graphics.Clear(uiCustoms.BackColor);
 
             DrawManager.DrawTextCenter(this.Text, uiCustoms.MainColor, this, e.Graphics);

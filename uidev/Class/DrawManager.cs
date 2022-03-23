@@ -19,17 +19,29 @@ namespace uidev.Class
     public static class DrawManager
     {
 
-        public static TextFormatFlags flags = TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.WordBreak;
+        public static TextFormatFlags center_flags = TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.WordBreak;
 
-        public static void DrawTextCenter(string Text, Color color, Control control, IDeviceContext graphics)
+        public static void DrawTextLeft(string text, Color color, Control control, IDeviceContext graphics)
         {
             TextRenderer.DrawText(
                 graphics,
-                Text,
+                text,
+                uiCustoms.Font,
+                new Point(control.Width - control.Width / 5, control.Height / 2),
+                color,
+                center_flags
+                );
+        }
+
+        public static void DrawTextCenter(string text, Color color, Control control, IDeviceContext graphics)
+        {
+            TextRenderer.DrawText(
+                graphics,
+                text,
                 uiCustoms.Font,
                 new Point(control.Width, control.Height / 2),
                 color,
-                flags
+                center_flags
                 );
         }
 

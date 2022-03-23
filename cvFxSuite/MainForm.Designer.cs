@@ -33,6 +33,10 @@ namespace cvFxSuite
             this.fxSlider1 = new uidev.Controls.FxSlider();
             this.tL_LayerItem1 = new uidev.TimeLineControls.TL_LayerItem();
             this.tL_LayerItem2 = new uidev.TimeLineControls.TL_LayerItem();
+            this.fxCombo1 = new uidev.Controls.FxCombo();
+            this.fxMenu1 = new uidev.Controls.FxMenu();
+            this.test1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fxMenu1.SuspendLayout();
             this.SuspendLayout();
             // 
             // fxButton1
@@ -88,17 +92,43 @@ namespace cvFxSuite
             this.tL_LayerItem2.Text = "tL_LayerItem2";
             this.tL_LayerItem2.view_text = true;
             // 
+            // fxCombo1
+            // 
+            this.fxCombo1.Border = true;
+            this.fxCombo1.Location = new System.Drawing.Point(208, 184);
+            this.fxCombo1.Name = "fxCombo1";
+            this.fxCombo1.popup_menu = this.fxMenu1;
+            this.fxCombo1.Size = new System.Drawing.Size(97, 27);
+            this.fxCombo1.TabIndex = 5;
+            this.fxCombo1.Text = "fxCombo1";
+            // 
+            // fxMenu1
+            // 
+            this.fxMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.test1ToolStripMenuItem});
+            this.fxMenu1.Name = "fxMenu1";
+            this.fxMenu1.Size = new System.Drawing.Size(100, 26);
+            // 
+            // test1ToolStripMenuItem
+            // 
+            this.test1ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.test1ToolStripMenuItem.Name = "test1ToolStripMenuItem";
+            this.test1ToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.test1ToolStripMenuItem.Text = "test1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 562);
+            this.Controls.Add(this.fxCombo1);
             this.Controls.Add(this.tL_LayerItem2);
             this.Controls.Add(this.tL_LayerItem1);
             this.Controls.Add(this.fxSlider1);
             this.Controls.Add(this.fxButton1);
             this.Name = "MainForm";
             this.Text = "cvEffector";
+            this.fxMenu1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -108,6 +138,9 @@ namespace cvFxSuite
         private uidev.Controls.FxSlider fxSlider1;
         private uidev.TimeLineControls.TL_LayerItem tL_LayerItem1;
         private uidev.TimeLineControls.TL_LayerItem tL_LayerItem2;
+        private uidev.Controls.FxCombo fxCombo1;
+        private uidev.Controls.FxMenu fxMenu1;
+        private System.Windows.Forms.ToolStripMenuItem test1ToolStripMenuItem;
     }
 }
 
