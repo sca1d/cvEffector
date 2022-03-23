@@ -67,7 +67,7 @@ namespace cvFxSuite
             this.tL_LayerItem1.Location = new System.Drawing.Point(573, 229);
             this.tL_LayerItem1.Name = "tL_LayerItem1";
             this.tL_LayerItem1.selected = true;
-            this.tL_LayerItem1.Size = new System.Drawing.Size(205, 29);
+            this.tL_LayerItem1.Size = new System.Drawing.Size(178, 29);
             this.tL_LayerItem1.srart_frame = 0;
             this.tL_LayerItem1.TabIndex = 3;
             this.tL_LayerItem1.Text = "tL_LayerItem1";
@@ -79,10 +79,10 @@ namespace cvFxSuite
             this.tL_LayerItem2.color = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
             this.tL_LayerItem2.enterColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.tL_LayerItem2.frame_width = 60;
-            this.tL_LayerItem2.Location = new System.Drawing.Point(370, 229);
+            this.tL_LayerItem2.Location = new System.Drawing.Point(414, 229);
             this.tL_LayerItem2.Name = "tL_LayerItem2";
             this.tL_LayerItem2.selected = true;
-            this.tL_LayerItem2.Size = new System.Drawing.Size(197, 29);
+            this.tL_LayerItem2.Size = new System.Drawing.Size(153, 29);
             this.tL_LayerItem2.srart_frame = 0;
             this.tL_LayerItem2.TabIndex = 4;
             this.tL_LayerItem2.Text = "tL_LayerItem2";

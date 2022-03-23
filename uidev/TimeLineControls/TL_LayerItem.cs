@@ -252,9 +252,12 @@ namespace uidev.TimeLineControls
 
             if (view_text)
             {
+
+                string t = DrawManager.ChangeTextSize(Text, Width - (1 + (2 * 2)));
+
                 TextRenderer.DrawText(
                     e.Graphics,
-                    Text,
+                    t,
                     uiCustoms.Font,
                     new Point(2, Height - 10),
                     uiCustoms.GrayColor,
