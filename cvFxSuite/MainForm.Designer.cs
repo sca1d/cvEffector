@@ -1,5 +1,5 @@
 ﻿
-namespace cvFxSuite
+namespace thetaSuite
 {
     partial class MainForm
     {
@@ -127,7 +127,7 @@ namespace cvFxSuite
             this.Controls.Add(this.fxSlider1);
             this.Controls.Add(this.fxButton1);
             this.Name = "MainForm";
-            this.Text = "cvEffector";
+            this.Text = "theta";
             this.fxMenu1.ResumeLayout(false);
             this.ResumeLayout(false);
 

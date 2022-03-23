@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0518EA2E-8C76-462B-9DB9-6A1DA69C4E9F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>cvFxSuite</RootNamespace>
-    <AssemblyName>cvFxSuite</AssemblyName>
+    <RootNamespace>thetaSuite</RootNamespace>
+    <AssemblyName>thetaSuite</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -68,6 +68,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

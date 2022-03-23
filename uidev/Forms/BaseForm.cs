@@ -22,8 +22,8 @@ namespace uidev.Forms
             InitializeComponent();
             this.BackColor = Class.uiCustoms.BackColor;
 
-            Sample sample = new Sample();
-            Console.WriteLine(sample.HelloWorld("test"));
+            //Sample sample = new Sample();
+            //Console.WriteLine(sample.HelloWorld("test"));
         }
 
         private int control_refresh(Control c)

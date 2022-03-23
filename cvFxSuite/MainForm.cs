@@ -12,7 +12,7 @@ using uidev.Class;
 using uidev.Forms;
 using uidev.Controls;
 
-namespace cvFxSuite
+namespace thetaSuite
 {
     public partial class MainForm : BaseForm
     {
