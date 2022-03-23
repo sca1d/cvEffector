@@ -180,6 +180,8 @@ namespace uidev.TimeLineControls
 
             Class.uiCustoms.PropertyChanged += PropertiesChanged;
 
+            selected = false;
+
             movingLayer_Start += move_start;
             movingLayer_End += move_end;
             changingLayerSize_Start += size_start;

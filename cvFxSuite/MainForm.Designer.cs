@@ -31,10 +31,11 @@ namespace cvFxSuite
         {
             this.fxButton1 = new uidev.Controls.FxButton();
             this.fxSlider1 = new uidev.Controls.FxSlider();
-            this.tL_LayerItem1 = new uidev.TimeLineControls.TL_LayerItem();
             this.fxCombo1 = new uidev.Controls.FxCombo();
             this.fxMenu1 = new uidev.Controls.FxMenu();
             this.test1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tL_LayerItem2 = new uidev.TimeLineControls.TL_LayerItem();
+            this.tL_LayerItem1 = new uidev.TimeLineControls.TL_LayerItem();
             this.fxMenu1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,21 +62,6 @@ namespace cvFxSuite
             this.fxSlider1.Text = "fxSlider1";
             this.fxSlider1.Value = 0;
             // 
-            // tL_LayerItem1
-            // 
-            this.tL_LayerItem1.clickColor = System.Drawing.Color.White;
-            this.tL_LayerItem1.color = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.tL_LayerItem1.enterColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.tL_LayerItem1.frame_width = 60;
-            this.tL_LayerItem1.Location = new System.Drawing.Point(527, 272);
-            this.tL_LayerItem1.Name = "tL_LayerItem1";
-            this.tL_LayerItem1.selected = true;
-            this.tL_LayerItem1.Size = new System.Drawing.Size(171, 29);
-            this.tL_LayerItem1.srart_frame = 0;
-            this.tL_LayerItem1.TabIndex = 3;
-            this.tL_LayerItem1.Text = "tL_LayerItem1";
-            this.tL_LayerItem1.view_text = true;
-            // 
             // fxCombo1
             // 
             this.fxCombo1.Border = true;
@@ -100,12 +86,43 @@ namespace cvFxSuite
             this.test1ToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.test1ToolStripMenuItem.Text = "test1";
             // 
+            // tL_LayerItem2
+            // 
+            this.tL_LayerItem2.clickColor = System.Drawing.Color.White;
+            this.tL_LayerItem2.color = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.tL_LayerItem2.enterColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.tL_LayerItem2.frame_width = 60;
+            this.tL_LayerItem2.Location = new System.Drawing.Point(704, 184);
+            this.tL_LayerItem2.Name = "tL_LayerItem2";
+            this.tL_LayerItem2.selected = false;
+            this.tL_LayerItem2.Size = new System.Drawing.Size(171, 23);
+            this.tL_LayerItem2.srart_frame = 0;
+            this.tL_LayerItem2.TabIndex = 6;
+            this.tL_LayerItem2.Text = "tL_LayerItem1";
+            this.tL_LayerItem2.view_text = true;
+            // 
+            // tL_LayerItem1
+            // 
+            this.tL_LayerItem1.clickColor = System.Drawing.Color.White;
+            this.tL_LayerItem1.color = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.tL_LayerItem1.enterColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.tL_LayerItem1.frame_width = 60;
+            this.tL_LayerItem1.Location = new System.Drawing.Point(527, 184);
+            this.tL_LayerItem1.Name = "tL_LayerItem1";
+            this.tL_LayerItem1.selected = false;
+            this.tL_LayerItem1.Size = new System.Drawing.Size(171, 23);
+            this.tL_LayerItem1.srart_frame = 0;
+            this.tL_LayerItem1.TabIndex = 7;
+            this.tL_LayerItem1.Text = "tL_LayerItem1";
+            this.tL_LayerItem1.view_text = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 562);
             this.Controls.Add(this.tL_LayerItem1);
+            this.Controls.Add(this.tL_LayerItem2);
             this.Controls.Add(this.fxCombo1);
             this.Controls.Add(this.fxSlider1);
             this.Controls.Add(this.fxButton1);
@@ -119,10 +136,11 @@ namespace cvFxSuite
         #endregion
         private uidev.Controls.FxButton fxButton1;
         private uidev.Controls.FxSlider fxSlider1;
-        private uidev.TimeLineControls.TL_LayerItem tL_LayerItem1;
         private uidev.Controls.FxCombo fxCombo1;
         private uidev.Controls.FxMenu fxMenu1;
         private System.Windows.Forms.ToolStripMenuItem test1ToolStripMenuItem;
+        private uidev.TimeLineControls.TL_LayerItem tL_LayerItem2;
+        private uidev.TimeLineControls.TL_LayerItem tL_LayerItem1;
     }
 }
 
