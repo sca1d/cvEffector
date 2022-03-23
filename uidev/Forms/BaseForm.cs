@@ -14,15 +14,33 @@ namespace uidev.Forms
 {
     public partial class BaseForm : System.Windows.Forms.Form
     {
+        
         public BaseForm()
         {
             InitializeComponent();
             this.BackColor = Class.uiCustoms.BackColor;
         }
 
+        private int control_refresh(Control c)
+        {
+            c.Refresh();
+            return 0;
+        }
+        public void AllRefresh()
+        {
+            Tools.DoAllControl(Controls, control_refresh);
+        }
+
         private void BaseForm_MouseDown(object sender, MouseEventArgs e)
         {
             this.ActiveControl = null;
+            AllRefresh();
+        }
+
+        private void BaseForm_Shown(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+            AllRefresh();
         }
     }
 }

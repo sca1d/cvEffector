@@ -29,7 +29,13 @@ namespace uidev.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FxBaseControl
+            // 
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FxBaseControl_MouseDown);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

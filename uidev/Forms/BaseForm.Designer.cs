@@ -41,6 +41,7 @@ namespace uidev.Forms
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BaseForm";
             this.Text = "BaseForm";
+            this.Shown += new System.EventHandler(this.BaseForm_Shown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BaseForm_MouseDown);
             this.ResumeLayout(false);
 

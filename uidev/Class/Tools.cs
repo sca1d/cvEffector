@@ -15,6 +15,15 @@ namespace uidev.Class
     public static class Tools
     {
 
+        public static void DoAllControl(Control.ControlCollection c, Func<Control, int> func)
+        {
+            foreach (Control _c in c)
+            {
+                if (0 < _c.Controls.Count) DoAllControl(_c.Controls, func);
+                func(_c);
+            }
+        }
+
         // get window client
         public static Rectangle GetClientRectangle(Control ctrl)
         {

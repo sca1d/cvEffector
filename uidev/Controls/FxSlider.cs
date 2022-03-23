@@ -238,6 +238,10 @@ namespace uidev.Controls
                 _value = GetValue();
                 Slide?.Invoke(_value);
             }
+            else
+            {
+                FindForm().ActiveControl = null;
+            }
             Refresh();
         }
 

@@ -125,7 +125,7 @@ namespace uidev.TimeLineControls
             }
         }
 
-        private bool _selected = true;
+        private bool _selected = false;
         public bool selected
         {
             get
@@ -308,6 +308,7 @@ namespace uidev.TimeLineControls
 
         private void TL_LayerItem_MouseDown(object sender, MouseEventArgs e)
         {
+            Focus();
             if (e.Button == MouseButtons.Left)
             {
                 if (!ChangingLayerSizeNow)

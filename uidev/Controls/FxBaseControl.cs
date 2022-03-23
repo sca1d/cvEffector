@@ -65,5 +65,9 @@ namespace uidev.Controls
             Refresh();
         }
 
+        private void FxBaseControl_MouseDown(object sender, MouseEventArgs e)
+        {
+            Focus();
+        }
     }
 }
