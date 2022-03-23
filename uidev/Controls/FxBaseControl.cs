@@ -35,6 +35,21 @@ namespace uidev.Controls
             }
         }
 
+        protected bool DontOpenMenuMode = false;
+        private FxMenu _menu;
+        public FxMenu Menu
+        {
+            get
+            {
+                return _menu;
+            }
+            set
+            {
+                _menu = value;
+                Refresh();
+            }
+        }
+
         public void Init()
         {
             this.SetStyle(ControlStyles.DoubleBuffer, true);
@@ -68,6 +83,17 @@ namespace uidev.Controls
         private void FxBaseControl_MouseDown(object sender, MouseEventArgs e)
         {
             Focus();
+        }
+
+        private void FxBaseControl_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (Menu != null && !DontOpenMenuMode)
+                {
+                    Menu.Show(PointToScreen( e.Location));
+                }
+            }
         }
     }
 }

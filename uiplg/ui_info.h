@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <Windows.h>
 
+#include <random>
+
 #include "opencv2/opencv.hpp"
 
 using namespace cv;

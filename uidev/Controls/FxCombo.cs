@@ -41,6 +41,7 @@ namespace uidev.Controls
 
         private bool InMouse = false;
         private bool DownMouse = false;
+        private bool TrueThisOpenes = false;
         private bool OpeningMenu = false;
 
         public FxCombo()
@@ -56,7 +57,7 @@ namespace uidev.Controls
             Color   back_color = uiCustoms.BackColor,
                     main_color = uiCustoms.MainColor;
 
-            if (DownMouse || OpeningMenu)
+            if (DownMouse || (OpeningMenu && TrueThisOpenes))
             {
                 back_color = uiCustoms.ClickColor;
                 main_color = uiCustoms.BackColor;
@@ -104,6 +105,7 @@ namespace uidev.Controls
         private void Popup_Closed(object sender, EventArgs e)
         {
             OpeningMenu = false;
+            TrueThisOpenes = false;
             Refresh();
         }
 
@@ -114,6 +116,7 @@ namespace uidev.Controls
                 DownMouse = true;
                 if (popup_menu != null)
                 {
+                    TrueThisOpenes = true;
                     popup_menu.Show(this, new Point(0, Height - 1));
                 }
                 Popup?.Invoke(new EventArgs());

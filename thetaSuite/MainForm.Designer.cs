@@ -43,6 +43,7 @@ namespace thetaSuite
             // 
             this.fxButton1.Border = true;
             this.fxButton1.Location = new System.Drawing.Point(12, 12);
+            this.fxButton1.Menu = null;
             this.fxButton1.Name = "fxButton1";
             this.fxButton1.Size = new System.Drawing.Size(134, 36);
             this.fxButton1.TabIndex = 1;
@@ -54,6 +55,7 @@ namespace thetaSuite
             this.fxSlider1.Border = false;
             this.fxSlider1.Location = new System.Drawing.Point(12, 54);
             this.fxSlider1.MaximumValue = 100;
+            this.fxSlider1.Menu = this.fxMenu1;
             this.fxSlider1.MinimumSize = new System.Drawing.Size(18, 14);
             this.fxSlider1.MinimumValue = 0;
             this.fxSlider1.Name = "fxSlider1";
@@ -66,6 +68,7 @@ namespace thetaSuite
             // 
             this.fxCombo1.Border = true;
             this.fxCombo1.Location = new System.Drawing.Point(12, 96);
+            this.fxCombo1.Menu = null;
             this.fxCombo1.Name = "fxCombo1";
             this.fxCombo1.popup_menu = this.fxMenu1;
             this.fxCombo1.Size = new System.Drawing.Size(134, 36);

@@ -39,8 +39,6 @@ namespace uidev.Forms
         {
             this.ActiveControl = null;
             AllRefresh();
-
-            ui_info info = new ui_info(this);
         }
 
         private void BaseForm_Shown(object sender, EventArgs e)
@@ -51,7 +49,9 @@ namespace uidev.Forms
 
         private void BaseForm_Paint(object sender, PaintEventArgs e)
         {
-
+            e.Graphics.Clear(uiCustoms.BackColor);
+            AllRefresh();
+            //ui_info info = new ui_info(this);
         }
     }
 }

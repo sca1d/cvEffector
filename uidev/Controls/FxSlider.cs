@@ -234,7 +234,10 @@ namespace uidev.Controls
                 )
             {
                 knobPoint = e.X;
-                if (e.Button == MouseButtons.Left) MouseIsDown = true;
+                if (e.Button == MouseButtons.Left)
+                {
+                    MouseIsDown = true;
+                }
                 _value = GetValue();
                 Slide?.Invoke(_value);
             }

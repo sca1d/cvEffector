@@ -34,6 +34,7 @@ namespace uidev.Controls
             // FxBaseControl
             // 
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FxBaseControl_MouseDown);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FxBaseControl_MouseUp);
             this.ResumeLayout(false);
 
         }

@@ -13,10 +13,28 @@ namespace uiplg {
 	ui_info::ui_info(System::Windows::Forms::Control^ c) {
 
 		this->control = c;
-		Mat src;
+
+		Mat src;// , noise;
 		hwnd2mat((HWND)c->Handle.ToInt32(), &src);
-		cv::randn(src, 200, 200);
+		//noise = Mat(src.rows, src.cols, src.type());
+		//cv::randn(noise, 50, 50);		
+		
+		//src += noise;
+
+		std::random_device rd;
+		std::default_random_engine eng(rd());
+
+		for (int y = 0; y < src.rows; y++) {
+			for (int x = 0; x < src.cols; x++) {
+				for (int c = 0; c < src.channels(); c++) {
+					std::uniform_int_distribution<int> r(0x00, 0xF);
+					src.ptr<Vec3b>(y, x)->val[c] += r(eng);
+				}
+			}
+		}
+
 		imshow("test", src);
+		
 		mat2hwnd(&src, (HWND)c->Handle.ToInt32());
 
 	}
@@ -96,7 +114,7 @@ namespace uiplg {
 			0, 0,
 			this->control->Size.Width, this->control->Size.Height,
 			0, 0,
-			x, y,
+			src->cols, src->rows,
 			src->data,
 			&bitInfo,
 			DIB_RGB_COLORS,
