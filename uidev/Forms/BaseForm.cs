@@ -21,9 +21,6 @@ namespace uidev.Forms
         {
             InitializeComponent();
             this.BackColor = Class.uiCustoms.BackColor;
-
-            //Sample sample = new Sample();
-            //Console.WriteLine(sample.HelloWorld("test"));
         }
 
         private int control_refresh(Control c)
@@ -46,6 +43,13 @@ namespace uidev.Forms
         {
             this.ActiveControl = null;
             AllRefresh();
+        }
+
+        private void BaseForm_Paint(object sender, PaintEventArgs e)
+        {
+            
+            //ui_info info = new ui_info(this, e.Graphics);
+            //info.DoNoise();
         }
     }
 }

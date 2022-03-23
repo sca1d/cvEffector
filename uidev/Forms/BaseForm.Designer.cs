@@ -42,6 +42,7 @@ namespace uidev.Forms
             this.Name = "BaseForm";
             this.Text = "BaseForm";
             this.Shown += new System.EventHandler(this.BaseForm_Shown);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.BaseForm_Paint);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BaseForm_MouseDown);
             this.ResumeLayout(false);
 

@@ -8,10 +8,5 @@ using System::String;
 
 namespace uiplg {
 
-	System::String^ Sample::HelloWorld(System::String^ name) {
-
-		return "Hello World!! " + this->name;
-
-	}
 
 }
