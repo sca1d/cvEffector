@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "thetaSuite", "cvFxSuite\thetaSuite.csproj", "{0518EA2E-8C76-462B-9DB9-6A1DA69C4E9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "thetaSuite", "thetaSuite\thetaSuite.csproj", "{0518EA2E-8C76-462B-9DB9-6A1DA69C4E9F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uidev", "uidev\uidev.csproj", "{1DB54DE5-00AE-4C40-B056-358049EFE1B4}"
 EndProject
