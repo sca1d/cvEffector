@@ -114,7 +114,7 @@ namespace uidev.Controls
                 DownMouse = true;
                 if (popup_menu != null)
                 {
-                    popup_menu.Show(this, new Point(Width - 1, (Height - 1) / 2));
+                    popup_menu.Show(this, new Point(0, Height - 1));
                 }
                 Popup?.Invoke(new EventArgs());
             }
