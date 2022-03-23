@@ -67,6 +67,36 @@ namespace uidev.TimeLineControls
             }
         }
 
+        private bool _viewText = true;
+        public bool view_text
+        {
+            get
+            {
+                return _viewText;
+            }
+            set
+            {
+                _viewText = value;
+                Refresh();
+            }
+        }
+
+        /*
+        private string _text;
+        public new string Text
+        {
+            get
+            {
+                return _text;
+            }
+            set
+            {
+                _text = value;
+                Refresh();
+            }
+        }
+        */
+
         private int _startFrame = 0;
         public int srart_frame
         {
@@ -81,16 +111,16 @@ namespace uidev.TimeLineControls
             }
         }
 
-        private int _frameNum = 60;
-        public int frame_num
+        private int _frameWidth = 60;
+        public int frame_width
         {
             get
             {
-                return _frameNum;
+                return _frameWidth;
             }
             set
             {
-                _frameNum = value;
+                _frameWidth = value;
                 Refresh();
             }
         }
@@ -220,6 +250,18 @@ namespace uidev.TimeLineControls
                 e.Graphics.Clear(color);
             }
 
+            if (view_text)
+            {
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    Text,
+                    uiCustoms.Font,
+                    new Point(2, Height - 10),
+                    uiCustoms.GrayColor,
+                    TextFormatFlags.VerticalCenter
+                );
+            }
+
             e.Graphics.FillPolygon(
                 new SolidBrush(TriColor),
                 STriP
@@ -245,6 +287,17 @@ namespace uidev.TimeLineControls
                 e.Graphics.DrawRectangle(uiCustoms.GrayPen, 0, 0, Width - 1, Height - 1);
             }
 
+        }
+
+        private void TL_LayerItem_Enter(object sender, EventArgs e)
+        {
+            selected = true;
+            Refresh();
+        }
+        private void TL_LayerItem_Leave(object sender, EventArgs e)
+        {
+            selected = false;
+            Refresh();
         }
 
         private void TL_LayerItem_MouseEnter(object sender, EventArgs e)
@@ -324,5 +377,6 @@ namespace uidev.TimeLineControls
 
             Refresh();
         }
+
     }
 }

@@ -10,7 +10,7 @@ namespace uidev.TimeLineControls
     {
 
         int srart_frame{ get; set; }
-        int frame_num { get; set; }
+        int frame_width { get; set; }
 
         bool selected { get; set; }
 

@@ -18,6 +18,8 @@ namespace uidev.Controls
         public delegate void SlideEvent(int value);
         public SlideEvent Slide;
 
+        private float penWidth = 2F;
+
         const int knobMoveRange = 2;
 
         private int knobSize = 7;
@@ -158,7 +160,7 @@ namespace uidev.Controls
             dps[2] = new PointF((float)knobPoint + (float)knobSize, yp);
             dps[3] = new PointF((float)knobPoint, yp + (float)knobSize);
 
-            Pen linepen = new Pen(Color.Gray, 2F);
+            Pen linepen = new Pen(Color.Gray, penWidth);
             e.Graphics.DrawLine(
                 linepen,
                 new PointF(knobSize + 2, Height / 2 + 0.05F),
@@ -223,6 +225,18 @@ namespace uidev.Controls
                 )
             {
                 MouseIsDown = true;
+            }
+            else if (
+                e.X >= knobSize &&
+                e.X <= Width - (1 + knobSize) &&
+                e.Y >= (Height / 2 + 0.05F) - penWidth &&
+                e.Y <= (Height / 2 + 0.05F) + penWidth
+                )
+            {
+                knobPoint = e.X;
+                if (e.Button == MouseButtons.Left) MouseIsDown = true;
+                _value = GetValue();
+                Slide?.Invoke(_value);
             }
             Refresh();
         }

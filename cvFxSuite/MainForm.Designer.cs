@@ -62,14 +62,15 @@ namespace cvFxSuite
             this.tL_LayerItem1.clickColor = System.Drawing.Color.White;
             this.tL_LayerItem1.color = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
             this.tL_LayerItem1.enterColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.tL_LayerItem1.frame_num = 60;
-            this.tL_LayerItem1.Location = new System.Drawing.Point(352, 140);
+            this.tL_LayerItem1.frame_width = 60;
+            this.tL_LayerItem1.Location = new System.Drawing.Point(573, 229);
             this.tL_LayerItem1.Name = "tL_LayerItem1";
             this.tL_LayerItem1.selected = true;
-            this.tL_LayerItem1.Size = new System.Drawing.Size(302, 31);
+            this.tL_LayerItem1.Size = new System.Drawing.Size(205, 29);
             this.tL_LayerItem1.srart_frame = 0;
             this.tL_LayerItem1.TabIndex = 3;
             this.tL_LayerItem1.Text = "tL_LayerItem1";
+            this.tL_LayerItem1.view_text = true;
             // 
             // MainForm
             // 

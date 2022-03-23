@@ -34,6 +34,8 @@ namespace uidev.TimeLineControls
             // TL_LayerItem
             // 
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TL_LayerItem_Paint);
+            this.Enter += new System.EventHandler(this.TL_LayerItem_Enter);
+            this.Leave += new System.EventHandler(this.TL_LayerItem_Leave);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TL_LayerItem_MouseDown);
             this.MouseEnter += new System.EventHandler(this.TL_LayerItem_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.TL_LayerItem_MouseLeave);

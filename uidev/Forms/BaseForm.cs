@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using uidev.Class;
+
 namespace uidev.Forms
 {
     public partial class BaseForm : System.Windows.Forms.Form
@@ -16,6 +18,11 @@ namespace uidev.Forms
         {
             InitializeComponent();
             this.BackColor = Class.uiCustoms.BackColor;
+        }
+
+        private void BaseForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.ActiveControl = null;
         }
     }
 }

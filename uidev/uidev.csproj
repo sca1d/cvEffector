@@ -48,6 +48,7 @@
     <Compile Include="Class\DrawManager.cs" />
     <Compile Include="Class\EventClass.cs" />
     <Compile Include="Class\IpcRemoteObj.cs" />
+    <Compile Include="Class\Tools.cs" />
     <Compile Include="Class\VideoStructs.cs" />
     <Compile Include="Controls\FxBaseControl.cs">
       <SubType>Component</SubType>
