@@ -9,18 +9,19 @@ using namespace cv;
 
 using namespace System;
 using namespace System::Drawing;
-using namespace System::ComponentModel;
-using namespace System::Windows;
-using namespace System::Windows::Forms;
+//using namespace System::ComponentModel;
+//using namespace System::Windows;
+//using namespace System::Windows::Forms;
 
 namespace uiplg {
 
 	public ref class ui_info {
 
 	private:
-		Control^ control;
+		System::Windows::Forms::Control^ control;
 
-		Mat hwnd2mat(HWND hwnd);
+		void hwnd2mat(HWND hwnd, Mat* src);
+		void mat2hwnd(Mat* src, HWND hwnd);
 
 	public:
 		ui_info(System::Windows::Forms::Control^ c);

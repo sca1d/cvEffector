@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,9 +37,10 @@ namespace uidev.Forms
 
         private void BaseForm_MouseDown(object sender, MouseEventArgs e)
         {
-            ui_info info = new ui_info(this);
             this.ActiveControl = null;
             AllRefresh();
+
+            ui_info info = new ui_info(this);
         }
 
         private void BaseForm_Shown(object sender, EventArgs e)
