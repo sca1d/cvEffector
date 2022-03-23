@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 using uidev.Class;
 
+using uiplg;
+
 namespace uidev.Forms
 {
     public partial class BaseForm : System.Windows.Forms.Form
@@ -19,6 +21,9 @@ namespace uidev.Forms
         {
             InitializeComponent();
             this.BackColor = Class.uiCustoms.BackColor;
+
+            Sample sample = new Sample();
+            Console.WriteLine(sample.HelloWorld("test"));
         }
 
         private int control_refresh(Control c)
