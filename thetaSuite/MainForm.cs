@@ -33,7 +33,7 @@ namespace thetaSuite
         {
             fxSlider2.Enabled = !fxSlider2.Enabled;
             fxCheckbox1.Enabled = !fxCheckbox1.Enabled;
-            fxButton1.Enabled = !fxButton1.Enabled;
+            fxButton3.Enabled = !fxButton3.Enabled;
             fxButton2.Text = fxSlider2.Enabled ? "true" : "false";
         }
     }

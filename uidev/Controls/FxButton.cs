@@ -59,19 +59,19 @@ namespace uidev.Controls
 
         private void FxButton_MouseEnter(object sender, EventArgs e)
         {
-            InMouse = true;
+            if (Enabled) InMouse = true;
             Refresh();
         }
 
         private void FxButton_MouseLeave(object sender, EventArgs e)
         {
-            InMouse = false;
+            if (Enabled) InMouse = false;
             Refresh();
         }
 
         private void FxButton_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (Enabled && e.Button == MouseButtons.Left)
             {
                 DownMouse = true;
                 Refresh();
@@ -102,7 +102,7 @@ namespace uidev.Controls
                 backColor = Tools.rgb2gray(_backColor);
                 borderColor = Tools.rgb2gray(_borderColor);
             }
-            else if (Enabled)
+            else
             {
                 mainColor = _mainColor;
                 clickColor = _clickColor;
