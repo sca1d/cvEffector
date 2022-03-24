@@ -63,6 +63,12 @@
     <Compile Include="Controls\FxButton.Designer.cs">
       <DependentUpon>FxButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\FxCheckbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FxCheckbox.Designer.cs">
+      <DependentUpon>FxCheckbox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FxCombo.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FxButton.resx">
       <DependentUpon>FxButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FxCheckbox.resx">
+      <DependentUpon>FxCheckbox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FxCombo.resx">
       <DependentUpon>FxCombo.cs</DependentUpon>

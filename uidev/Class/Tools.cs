@@ -15,6 +15,17 @@ namespace uidev.Class
     public static class Tools
     {
 
+        public static Color rgb2gray(Color c)
+        {
+            double r = c.R;
+            double g = c.G;
+            double b = c.B;
+
+            double gray = (r + g + b) / 3.0;
+
+            return Color.FromArgb((int)gray, (int)gray, (int)gray);
+        }
+
         public static void DoAllControl(Control.ControlCollection c, Func<Control, int> func)
         {
             foreach (Control _c in c)

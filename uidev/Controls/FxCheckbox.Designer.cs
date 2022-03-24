@@ -1,7 +1,7 @@
 ﻿
 namespace uidev.Controls
 {
-    partial class FxBaseControl
+    partial class FxCheckbox
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -31,11 +31,15 @@ namespace uidev.Controls
         {
             this.SuspendLayout();
             // 
-            // FxBaseControl
+            // FxCheckbox
             // 
-            this.EnabledChanged += new System.EventHandler(this.FxBaseControl_EnabledChanged);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FxBaseControl_MouseDown);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FxBaseControl_MouseUp);
+            this.Border = false;
+            this.EnabledChanged += new System.EventHandler(this.FxCheckbox_EnabledChanged);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FxCheckbox_Paint);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FxCheckbox_MouseDown);
+            this.MouseEnter += new System.EventHandler(this.FxCheckbox_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.FxCheckbox_MouseLeave);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FxCheckbox_MouseUp);
             this.ResumeLayout(false);
 
         }

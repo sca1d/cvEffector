@@ -36,6 +36,9 @@ namespace thetaSuite
             this.fxCombo1 = new uidev.Controls.FxCombo();
             this.tL_LayerItem2 = new uidev.TimeLineControls.TL_LayerItem();
             this.tL_LayerItem1 = new uidev.TimeLineControls.TL_LayerItem();
+            this.fxCheckbox1 = new uidev.Controls.FxCheckbox();
+            this.fxSlider2 = new uidev.Controls.FxSlider();
+            this.fxButton2 = new uidev.Controls.FxButton();
             this.fxMenu1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,11 +124,50 @@ namespace thetaSuite
             this.tL_LayerItem1.Text = "tL_LayerItem1";
             this.tL_LayerItem1.view_text = true;
             // 
+            // fxCheckbox1
+            // 
+            this.fxCheckbox1.Border = true;
+            this.fxCheckbox1.Location = new System.Drawing.Point(212, 514);
+            this.fxCheckbox1.Menu = this.fxMenu1;
+            this.fxCheckbox1.Name = "fxCheckbox1";
+            this.fxCheckbox1.Size = new System.Drawing.Size(107, 23);
+            this.fxCheckbox1.TabIndex = 8;
+            this.fxCheckbox1.Text = "fxCheckbox1";
+            this.fxCheckbox1.Value = false;
+            // 
+            // fxSlider2
+            // 
+            this.fxSlider2.Border = true;
+            this.fxSlider2.Location = new System.Drawing.Point(212, 431);
+            this.fxSlider2.MaximumValue = 100;
+            this.fxSlider2.Menu = null;
+            this.fxSlider2.MinimumSize = new System.Drawing.Size(18, 14);
+            this.fxSlider2.MinimumValue = 0;
+            this.fxSlider2.Name = "fxSlider2";
+            this.fxSlider2.Size = new System.Drawing.Size(218, 77);
+            this.fxSlider2.TabIndex = 9;
+            this.fxSlider2.Text = "fxSlider2";
+            this.fxSlider2.Value = 0;
+            // 
+            // fxButton2
+            // 
+            this.fxButton2.Border = true;
+            this.fxButton2.Location = new System.Drawing.Point(212, 485);
+            this.fxButton2.Menu = null;
+            this.fxButton2.Name = "fxButton2";
+            this.fxButton2.Size = new System.Drawing.Size(75, 23);
+            this.fxButton2.TabIndex = 10;
+            this.fxButton2.Text = "true";
+            this.fxButton2.Click += new System.EventHandler(this.fxButton2_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 562);
+            this.Controls.Add(this.fxButton2);
+            this.Controls.Add(this.fxSlider2);
+            this.Controls.Add(this.fxCheckbox1);
             this.Controls.Add(this.tL_LayerItem1);
             this.Controls.Add(this.tL_LayerItem2);
             this.Controls.Add(this.fxCombo1);
@@ -146,6 +188,9 @@ namespace thetaSuite
         private System.Windows.Forms.ToolStripMenuItem test1ToolStripMenuItem;
         private uidev.TimeLineControls.TL_LayerItem tL_LayerItem2;
         private uidev.TimeLineControls.TL_LayerItem tL_LayerItem1;
+        private uidev.Controls.FxCheckbox fxCheckbox1;
+        private uidev.Controls.FxSlider fxSlider2;
+        private uidev.Controls.FxButton fxButton2;
     }
 }
 

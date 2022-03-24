@@ -13,6 +13,24 @@ namespace uidev.Controls
     public partial class FxBaseControl : Control, Interface.FxUiBase
     {
 
+        public new EventHandler EnabledChanged;
+
+        private bool _enabled = true;
+        public new bool Enabled
+        {
+            get
+            {
+                return _enabled;
+            }
+            set
+            {
+                _enabled = value;
+                //Console.WriteLine("enabled change");
+                EnabledChanged?.Invoke(this, new EventArgs());
+                Refresh();
+            }
+        }
+
         private bool _border = true;
         public bool Border
         {
@@ -89,11 +107,16 @@ namespace uidev.Controls
         {
             if (e.Button == MouseButtons.Right)
             {
-                if (Menu != null && !DontOpenMenuMode)
+                if (Menu != null && Enabled && !DontOpenMenuMode)
                 {
                     Menu.Show(PointToScreen( e.Location));
                 }
             }
+        }
+
+        private void FxBaseControl_EnabledChanged(object sender, EventArgs e)
+        {
+            Refresh();
         }
     }
 }

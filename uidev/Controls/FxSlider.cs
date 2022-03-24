@@ -44,6 +44,8 @@ namespace uidev.Controls
         private Color mouseEnterColor = Color.FromArgb(170, 160, 226);
         private Color mouseClickColor = Color.GhostWhite;
 
+        private Color borderColor = Class.uiCustoms.BorderPen.Color;
+
         private int _value;
         public int Value
         {
@@ -169,18 +171,18 @@ namespace uidev.Controls
 
             if (MouseIsDown)
             {
-                e.Graphics.FillPolygon(new SolidBrush(this.mouseClickColor), dps);
+                e.Graphics.FillPolygon(new SolidBrush(mouseClickColor), dps);
             }
             else if (MouseIsEnter)
             {
-                e.Graphics.FillPolygon(new SolidBrush(this.mouseEnterColor), dps);
+                e.Graphics.FillPolygon(new SolidBrush(mouseEnterColor), dps);
             }
             else
             {
-                e.Graphics.FillPolygon(new SolidBrush(this.knobColor), dps);
+                e.Graphics.FillPolygon(new SolidBrush(knobColor), dps);
             }
 
-            if (Border) e.Graphics.DrawRectangle(Class.uiCustoms.BorderPen, 0, 0, Width - 1, Height - 1);
+            if (Border) e.Graphics.DrawRectangle(new Pen(borderColor), 0, 0, Width - 1, Height - 1);
 
         }
 
@@ -217,6 +219,7 @@ namespace uidev.Controls
 
         private void FxSlider_MouseDown(object sender, MouseEventArgs e) {
             if (
+                Enabled &&
                 e.X >= this.knobPoint - this.knobSize &&
                 e.X <= this.knobPoint + this.knobSize &&
                 e.Y >= yp - this.knobSize &&
@@ -227,6 +230,7 @@ namespace uidev.Controls
                 MouseIsDown = true;
             }
             else if (
+                Enabled &&
                 e.X >= knobSize &&
                 e.X <= Width - (1 + knobSize) &&
                 e.Y >= (Height / 2 + 0.05F) - penWidth &&
@@ -256,6 +260,45 @@ namespace uidev.Controls
         private void FxSlider_Leave(object sender, EventArgs e)
         {
 
+        }
+
+        private void FxSlider_EnabledChanged(object sender, EventArgs e)
+        {
+            Color _knobColor = Class.uiCustoms.MainColor;
+            Color _mouseEnterKnobColor = Class.uiCustoms.MainEnterColor;
+            Color _mouseClickKnobColor = Class.uiCustoms.MainClickColor;
+
+            Color _mainColor = Color.SlateBlue;
+            Color _mouseEnterColor = Color.FromArgb(170, 160, 226);
+            Color _mouseClickColor = Color.GhostWhite;
+
+            Color _borderColor = Class.uiCustoms.BorderPen.Color;
+
+            if (!Enabled)
+            {
+                knobColor = Class.Tools.rgb2gray(_knobColor);
+                mouseEnterKnobColor = Class.Tools.rgb2gray(_knobColor);
+                mouseClickKnobColor = Class.Tools.rgb2gray(_knobColor);
+
+                mainColor = Class.Tools.rgb2gray(_mainColor);
+                mouseEnterColor = Class.Tools.rgb2gray(_mainColor);
+                mouseClickColor = Class.Tools.rgb2gray(_mainColor);
+
+                borderColor = Class.Tools.rgb2gray(_borderColor);
+            }
+            else
+            {
+                knobColor = _knobColor;
+                mouseEnterKnobColor = _mouseEnterKnobColor;
+                mouseClickKnobColor = _mouseClickKnobColor;
+
+                mainColor = _mainColor;
+                mouseEnterColor = _mouseEnterColor;
+                mouseClickColor = _mouseClickColor;
+
+                borderColor = Class.uiCustoms.BorderPen.Color;
+            }
+            Refresh();
         }
 
         /*
