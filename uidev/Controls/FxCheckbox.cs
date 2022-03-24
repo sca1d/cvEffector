@@ -133,9 +133,10 @@ namespace uidev.Controls
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (Enabled)
+                MouseIsDown = false;
+                Point loc = e.Location;
+                if (Enabled && 0 <= loc.X && loc.X < Width && 0 <= loc.Y && loc.Y < Height)
                 {
-                    MouseIsDown = false;
                     Value = !Value;
                 }
             }

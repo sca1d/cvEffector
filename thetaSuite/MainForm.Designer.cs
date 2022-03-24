@@ -39,6 +39,7 @@ namespace thetaSuite
             this.fxCheckbox1 = new uidev.Controls.FxCheckbox();
             this.fxSlider2 = new uidev.Controls.FxSlider();
             this.fxButton2 = new uidev.Controls.FxButton();
+            this.fxButton3 = new uidev.Controls.FxButton();
             this.fxMenu1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,11 +161,22 @@ namespace thetaSuite
             this.fxButton2.Text = "true";
             this.fxButton2.Click += new System.EventHandler(this.fxButton2_Click);
             // 
+            // fxButton3
+            // 
+            this.fxButton3.Border = true;
+            this.fxButton3.Location = new System.Drawing.Point(325, 514);
+            this.fxButton3.Menu = null;
+            this.fxButton3.Name = "fxButton3";
+            this.fxButton3.Size = new System.Drawing.Size(75, 23);
+            this.fxButton3.TabIndex = 11;
+            this.fxButton3.Text = "fxButton3";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 562);
+            this.Controls.Add(this.fxButton3);
             this.Controls.Add(this.fxButton2);
             this.Controls.Add(this.fxSlider2);
             this.Controls.Add(this.fxCheckbox1);
@@ -191,6 +203,7 @@ namespace thetaSuite
         private uidev.Controls.FxCheckbox fxCheckbox1;
         private uidev.Controls.FxSlider fxSlider2;
         private uidev.Controls.FxButton fxButton2;
+        private uidev.Controls.FxButton fxButton3;
     }
 }
 

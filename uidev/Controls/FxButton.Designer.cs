@@ -33,6 +33,7 @@ namespace uidev.Controls
             // 
             // FxButton
             // 
+            this.EnabledChanged += new System.EventHandler(this.FxButton_EnabledChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FxButton_Paint);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FxButton_MouseDown);
             this.MouseEnter += new System.EventHandler(this.FxButton_MouseEnter);
