@@ -37,6 +37,7 @@ namespace uidev.Controls
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FxSlider_Paint);
             this.Leave += new System.EventHandler(this.FxSlider_Leave);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FxSlider_MouseDown);
+            this.MouseLeave += new System.EventHandler(this.FxSlider_MouseLeave);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FxSlider_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FxSlider_MouseUp);
             this.ResumeLayout(false);

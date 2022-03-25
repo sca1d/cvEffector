@@ -23,4 +23,16 @@ namespace uidev.Class
         }
 
     }
+
+    public class SlideArgs : EventArgs
+    {
+
+        public int value;
+
+        public SlideArgs(int v)
+        {
+            value = v;
+        }
+
+    }
 }

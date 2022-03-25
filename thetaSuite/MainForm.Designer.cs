@@ -148,7 +148,7 @@ namespace thetaSuite
             // fxSlider2
             // 
             this.fxSlider2.Border = false;
-            this.fxSlider2.Location = new System.Drawing.Point(283, 91);
+            this.fxSlider2.Location = new System.Drawing.Point(322, 89);
             this.fxSlider2.MaximumValue = 100;
             this.fxSlider2.Menu = null;
             this.fxSlider2.MinimumSize = new System.Drawing.Size(18, 14);

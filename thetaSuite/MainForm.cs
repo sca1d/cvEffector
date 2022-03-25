@@ -20,8 +20,7 @@ namespace thetaSuite
         {
             InitializeComponent();
 
-            fxSlider1.StartThread();
-            fxSlider2.StartThread();
+            this.fxSlider1.Slide += fxSlider1_Slide;
         }
 
         private void fxButton1_Click(object sender, EventArgs e)
@@ -34,6 +33,11 @@ namespace thetaSuite
             //fxCheckbox1.Enabled = ControlEnabled;
 
             fxButton1.Text = "Enabled : " + fxPanel1.Enabled.ToString();
+        }
+
+        private void fxSlider1_Slide(object sender, uidev.Class.SlideArgs e)
+        {
+            this.Text = e.value.ToString();
         }
     }
 }

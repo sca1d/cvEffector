@@ -160,7 +160,7 @@ namespace uidev.Controls
 
         private void FxSplitPanels_MouseDown(object sender, MouseEventArgs e)
         {
-            if (GetMouseInSplit(e.Location.X)) MouseIsDown = true;
+            if (GetMouseInSplit(e.Location.X) && e.Button == MouseButtons.Left) MouseIsDown = true;
         }
 
         private void FxSplitPanels_MouseUp(object sender, MouseEventArgs e)

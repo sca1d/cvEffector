@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace uidev.Controls
 {
-    public partial class FxSlider : Interface.FxAlwaysMouseActive, Interface.FxUiBase
+    public partial class FxSlider : FxBaseControl, Interface.FxUiBase
     {
 
-        public delegate void SlideEvent(int value);
+        public delegate void SlideEvent(object sender, Class.SlideArgs e);
         public SlideEvent Slide;
 
         private float penWidth = 2F;
@@ -110,8 +110,6 @@ namespace uidev.Controls
             InitializeComponent();
 
             this.MinimumSize = new Size(knobSize * 2 + knobMoveRange * 2, knobSize * 2);
-
-            this.ThreadMainLoop += FxSlider_ThreadMainLoop;
         }
 
         public int GetValue()
@@ -192,6 +190,7 @@ namespace uidev.Controls
             ParentX -= c.Location.X;
             return 0;
         }
+        /*
         private void FxSlider_ThreadMainLoop(Point point)
         {
 
@@ -203,18 +202,30 @@ namespace uidev.Controls
             {
                 knobPoint = knobSize < futureX ? (futureX < (this.Width - 1 - knobSize) ? futureX : this.Width - knobSize) : knobSize;
                 _value = GetValue();
-                Slide?.Invoke(_value);
+                Slide?.Invoke(_value, new EventArgs());
                 // Console.WriteLine(GetValue());
             }
+        }
+        */
+
+        private bool GetMouseInKnob(Point mouseP)
+        {
+            return  mouseP.X >= this.knobPoint - this.knobSize &&
+                    mouseP.X <= this.knobPoint + this.knobSize &&
+                    mouseP.Y >= yp - this.knobSize &&
+                    mouseP.Y <= yp + this.knobSize;
         }
 
         private void FxSlider_MouseMove(object sender, MouseEventArgs e)
         {
-            if (
-                e.X >= this.knobPoint - this.knobSize &&
-                e.X <= this.knobPoint + this.knobSize &&
-                e.Y >= yp - this.knobSize &&
-                e.Y <= yp + this.knobSize)
+            Point mouseP = e.Location;
+            if (MouseIsDown)
+            {
+                knobPoint = knobSize < mouseP.X ? (mouseP.X < (this.Width - 1 - knobSize) ? mouseP.X : this.Width - knobSize) : knobSize;
+                _value = GetValue();
+                Slide?.Invoke(_value, new Class.SlideArgs(GetValue()));
+            }
+            if (GetMouseInKnob(mouseP))
             {
                 MouseIsEnter = true;
             }
@@ -226,14 +237,7 @@ namespace uidev.Controls
         }
 
         private void FxSlider_MouseDown(object sender, MouseEventArgs e) {
-            if (
-                Enabled &&
-                e.X >= this.knobPoint - this.knobSize &&
-                e.X <= this.knobPoint + this.knobSize &&
-                e.Y >= yp - this.knobSize &&
-                e.Y <= yp + this.knobSize &&
-                e.Button == MouseButtons.Left
-                )
+            if (Enabled && GetMouseInKnob(e.Location) && e.Button == MouseButtons.Left)
             {
                 MouseIsDown = true;
             }
@@ -251,7 +255,7 @@ namespace uidev.Controls
                     MouseIsDown = true;
                 }
                 _value = GetValue();
-                Slide?.Invoke(_value);
+                Slide?.Invoke(_value, new Class.SlideArgs(GetValue()));
             }
             else
             {
@@ -260,14 +264,22 @@ namespace uidev.Controls
             Refresh();
         }
 
-        private void FxSlider_MouseUp(object sender, MouseEventArgs e) {
+        private void FxSlider_MouseUp(object sender, MouseEventArgs e)
+        {
             MouseIsDown = false;
+
+            if (!GetMouseInKnob(e.Location))
+            {
+                MouseIsEnter = false;
+            }
+
             Refresh();
         }
 
         private void FxSlider_Leave(object sender, EventArgs e)
         {
-
+            MouseIsEnter = false;
+            Refresh();
         }
 
         private void FxSlider_EnabledChanged(object sender, EventArgs e)
@@ -306,6 +318,12 @@ namespace uidev.Controls
 
                 borderColor = Class.uiCustoms.BorderPen.Color;
             }
+            Refresh();
+        }
+
+        private void FxSlider_MouseLeave(object sender, EventArgs e)
+        {
+            MouseIsEnter = false;
             Refresh();
         }
 
