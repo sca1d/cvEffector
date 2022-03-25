@@ -80,7 +80,7 @@ namespace uidev.Controls
 
             if (Border) e.Graphics.DrawRectangle(new Pen(borderColor), 0, 0, Width - 1, Height - 1);
         }
-
+        
         private void FxPanel_EnabledChanged(object sender, EventArgs e)
         {
             if (!Enabled)
@@ -90,6 +90,23 @@ namespace uidev.Controls
             else
             {
                 borderColor = Class.uiCustoms.BorderPen.Color;
+            }
+            Refresh();
+        }
+
+        private void FxPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            Focus();
+        }
+
+        private void FxPanel_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (Menu != null && Enabled && !DontOpenMenuMode)
+                {
+                    Menu.Show(PointToScreen(e.Location));
+                }
             }
         }
     }

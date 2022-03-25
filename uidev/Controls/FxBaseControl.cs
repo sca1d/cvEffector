@@ -13,8 +13,9 @@ namespace uidev.Controls
     public partial class FxBaseControl : Control, Interface.FxUiBase
     {
 
-        public new EventHandler EnabledChanged;
+        //public new EventHandler EnabledChanged;
 
+        /*
         private bool _enabled = true;
         public new bool Enabled
         {
@@ -30,6 +31,7 @@ namespace uidev.Controls
                 Refresh();
             }
         }
+        */
 
         private bool _border = true;
         public bool Border
@@ -128,6 +130,7 @@ namespace uidev.Controls
 
         private void FxBaseControl_EnabledChanged(object sender, EventArgs e)
         {
+            //Console.WriteLine("Enabled changed");
             Refresh();
         }
     }

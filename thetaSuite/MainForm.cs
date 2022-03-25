@@ -28,15 +28,13 @@ namespace thetaSuite
 
         private void fxButton1_Click(object sender, EventArgs e)
         {
-            ControlEnabled = fxPanel1.Enabled;
-
-            fxPanel1.Enabled = !ControlEnabled;
+            fxPanel1.Enabled = !fxPanel1.Enabled;
             //fxCombo1.Enabled = ControlEnabled;
             //fxButton2.Enabled = ControlEnabled;
             //fxSlider1.Enabled = ControlEnabled;
             //fxCheckbox1.Enabled = ControlEnabled;
 
-            fxButton1.Text = "Enabled : " + ControlEnabled.ToString();
+            fxButton1.Text = "Enabled : " + fxPanel1.Enabled.ToString();
         }
     }
 }

@@ -38,6 +38,7 @@ namespace thetaSuite
             this.fxCheckbox1 = new uidev.Controls.FxCheckbox();
             this.fxPanel1 = new uidev.Controls.FxPanel();
             this.fxSlider2 = new uidev.Controls.FxSlider();
+            this.tL_LayerItem1 = new uidev.TimeLineControls.TL_LayerItem();
             this.fxMenu1.SuspendLayout();
             this.fxPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -116,6 +117,7 @@ namespace thetaSuite
             // fxPanel1
             // 
             this.fxPanel1.Border = true;
+            this.fxPanel1.Controls.Add(this.tL_LayerItem1);
             this.fxPanel1.Controls.Add(this.fxCombo1);
             this.fxPanel1.Controls.Add(this.fxButton2);
             this.fxPanel1.Controls.Add(this.fxCheckbox1);
@@ -139,6 +141,22 @@ namespace thetaSuite
             this.fxSlider2.TabIndex = 8;
             this.fxSlider2.Text = "fxSlider2";
             this.fxSlider2.Value = 0;
+            // 
+            // tL_LayerItem1
+            // 
+            this.tL_LayerItem1.clickColor = System.Drawing.Color.White;
+            this.tL_LayerItem1.color = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.tL_LayerItem1.enterColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.tL_LayerItem1.frame_width = 60;
+            this.tL_LayerItem1.Location = new System.Drawing.Point(3, 83);
+            this.tL_LayerItem1.Menu = null;
+            this.tL_LayerItem1.Name = "tL_LayerItem1";
+            this.tL_LayerItem1.selected = false;
+            this.tL_LayerItem1.Size = new System.Drawing.Size(262, 23);
+            this.tL_LayerItem1.srart_frame = 0;
+            this.tL_LayerItem1.TabIndex = 7;
+            this.tL_LayerItem1.Text = "tL_LayerItem1";
+            this.tL_LayerItem1.view_text = true;
             // 
             // MainForm
             // 
@@ -166,6 +184,7 @@ namespace thetaSuite
         private uidev.Controls.FxCheckbox fxCheckbox1;
         private uidev.Controls.FxPanel fxPanel1;
         private uidev.Controls.FxSlider fxSlider2;
+        private uidev.TimeLineControls.TL_LayerItem tL_LayerItem1;
     }
 }
 

@@ -45,6 +45,14 @@ namespace uidev.Class
                 func(_c);
             }
         }
+        public static void RefreshAllControl(Control.ControlCollection c)
+        {
+            foreach (Control _c in c)
+            {
+                if (0 < _c.Controls.Count) RefreshAllControl(_c.Controls);
+                _c.Refresh();
+            }
+        }
 
         // get window client
         public static Rectangle GetClientRectangle(Control ctrl)
