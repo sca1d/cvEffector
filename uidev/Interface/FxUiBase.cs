@@ -9,7 +9,13 @@ namespace uidev.Interface
     interface FxUiBase
     {
 
+        bool Enabled { get; set; }
+
         bool Border { get; set; }
+
+        bool DontOpenMenuMode { get; }
+
+        Controls.FxMenu Menu { get; set; }
 
         void Init();
 

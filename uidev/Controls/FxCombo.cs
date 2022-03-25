@@ -32,12 +32,24 @@ namespace uidev.Controls
             set
             {
                 _popupMenu = value;
-                value.Opening += PopupOpening;
-                value.Closed += Popup_Closed;
+                if (value != null)
+                {
+                    value.Opening += PopupOpening;
+                    value.Closed += Popup_Closed;
+                }
             }
         }
 
         private const int space = 4;
+
+        private Color backColor = uiCustoms.BackColor;
+        private Color mainColor = uiCustoms.MainColor;
+
+        private Color backEnterColor = uiCustoms.DashColor;
+        private Color mainEnterColor = uiCustoms.BackColor;
+
+        private Color backClickColor = uiCustoms.ClickColor;
+        private Color mainClickColor = uiCustoms.BackColor;
 
         private bool InMouse = false;
         private bool DownMouse = false;
@@ -54,19 +66,19 @@ namespace uidev.Controls
 
             e.Graphics.SmoothingMode = uiCustoms.SmoothingMode;
 
-            Color   back_color = uiCustoms.BackColor,
-                    main_color = uiCustoms.MainColor;
+            Color   back_color = backColor,
+                    main_color = mainColor;
 
             if (DownMouse || (OpeningMenu && TrueThisOpenes))
             {
-                back_color = uiCustoms.ClickColor;
-                main_color = uiCustoms.BackColor;
+                back_color = backClickColor;
+                main_color = mainClickColor;
             }
 
             if (InMouse && !DownMouse && !OpeningMenu)
             {
-                back_color = uiCustoms.DashColor;
-                main_color = uiCustoms.BackColor;
+                back_color = backEnterColor;
+                main_color = mainEnterColor;
             }
 
             e.Graphics.Clear(back_color);
@@ -111,7 +123,7 @@ namespace uidev.Controls
 
         private void FxCombo_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (Enabled && e.Button == MouseButtons.Left)
             {
                 DownMouse = true;
                 if (popup_menu != null)
@@ -142,5 +154,40 @@ namespace uidev.Controls
             Refresh();
         }
 
+        private void FxCombo_EnabledChanged(object sender, EventArgs e)
+        {
+            Color __backColor = uiCustoms.BackColor;
+            Color __mainColor = uiCustoms.MainColor;
+
+            Color __backEnterColor = uiCustoms.DashColor;
+            Color __mainEnterColor = uiCustoms.BackColor;
+
+            Color __backClickColor = uiCustoms.ClickColor;
+            Color __mainClickColor = uiCustoms.BackColor;
+
+            if (!Enabled)
+            {
+                backColor = Tools.rgb2gray(__backColor);
+                mainColor = Tools.rgb2gray(__mainColor);
+
+                backEnterColor = Tools.rgb2gray(__backColor);
+                mainEnterColor = Tools.rgb2gray(__mainColor);
+
+                backClickColor = Tools.rgb2gray(__backColor);
+                mainClickColor = Tools.rgb2gray(__mainColor);
+            }
+            else
+            {
+                backColor = __backColor;
+                mainColor = __mainColor;
+
+                backEnterColor = __backEnterColor;
+                mainEnterColor = __mainEnterColor;
+
+                backClickColor = __backClickColor;
+                mainClickColor = __mainClickColor;
+            }
+            Refresh();
+        }
     }
 }

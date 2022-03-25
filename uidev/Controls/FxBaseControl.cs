@@ -53,7 +53,19 @@ namespace uidev.Controls
             }
         }
 
-        protected bool DontOpenMenuMode = false;
+        private bool _dontOpenMenuMode = false;
+        public bool DontOpenMenuMode
+        {
+            get
+            {
+                return _dontOpenMenuMode;
+            }
+            protected set
+            {
+                _dontOpenMenuMode = value;
+            }
+        }
+
         private FxMenu _menu;
         public FxMenu Menu
         {

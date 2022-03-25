@@ -23,7 +23,18 @@ namespace uidev.Class
 
             double gray = (r + g + b) / 3.0;
 
-            return Color.FromArgb((int)gray, (int)gray, (int)gray);
+            int gr = (int)((double)0x00 <= gray ? gray <= (double)0xFF ? (int)gray : (double)0xFF : (double)0x00);
+
+            return Color.FromArgb(gr, gr, gr);
+        }
+
+        public static void DoAllParent(Control _this, Func<Control, int> func)
+        {
+            if (_this.Parent != null)
+            {
+                func(_this.Parent);
+                DoAllParent(_this.Parent, func);
+            }
         }
 
         public static void DoAllControl(Control.ControlCollection c, Func<Control, int> func)

@@ -76,11 +76,23 @@
       <DependentUpon>FxCombo.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\DarkColor.cs" />
+    <Compile Include="Controls\FxControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FxControl.Designer.cs">
+      <DependentUpon>FxControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FxMenu.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\FxMenu.Designer.cs">
       <DependentUpon>FxMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FxPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FxPanel.Designer.cs">
+      <DependentUpon>FxPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\FxSlider.cs">
       <SubType>Component</SubType>
@@ -137,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FxCombo.resx">
       <DependentUpon>FxCombo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FxControl.resx">
+      <DependentUpon>FxControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FxPanel.resx">
+      <DependentUpon>FxPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FxSlider.resx">
       <DependentUpon>FxSlider.cs</DependentUpon>

@@ -186,10 +186,18 @@ namespace uidev.Controls
 
         }
 
+        private int ParentX = 0;
+        private int GetParentX(Control c)
+        {
+            ParentX -= c.Location.X;
+            return 0;
+        }
         private void FxSlider_ThreadMainLoop(Point point)
         {
 
-            int futureX = point.X - this.FindForm().Location.X - this.Location.X - knobSize;
+            ParentX = point.X;
+            Class.Tools.DoAllParent(this, GetParentX);
+            int futureX = ParentX - this.Location.X - knobSize;
 
             if (MouseIsDown)
             {

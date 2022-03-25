@@ -16,6 +16,8 @@ namespace thetaSuite
 {
     public partial class MainForm : BaseForm
     {
+        private bool ControlEnabled = true;
+
         public MainForm()
         {
             InitializeComponent();
@@ -26,15 +28,15 @@ namespace thetaSuite
 
         private void fxButton1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("slider value : " + fxSlider1.Value);
-        }
+            ControlEnabled = fxPanel1.Enabled;
 
-        private void fxButton2_Click(object sender, EventArgs e)
-        {
-            fxSlider2.Enabled = !fxSlider2.Enabled;
-            fxCheckbox1.Enabled = !fxCheckbox1.Enabled;
-            fxButton3.Enabled = !fxButton3.Enabled;
-            fxButton2.Text = fxSlider2.Enabled ? "true" : "false";
+            fxPanel1.Enabled = !ControlEnabled;
+            //fxCombo1.Enabled = ControlEnabled;
+            //fxButton2.Enabled = ControlEnabled;
+            //fxSlider1.Enabled = ControlEnabled;
+            //fxCheckbox1.Enabled = ControlEnabled;
+
+            fxButton1.Text = "Enabled : " + ControlEnabled.ToString();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace uidev.Controls
 {
-    partial class FxCombo
+    partial class FxControl
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -31,14 +31,10 @@ namespace uidev.Controls
         {
             this.SuspendLayout();
             // 
-            // FxCombo
+            // FxControl
             // 
-            this.EnabledChanged += new System.EventHandler(this.FxCombo_EnabledChanged);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FxCombo_Paint);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FxCombo_MouseDown);
-            this.MouseEnter += new System.EventHandler(this.FxCombo_MouseEnter);
-            this.MouseLeave += new System.EventHandler(this.FxCombo_MouseLeave);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FxCombo_MouseUp);
+            this.EnabledChanged += new System.EventHandler(this.FxControl_EnabledChanged);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FxControl_Paint);
             this.ResumeLayout(false);
 
         }
