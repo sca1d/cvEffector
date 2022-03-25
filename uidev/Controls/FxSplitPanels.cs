@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -8,17 +9,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
 namespace uidev.Controls
 {
+    //[Designer(typeof(Designs.FxSplitPanelsDesigner), typeof(IRootDesigner))]
+    [Designer(typeof(Designs.FxSplitPanelsDesigner))]
     public partial class FxSplitPanels : FxBaseControl
     {
         private Pen borderPen = Class.uiCustoms.BorderPen;
 
         private bool MouseIsDown = false;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public FxPanel fxPanel1 = new FxPanel();
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public FxPanel fxPanel2 = new FxPanel();
+
+        //public bool Visible { get; set; }
+
+        private int _panelMinSize = 10;
+        public int PanelMinimumSize
+        {
+            get
+            {
+                return _panelMinSize;
+            }
+            set
+            {
+                _panelMinSize = value;
+            }
+        }
 
         private int _holdSpace = 4;
         public int HoldSpace
@@ -44,7 +65,7 @@ namespace uidev.Controls
             }
             set
             {
-                _splitPoint = value;
+                _splitPoint = PanelMinimumSize <= value ? value <= Width - PanelMinimumSize ? value : Width - PanelMinimumSize : PanelMinimumSize;
                 InitPanels();
                 Refresh();
             }
@@ -90,6 +111,9 @@ namespace uidev.Controls
 
             this.Controls.Add(fxPanel1);
             this.Controls.Add(fxPanel2);
+
+            TypeDescriptor.AddAttributes(this.fxPanel1, new DesignerAttribute(typeof(Designs.PanelDesigner)));
+            TypeDescriptor.AddAttributes(this.fxPanel2, new DesignerAttribute(typeof(Designs.PanelDesigner)));
         }
 
         private void FxSplitPanels_Paint(object sender, PaintEventArgs e)
@@ -130,6 +154,10 @@ namespace uidev.Controls
         }
 
         private void FxSplitPanels_Resize(object sender, EventArgs e)
+        {
+            InitPanels();
+        }
+        private void FxSplitPanels_SizeChanged(object sender, EventArgs e)
         {
             InitPanels();
         }
