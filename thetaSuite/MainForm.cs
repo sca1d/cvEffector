@@ -16,8 +16,6 @@ namespace thetaSuite
 {
     public partial class MainForm : BaseForm
     {
-        private bool ControlEnabled = true;
-
         public MainForm()
         {
             InitializeComponent();
@@ -29,6 +27,7 @@ namespace thetaSuite
         private void fxButton1_Click(object sender, EventArgs e)
         {
             fxPanel1.Enabled = !fxPanel1.Enabled;
+            fxSplitPanels1.fxPanel1.Enabled = !fxSplitPanels1.fxPanel1.Enabled;
             //fxCombo1.Enabled = ControlEnabled;
             //fxButton2.Enabled = ControlEnabled;
             //fxSlider1.Enabled = ControlEnabled;

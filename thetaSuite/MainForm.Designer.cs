@@ -37,8 +37,9 @@ namespace thetaSuite
             this.fxSlider1 = new uidev.Controls.FxSlider();
             this.fxCheckbox1 = new uidev.Controls.FxCheckbox();
             this.fxPanel1 = new uidev.Controls.FxPanel();
-            this.fxSlider2 = new uidev.Controls.FxSlider();
             this.tL_LayerItem1 = new uidev.TimeLineControls.TL_LayerItem();
+            this.fxSlider2 = new uidev.Controls.FxSlider();
+            this.fxSplitPanels1 = new uidev.Controls.FxSplitPanels();
             this.fxMenu1.SuspendLayout();
             this.fxPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -128,20 +129,6 @@ namespace thetaSuite
             this.fxPanel1.Size = new System.Drawing.Size(268, 196);
             this.fxPanel1.TabIndex = 7;
             // 
-            // fxSlider2
-            // 
-            this.fxSlider2.Border = false;
-            this.fxSlider2.Location = new System.Drawing.Point(283, 91);
-            this.fxSlider2.MaximumValue = 100;
-            this.fxSlider2.Menu = null;
-            this.fxSlider2.MinimumSize = new System.Drawing.Size(18, 14);
-            this.fxSlider2.MinimumValue = 0;
-            this.fxSlider2.Name = "fxSlider2";
-            this.fxSlider2.Size = new System.Drawing.Size(131, 15);
-            this.fxSlider2.TabIndex = 8;
-            this.fxSlider2.Text = "fxSlider2";
-            this.fxSlider2.Value = 0;
-            // 
             // tL_LayerItem1
             // 
             this.tL_LayerItem1.clickColor = System.Drawing.Color.White;
@@ -158,11 +145,38 @@ namespace thetaSuite
             this.tL_LayerItem1.Text = "tL_LayerItem1";
             this.tL_LayerItem1.view_text = true;
             // 
+            // fxSlider2
+            // 
+            this.fxSlider2.Border = false;
+            this.fxSlider2.Location = new System.Drawing.Point(283, 91);
+            this.fxSlider2.MaximumValue = 100;
+            this.fxSlider2.Menu = null;
+            this.fxSlider2.MinimumSize = new System.Drawing.Size(18, 14);
+            this.fxSlider2.MinimumValue = 0;
+            this.fxSlider2.Name = "fxSlider2";
+            this.fxSlider2.Size = new System.Drawing.Size(131, 15);
+            this.fxSlider2.TabIndex = 8;
+            this.fxSlider2.Text = "fxSlider2";
+            this.fxSlider2.Value = 0;
+            // 
+            // fxSplitPanels1
+            // 
+            this.fxSplitPanels1.Border = true;
+            this.fxSplitPanels1.HoldSpace = 4;
+            this.fxSplitPanels1.Location = new System.Drawing.Point(507, 139);
+            this.fxSplitPanels1.Menu = null;
+            this.fxSplitPanels1.Name = "fxSplitPanels1";
+            this.fxSplitPanels1.Size = new System.Drawing.Size(350, 196);
+            this.fxSplitPanels1.SplitCursor = System.Windows.Forms.Cursors.SizeWE;
+            this.fxSplitPanels1.SplitPoint = 100;
+            this.fxSplitPanels1.TabIndex = 9;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 562);
+            this.Controls.Add(this.fxSplitPanels1);
             this.Controls.Add(this.fxSlider2);
             this.Controls.Add(this.fxPanel1);
             this.Controls.Add(this.fxButton1);
@@ -185,6 +199,7 @@ namespace thetaSuite
         private uidev.Controls.FxPanel fxPanel1;
         private uidev.Controls.FxSlider fxSlider2;
         private uidev.TimeLineControls.TL_LayerItem tL_LayerItem1;
+        private uidev.Controls.FxSplitPanels fxSplitPanels1;
     }
 }
 
