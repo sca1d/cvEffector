@@ -116,6 +116,7 @@ namespace thetaSuite
             this.fxSlider1.Menu = null;
             this.fxSlider1.MinimumSize = new System.Drawing.Size(18, 14);
             this.fxSlider1.MinimumValue = 0;
+            this.fxSlider1.MouseOnTheLineCursor = System.Windows.Forms.Cursors.Default;
             this.fxSlider1.Name = "fxSlider1";
             this.fxSlider1.Size = new System.Drawing.Size(136, 41);
             this.fxSlider1.TabIndex = 4;
@@ -185,7 +186,7 @@ namespace thetaSuite
             // 
             this.fxSplitPanels1.Border = true;
             this.fxSplitPanels1.HoldSpace = 4;
-            this.fxSplitPanels1.Location = new System.Drawing.Point(512, 73);
+            this.fxSplitPanels1.Location = new System.Drawing.Point(498, 73);
             this.fxSplitPanels1.Menu = null;
             this.fxSplitPanels1.Name = "fxSplitPanels1";
             this.fxSplitPanels1.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -253,6 +254,7 @@ namespace thetaSuite
             // 
             this.fxSplitPanels2.Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.fxSplitPanels2.Panel2.AutoScroll = true;
             this.fxSplitPanels2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.fxSplitPanels2.Panel2.Border = true;
             this.fxSplitPanels2.Panel2.Controls.Add(this.fxCheckbox2);
@@ -295,6 +297,7 @@ namespace thetaSuite
             this.fxSlider3.Menu = null;
             this.fxSlider3.MinimumSize = new System.Drawing.Size(18, 14);
             this.fxSlider3.MinimumValue = 0;
+            this.fxSlider3.MouseOnTheLineCursor = System.Windows.Forms.Cursors.Default;
             this.fxSlider3.Name = "fxSlider3";
             this.fxSlider3.Size = new System.Drawing.Size(153, 14);
             this.fxSlider3.TabIndex = 2;
@@ -309,11 +312,12 @@ namespace thetaSuite
             this.fxSlider2.Menu = null;
             this.fxSlider2.MinimumSize = new System.Drawing.Size(18, 14);
             this.fxSlider2.MinimumValue = 0;
+            this.fxSlider2.MouseOnTheLineCursor = System.Windows.Forms.Cursors.Default;
             this.fxSlider2.Name = "fxSlider2";
             this.fxSlider2.Size = new System.Drawing.Size(153, 19);
             this.fxSlider2.TabIndex = 1;
             this.fxSlider2.Text = "fxSlider2";
-            this.fxSlider2.Value = 0;
+            this.fxSlider2.Value = 50;
             // 
             // fxButton2
             // 

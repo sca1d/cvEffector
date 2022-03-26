@@ -104,6 +104,19 @@ namespace uidev.Controls
             }
         }
 
+        private Cursor _mouseOnTheLineCursor = Cursors.Default;
+        public Cursor MouseOnTheLineCursor
+        {
+            get
+            {
+                return _mouseOnTheLineCursor;
+            }
+            set
+            {
+                _mouseOnTheLineCursor = value;
+            }
+        }
+
         public FxSlider()
         {
 
@@ -139,7 +152,6 @@ namespace uidev.Controls
             {
                 v = (int)((__value - MinimumValue) * ((Width - 1 - knobSize * 2)
               / (float)(MaximumValue - MinimumValue)) + knobSize);
-                Console.WriteLine("other:" + __value);
             }
 
             knobPoint = v;
@@ -216,9 +228,27 @@ namespace uidev.Controls
                     mouseP.Y <= yp + this.knobSize;
         }
 
+        private bool GetMouseOnTheLine(Point mouseP)
+        {
+            return mouseP.X >= knobSize &&
+                    mouseP.X <= Width - (1 + knobSize) &&
+                    mouseP.Y >= (Height / 2 + 0.05F) - penWidth &&
+                    mouseP.Y <= (Height / 2 + 0.05F) + penWidth;
+        }
+
         private void FxSlider_MouseMove(object sender, MouseEventArgs e)
         {
             Point mouseP = e.Location;
+
+            if (Enabled && GetMouseOnTheLine(e.Location))
+            {
+                Cursor = MouseOnTheLineCursor;
+            }
+            else
+            {
+                Cursor = Cursors.Default;
+            }
+
             if (MouseIsDown)
             {
                 knobPoint = knobSize < mouseP.X ? (mouseP.X < (this.Width - 1 - knobSize) ? mouseP.X : this.Width - knobSize) : knobSize;
@@ -241,13 +271,7 @@ namespace uidev.Controls
             {
                 MouseIsDown = true;
             }
-            else if (
-                Enabled &&
-                e.X >= knobSize &&
-                e.X <= Width - (1 + knobSize) &&
-                e.Y >= (Height / 2 + 0.05F) - penWidth &&
-                e.Y <= (Height / 2 + 0.05F) + penWidth
-                )
+            else if (Enabled && GetMouseOnTheLine(e.Location))
             {
                 knobPoint = e.X;
                 if (e.Button == MouseButtons.Left)

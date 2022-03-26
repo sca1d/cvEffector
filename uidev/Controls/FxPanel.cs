@@ -108,5 +108,10 @@ namespace uidev.Controls
                 }
             }
         }
+
+        private void FxPanel_Scroll(object sender, ScrollEventArgs e)
+        {
+            Refresh();
+        }
     }
 }
