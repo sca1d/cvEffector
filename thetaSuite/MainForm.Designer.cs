@@ -42,8 +42,10 @@ namespace thetaSuite
             this.Panel2 = new uidev.Controls.FxPanel();
             this.Panel1 = new uidev.Controls.FxPanel();
             this.fxSplitPanels1 = new uidev.Controls.FxSplitPanels();
+            this.fxSplitPanels2 = new uidev.Controls.FxSplitPanels();
             this.fxMenu1.SuspendLayout();
             this.fxSplitPanels1.SuspendLayout();
+            this.fxSplitPanels2.SuspendLayout();
             this.SuspendLayout();
             // 
             // fxButton1
@@ -177,9 +179,10 @@ namespace thetaSuite
             // 
             this.fxSplitPanels1.Border = true;
             this.fxSplitPanels1.HoldSpace = 4;
-            this.fxSplitPanels1.Location = new System.Drawing.Point(536, 135);
+            this.fxSplitPanels1.Location = new System.Drawing.Point(537, 83);
             this.fxSplitPanels1.Menu = null;
             this.fxSplitPanels1.Name = "fxSplitPanels1";
+            this.fxSplitPanels1.Orientation = System.Windows.Forms.Orientation.Vertical;
             // 
             // fxSplitPanels1.Panel1
             // 
@@ -190,7 +193,7 @@ namespace thetaSuite
             this.fxSplitPanels1.Panel1.Location = new System.Drawing.Point(3, 3);
             this.fxSplitPanels1.Panel1.Menu = null;
             this.fxSplitPanels1.Panel1.Name = "Panel1";
-            this.fxSplitPanels1.Panel1.Size = new System.Drawing.Size(95, 182);
+            this.fxSplitPanels1.Panel1.Size = new System.Drawing.Size(95, 177);
             this.fxSplitPanels1.Panel1.TabIndex = 0;
             this.fxSplitPanels1.Panel1.Visible = true;
             // 
@@ -203,22 +206,67 @@ namespace thetaSuite
             this.fxSplitPanels1.Panel2.Location = new System.Drawing.Point(102, 3);
             this.fxSplitPanels1.Panel2.Menu = null;
             this.fxSplitPanels1.Panel2.Name = "Panel2";
-            this.fxSplitPanels1.Panel2.Size = new System.Drawing.Size(103, 182);
+            this.fxSplitPanels1.Panel2.Size = new System.Drawing.Size(87, 177);
             this.fxSplitPanels1.Panel2.TabIndex = 1;
             this.fxSplitPanels1.Panel2.Visible = true;
             this.fxSplitPanels1.PanelMinimumSize = 10;
             this.fxSplitPanels1.PanelsMargin = 3;
-            this.fxSplitPanels1.Size = new System.Drawing.Size(208, 188);
-            this.fxSplitPanels1.SplitCursor = System.Windows.Forms.Cursors.SizeWE;
+            this.fxSplitPanels1.Size = new System.Drawing.Size(192, 183);
+            this.fxSplitPanels1.SplitCursorHorizon = System.Windows.Forms.Cursors.SizeNS;
+            this.fxSplitPanels1.SplitCursorVertical = System.Windows.Forms.Cursors.SizeWE;
             this.fxSplitPanels1.SplitPoint = 100;
             this.fxSplitPanels1.TabIndex = 7;
             this.fxSplitPanels1.Text = "fxSplitPanels1";
+            // 
+            // fxSplitPanels2
+            // 
+            this.fxSplitPanels2.Border = true;
+            this.fxSplitPanels2.HoldSpace = 4;
+            this.fxSplitPanels2.Location = new System.Drawing.Point(537, 272);
+            this.fxSplitPanels2.Menu = null;
+            this.fxSplitPanels2.Name = "fxSplitPanels2";
+            this.fxSplitPanels2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // fxSplitPanels2.Panel1
+            // 
+            this.fxSplitPanels2.Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fxSplitPanels2.Panel1.Border = true;
+            this.fxSplitPanels2.Panel1.Enabled = true;
+            this.fxSplitPanels2.Panel1.Location = new System.Drawing.Point(3, 3);
+            this.fxSplitPanels2.Panel1.Menu = null;
+            this.fxSplitPanels2.Panel1.Name = "Panel1";
+            this.fxSplitPanels2.Panel1.Size = new System.Drawing.Size(186, 65);
+            this.fxSplitPanels2.Panel1.TabIndex = 0;
+            this.fxSplitPanels2.Panel1.Visible = true;
+            // 
+            // fxSplitPanels2.Panel2
+            // 
+            this.fxSplitPanels2.Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fxSplitPanels2.Panel2.Border = true;
+            this.fxSplitPanels2.Panel2.Enabled = true;
+            this.fxSplitPanels2.Panel2.Location = new System.Drawing.Point(3, 72);
+            this.fxSplitPanels2.Panel2.Menu = null;
+            this.fxSplitPanels2.Panel2.Name = "Panel2";
+            this.fxSplitPanels2.Panel2.Size = new System.Drawing.Size(186, 71);
+            this.fxSplitPanels2.Panel2.TabIndex = 1;
+            this.fxSplitPanels2.Panel2.Visible = true;
+            this.fxSplitPanels2.PanelMinimumSize = 10;
+            this.fxSplitPanels2.PanelsMargin = 3;
+            this.fxSplitPanels2.Size = new System.Drawing.Size(192, 146);
+            this.fxSplitPanels2.SplitCursorHorizon = System.Windows.Forms.Cursors.SizeNS;
+            this.fxSplitPanels2.SplitCursorVertical = System.Windows.Forms.Cursors.SizeWE;
+            this.fxSplitPanels2.SplitPoint = 70;
+            this.fxSplitPanels2.TabIndex = 8;
+            this.fxSplitPanels2.Text = "fxSplitPanels2";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fxSplitPanels2);
             this.Controls.Add(this.fxSplitPanels1);
             this.Controls.Add(this.fxPanel1);
             this.Controls.Add(this.tL_LayerItem1);
@@ -230,6 +278,7 @@ namespace thetaSuite
             this.Text = "theta";
             this.fxMenu1.ResumeLayout(false);
             this.fxSplitPanels1.ResumeLayout(false);
+            this.fxSplitPanels2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -246,8 +295,9 @@ namespace thetaSuite
         private uidev.TimeLineControls.TL_LayerItem tL_LayerItem1;
         private System.Windows.Forms.Button button1;
         private uidev.Controls.FxPanel fxPanel1;
+        private uidev.Controls.FxSplitPanels fxSplitPanels1;
         private uidev.Controls.FxPanel Panel2;
         private uidev.Controls.FxPanel Panel1;
-        private uidev.Controls.FxSplitPanels fxSplitPanels1;
+        private uidev.Controls.FxSplitPanels fxSplitPanels2;
     }
 }

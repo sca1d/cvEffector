@@ -65,6 +65,20 @@ namespace uidev.Controls
             }
         }
 
+        private Orientation _orientation = Orientation.Vertical;
+        public Orientation Orientation
+        {
+            get
+            {
+                return _orientation;
+            }
+            set
+            {
+                _orientation = value;
+                UpdatePanels();
+            }
+        }
+
         private int _holdSpace = 4;
         public int HoldSpace
         {
@@ -88,21 +102,35 @@ namespace uidev.Controls
             }
             set
             {
-                _spitPoint = Class.Tools.MinMax(value, PanelMinimumSize, Width - PanelMinimumSize);
+                int WH = Orientation == Orientation.Vertical ? Width : Height;
+                _spitPoint = Class.Tools.MinMax(value, PanelMinimumSize, WH - PanelMinimumSize);
                 UpdatePanels();
             }
         }
 
-        private Cursor _splitCursor = Cursors.SizeWE;
-        public Cursor SplitCursor
+        private Cursor _splitCursorVertical = Cursors.SizeWE;
+        public Cursor SplitCursorVertical
         {
             get
             {
-                return _splitCursor;
+                return _splitCursorVertical;
             }
             set
             {
-                _splitCursor = value;
+                _splitCursorVertical = value;
+            }
+        }
+
+        private Cursor _splitCursorHorizon = Cursors.SizeNS;
+        public Cursor SplitCursorHorizon
+        {
+            get
+            {
+                return _splitCursorHorizon;
+            }
+            set
+            {
+                _splitCursorHorizon = value;
             }
         }
         #endregion
@@ -130,14 +158,28 @@ namespace uidev.Controls
 
             int SizeMargin = PanelsMargin * 2;
 
-            panel1.Size = new Size(SplitPoint - HoldSpace / 2 - PanelsMargin, Height - SizeMargin);
-            panel2.Size = new Size(Width - (SplitPoint + HoldSpace / 2) - PanelsMargin, Height - SizeMargin);
-            
-            panel1.Location = new Point(PanelsMargin, PanelsMargin);
-            panel2.Location = new Point(SplitPoint + HoldSpace / 2, PanelsMargin);
+            if (Orientation == Orientation.Vertical)
+            {
+                panel1.Size = new Size(SplitPoint - HoldSpace / 2 - PanelsMargin, Height - SizeMargin);
+                panel2.Size = new Size(Width - (SplitPoint + HoldSpace / 2) - PanelsMargin, Height - SizeMargin);
 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom;
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
+                panel1.Location = new Point(PanelsMargin, PanelsMargin);
+                panel2.Location = new Point(SplitPoint + HoldSpace / 2, PanelsMargin);
+
+                panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom;
+                panel2.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
+            }
+            else
+            {
+                panel1.Size = new Size(Width - SizeMargin, SplitPoint - HoldSpace / 2 - PanelsMargin);
+                panel2.Size = new Size(Width - SizeMargin, Height - (SplitPoint + HoldSpace / 2) - PanelsMargin);
+
+                panel1.Location = new Point(PanelsMargin, PanelsMargin);
+                panel2.Location = new Point(PanelsMargin, SplitPoint + HoldSpace / 2);
+
+                panel1.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right;
+                panel2.Anchor = AnchorStyles.Left | AnchorStyles.Bottom | AnchorStyles.Right;
+            }
 
             Refresh();
         }
@@ -158,7 +200,20 @@ namespace uidev.Controls
         private bool GetMouseInSplit(Point mouseP)
         {
             int halfs = (int)Math.Round((double)HoldSpace / 2.0);
-            return (SplitPoint - halfs <= mouseP.X && mouseP.X <= SplitPoint + halfs && PanelsMargin <= mouseP.Y && mouseP.Y <= Height - PanelsMargin);
+
+            if (Orientation == Orientation.Vertical)
+            {
+                return (SplitPoint - halfs <= mouseP.X && mouseP.X <= SplitPoint + halfs && PanelsMargin <= mouseP.Y && mouseP.Y <= Height - PanelsMargin);
+            }
+            else
+            {
+                return (SplitPoint - halfs <= mouseP.Y && mouseP.Y <= SplitPoint + halfs && PanelsMargin <= mouseP.X && mouseP.X <= Width - PanelsMargin);
+            }
+        }
+
+        public void SetMouseCursor()
+        {
+            Cursor = Orientation == Orientation.Vertical ? SplitCursorVertical : SplitCursorHorizon;
         }
 
         private void FxSplitPanels_Paint(object sender, PaintEventArgs e)
@@ -212,13 +267,13 @@ namespace uidev.Controls
         {
             if (MouseIsDown)
             {
-                Cursor = SplitCursor;
-                SplitPoint = e.X;
+                SetMouseCursor();
+                SplitPoint = Orientation == Orientation.Vertical ? e.X : e.Y;
                 UpdatePanels();
             }
             else if (GetMouseInSplit(e.Location))
             {
-                Cursor = SplitCursor;
+                SetMouseCursor();
             }
             else
             {
