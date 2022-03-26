@@ -109,6 +109,9 @@
       <DependentUpon>FxSplitPanels.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\DesignSample.cs" />
+    <Compile Include="Interface\FxInternalPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TimeLineControls\Options\TL_AudioItemOptions.cs" />
     <Compile Include="TimeLineControls\Options\TL_ItemOptions.cs" />
     <Compile Include="TimeLineControls\Options\TL_VideoItemOptions.cs" />

@@ -17,6 +17,31 @@ namespace uidev.Controls
         protected FxPanel panel1 = new FxPanel();
         protected FxPanel panel2 = new FxPanel();
 
+        public FxPanel Panel1
+        {
+            get
+            {
+                return panel1;
+            }
+            set
+            {
+                panel1 = value;
+                UpdatePanels();
+            }
+        }
+        public FxPanel Panel2
+        {
+            get
+            {
+                return panel2;
+            }
+            set
+            {
+                panel2 = value;
+                UpdatePanels();
+            }
+        }
+
         #region PROPERTIES
         private int _panelsMargin = 3;
         public int PanelsMargin
@@ -96,31 +121,10 @@ namespace uidev.Controls
             //panel1.Visible = true;
             //panel2.Visible = true;
 
-            //panel1.BorderStyle = BorderStyle.FixedSingle;
-            //panel2.BorderStyle;
-
             Refresh();
         }
         private void UpdatePanels()
         {
-            /*
-            int w = Width - 1;
-            int h = Height - 1;
-
-            RectangleF p1r = new RectangleF(
-                PanelsMargin,
-                PanelsMargin,
-                SplitPoint - HoldSpace / 2 - PanelsMargin * 2,
-                h - PanelsMargin * 2
-                );
-            RectangleF p2r = new RectangleF(
-                SplitPoint + HoldSpace / 2 + PanelsMargin,
-                PanelsMargin,
-                w - (SplitPoint + HoldSpace) - PanelsMargin * 2,
-                h - PanelsMargin * 2
-                );
-            */
-
             //panel1.Margin = new Padding(PanelsMargin);
             //panel2.Margin = new Padding(PanelsMargin);
 
@@ -175,9 +179,6 @@ namespace uidev.Controls
 
             e.Graphics.DrawRectangles(borderPen, r);
             */
-
-            //int p = Width / 2;
-            //e.Graphics.DrawLine(borderPen, new Point(panel1.Width, panel1.Location.Y), new Point(panel1.Width, panel1.Location.Y + panel1.Height));
 
             if (Border) e.Graphics.DrawRectangle(borderPen, 0, 0, Width - 1, Height - 1);
 

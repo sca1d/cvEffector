@@ -11,10 +11,6 @@ namespace uidev.Interface
     interface FxUiBase
     {
 
-        bool Enabled { get; set; }
-
-        // Font Font { get; }
-
         bool Border { get; set; }
 
         bool DontOpenMenuMode { get; }
