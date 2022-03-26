@@ -18,7 +18,7 @@ namespace uidev.Designs
         public override void Initialize(IComponent component)
         {
             base.Initialize(component);
-            
+
             var panel1 = ((Controls.FxSplitPanels)this.Control).Panel1;
             var panel2 = ((Controls.FxSplitPanels)this.Control).Panel2;
 

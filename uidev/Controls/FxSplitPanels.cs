@@ -11,6 +11,7 @@ using System.Windows.Forms;
 namespace uidev.Controls
 {
     [Designer(typeof(Designs.FxSplitPanelsDesigner))]
+    //[Designer(typeof(Designs.SplitDesigner))]
     public partial class FxSplitPanels : FxBaseControl
     {
 
@@ -26,11 +27,6 @@ namespace uidev.Controls
             {
                 return panel1;
             }
-            set
-            {
-                panel1 = value;
-                UpdatePanels();
-            }
         }
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public FxPanel Panel2
@@ -38,11 +34,6 @@ namespace uidev.Controls
             get
             {
                 return panel2;
-            }
-            set
-            {
-                panel2 = value;
-                UpdatePanels();
             }
         }
 
