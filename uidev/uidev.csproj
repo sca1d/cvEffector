@@ -103,21 +103,12 @@
     </Compile>
     <Compile Include="Class\RemoteProcess.cs" />
     <Compile Include="Controls\FxSplitPanels.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\FxSplitPanels.Designer.cs">
       <DependentUpon>FxSplitPanels.cs</DependentUpon>
     </Compile>
-    <Compile Include="Designs\FxSplitPanelsDesigner.cs" />
-    <Compile Include="Designs\PanelDesigner.cs" />
-    <Compile Include="olds\oldFxSplitPanels.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="olds\oldFxSplitPanels.Designer.cs">
-      <DependentUpon>oldFxSplitPanels.cs</DependentUpon>
-    </Compile>
     <Compile Include="Designs\DesignSample.cs" />
-    <Compile Include="olds\oldFxSplitPanelDesigner.cs" />
     <Compile Include="TimeLineControls\Options\TL_AudioItemOptions.cs" />
     <Compile Include="TimeLineControls\Options\TL_ItemOptions.cs" />
     <Compile Include="TimeLineControls\Options\TL_VideoItemOptions.cs" />
@@ -178,9 +169,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FxSplitPanels.resx">
       <DependentUpon>FxSplitPanels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="olds\oldFxSplitPanels.resx">
-      <DependentUpon>oldFxSplitPanels.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TimeLineControls\TL_LayerItem.resx">
       <DependentUpon>TL_LayerItem.cs</DependentUpon>

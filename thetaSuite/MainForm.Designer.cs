@@ -38,6 +38,7 @@ namespace thetaSuite
             this.fxSlider1 = new uidev.Controls.FxSlider();
             this.tL_LayerItem1 = new uidev.TimeLineControls.TL_LayerItem();
             this.fxPanel1 = new uidev.Controls.FxPanel();
+            this.fxSplitPanels1 = new uidev.Controls.FxSplitPanels();
             this.fxMenu1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,7 +116,7 @@ namespace thetaSuite
             this.tL_LayerItem1.color = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
             this.tL_LayerItem1.enterColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.tL_LayerItem1.frame_width = 60;
-            this.tL_LayerItem1.Location = new System.Drawing.Point(391, 152);
+            this.tL_LayerItem1.Location = new System.Drawing.Point(388, 161);
             this.tL_LayerItem1.Menu = null;
             this.tL_LayerItem1.Name = "tL_LayerItem1";
             this.tL_LayerItem1.selected = false;
@@ -134,11 +135,22 @@ namespace thetaSuite
             this.fxPanel1.Size = new System.Drawing.Size(406, 104);
             this.fxPanel1.TabIndex = 6;
             // 
+            // fxSplitPanels1
+            // 
+            this.fxSplitPanels1.Border = true;
+            this.fxSplitPanels1.Location = new System.Drawing.Point(12, 99);
+            this.fxSplitPanels1.Menu = null;
+            this.fxSplitPanels1.Name = "fxSplitPanels1";
+            this.fxSplitPanels1.Size = new System.Drawing.Size(228, 204);
+            this.fxSplitPanels1.TabIndex = 7;
+            this.fxSplitPanels1.Text = "fxSplitPanels1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fxSplitPanels1);
             this.Controls.Add(this.fxPanel1);
             this.Controls.Add(this.tL_LayerItem1);
             this.Controls.Add(this.fxSlider1);
@@ -163,5 +175,6 @@ namespace thetaSuite
         private uidev.Controls.FxSlider fxSlider1;
         private uidev.TimeLineControls.TL_LayerItem tL_LayerItem1;
         private uidev.Controls.FxPanel fxPanel1;
+        private uidev.Controls.FxSplitPanels fxSplitPanels1;
     }
 }
