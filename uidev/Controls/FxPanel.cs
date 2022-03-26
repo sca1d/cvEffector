@@ -13,7 +13,6 @@ namespace uidev.Controls
     public partial class FxPanel : Panel, Interface.FxUiBase
     {
 
-        private Color backColor = Class.uiCustoms.BackColor;
         private Color borderColor = Class.uiCustoms.BorderPen.Color;
 
         [BrowsableAttribute(false), EditorBrowsable(EditorBrowsableState.Never)]
@@ -76,7 +75,7 @@ namespace uidev.Controls
 
         private void FxPanel_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.Clear(backColor);
+            e.Graphics.Clear(BackColor);
 
             if (Border) e.Graphics.DrawRectangle(new Pen(borderColor), 0, 0, Width - 1, Height - 1);
         }

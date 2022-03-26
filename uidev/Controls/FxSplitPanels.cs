@@ -218,6 +218,7 @@ namespace uidev.Controls
 
         private void FxSplitPanels_Paint(object sender, PaintEventArgs e)
         {
+            e.Graphics.Clear(Class.uiCustoms.DarkColor);
 
             /*
             int w = Width - 1;
