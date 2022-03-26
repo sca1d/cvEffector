@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace uidev.Controls
 {
+    [Designer(typeof(Designs.FxSplitPanelsDesigner))]
     public partial class FxSplitPanels : FxBaseControl
     {
 
@@ -18,6 +19,7 @@ namespace uidev.Controls
         protected FxPanel panel2 = new FxPanel();
 
         // public panel properties
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public FxPanel Panel1
         {
             get
@@ -30,6 +32,7 @@ namespace uidev.Controls
                 UpdatePanels();
             }
         }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public FxPanel Panel2
         {
             get
@@ -123,6 +126,9 @@ namespace uidev.Controls
         {
             //panel1.Visible = true;
             //panel2.Visible = true;
+
+            TypeDescriptor.AddAttributes(this.panel1, new DesignerAttribute(typeof(Designs.PanelDesigner)));
+            TypeDescriptor.AddAttributes(this.panel2, new DesignerAttribute(typeof(Designs.PanelDesigner)));
 
             Refresh();
         }

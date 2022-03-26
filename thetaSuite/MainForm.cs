@@ -18,7 +18,7 @@ namespace thetaSuite
         {
             InitializeComponent();
 
-            this.fxSplitPanels1.Panel1.Controls.Add(new Button());
+            //this.fxSplitPanels1.Panel1.Controls.Add(new Button());
         }
     }
 }

@@ -109,6 +109,8 @@
       <DependentUpon>FxSplitPanels.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\DesignSample.cs" />
+    <Compile Include="Designs\FxSplitPanelsDesigner.cs" />
+    <Compile Include="Designs\PanelDesigner.cs" />
     <Compile Include="Interface\FxInternalPanel.cs">
       <SubType>Component</SubType>
     </Compile>
