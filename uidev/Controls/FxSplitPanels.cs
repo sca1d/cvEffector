@@ -17,6 +17,7 @@ namespace uidev.Controls
         protected FxPanel panel1 = new FxPanel();
         protected FxPanel panel2 = new FxPanel();
 
+        // public panel properties
         public FxPanel Panel1
         {
             get
@@ -112,6 +113,8 @@ namespace uidev.Controls
         }
         #endregion
 
+        private bool MouseIsDown = false;
+
         #region COLORING DEFINE
         private Pen borderPen = Class.uiCustoms.BorderPen;
         #endregion
@@ -153,6 +156,12 @@ namespace uidev.Controls
 
             this.Controls.Add(panel1);
             this.Controls.Add(panel2);
+        }
+
+        private bool GetMouseInSplit(Point mouseP)
+        {
+            int halfs = (int)Math.Round((double)HoldSpace / 2.0);
+            return (SplitPoint - halfs <= mouseP.X && mouseP.X <= SplitPoint + halfs && PanelsMargin <= mouseP.Y && mouseP.Y <= Height - PanelsMargin);
         }
 
         private void FxSplitPanels_Paint(object sender, PaintEventArgs e)
@@ -200,6 +209,44 @@ namespace uidev.Controls
         private void FxSplitPanels_Resize(object sender, EventArgs e)
         {
             UpdatePanels();
+        }
+
+        private void FxSplitPanels_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MouseIsDown)
+            {
+                Cursor = SplitCursor;
+                SplitPoint = e.X;
+                UpdatePanels();
+            }
+            else if (GetMouseInSplit(e.Location))
+            {
+                Cursor = SplitCursor;
+            }
+            else
+            {
+                Cursor = Cursors.Default;
+            }
+        }
+
+        private void FxSplitPanels_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (GetMouseInSplit(e.Location)) MouseIsDown = true;
+        }
+
+        private void FxSplitPanels_MouseUp(object sender, MouseEventArgs e)
+        {
+            MouseIsDown = false;
+        }
+
+        private void FxSplitPanels_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FxSplitPanels_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
         }
     }
 }

@@ -35,6 +35,11 @@ namespace uidev.Controls
             // 
             this.EnabledChanged += new System.EventHandler(this.FxSplitPanels_EnabledChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FxSplitPanels_Paint);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FxSplitPanels_MouseDown);
+            this.MouseEnter += new System.EventHandler(this.FxSplitPanels_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.FxSplitPanels_MouseLeave);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FxSplitPanels_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FxSplitPanels_MouseUp);
             this.Resize += new System.EventHandler(this.FxSplitPanels_Resize);
             this.ResumeLayout(false);
 
