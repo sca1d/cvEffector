@@ -15,6 +15,11 @@ namespace uidev.Class
     public static class Tools
     {
 
+        public static int MinMax(int value, int min, int max)
+        {
+            return min <= value ? value <= max ? value : max : min;
+        }
+
         public static Color rgb2gray(Color c)
         {
             double r = c.R;

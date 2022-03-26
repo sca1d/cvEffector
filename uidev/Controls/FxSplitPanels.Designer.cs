@@ -35,6 +35,7 @@ namespace uidev.Controls
             // 
             this.EnabledChanged += new System.EventHandler(this.FxSplitPanels_EnabledChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FxSplitPanels_Paint);
+            this.Resize += new System.EventHandler(this.FxSplitPanels_Resize);
             this.ResumeLayout(false);
 
         }

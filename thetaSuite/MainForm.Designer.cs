@@ -137,11 +137,16 @@ namespace thetaSuite
             // 
             // fxSplitPanels1
             // 
-            this.fxSplitPanels1.Border = true;
+            this.fxSplitPanels1.Border = false;
+            this.fxSplitPanels1.HoldSpace = 4;
             this.fxSplitPanels1.Location = new System.Drawing.Point(12, 99);
             this.fxSplitPanels1.Menu = null;
             this.fxSplitPanels1.Name = "fxSplitPanels1";
+            this.fxSplitPanels1.PanelMinimumSize = 10;
+            this.fxSplitPanels1.PanelsMargin = 2;
             this.fxSplitPanels1.Size = new System.Drawing.Size(228, 204);
+            this.fxSplitPanels1.SplitCursor = System.Windows.Forms.Cursors.SizeWE;
+            this.fxSplitPanels1.SplitPoint = 150;
             this.fxSplitPanels1.TabIndex = 7;
             this.fxSplitPanels1.Text = "fxSplitPanels1";
             // 

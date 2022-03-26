@@ -15,6 +15,18 @@ namespace uidev.Controls
 
         //public new EventHandler EnabledChanged;
 
+        new public Font Font
+        {
+            get
+            {
+                return base.Font;
+            }
+            protected set
+            {
+                base.Font = value;
+            }
+        }
+
         /*
         private bool _enabled = true;
         public new bool Enabled
