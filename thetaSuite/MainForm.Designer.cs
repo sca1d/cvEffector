@@ -32,6 +32,8 @@ namespace thetaSuite
             this.fxSplitPanels1 = new uidev.Controls.FxSplitPanels();
             this.fxSplitPanels2 = new uidev.Controls.FxSplitPanels();
             this.fxButton1 = new uidev.Controls.FxButton();
+            this.tL_LayerItem1 = new uidev.TimeLineControls.TL_LayerItem();
+            this.fxTextbox1 = new uidev.Controls.FxTextbox();
             this.fxSplitPanels1.Panel2.SuspendLayout();
             this.fxSplitPanels1.SuspendLayout();
             this.fxSplitPanels2.Panel2.SuspendLayout();
@@ -137,11 +139,40 @@ namespace thetaSuite
             this.fxButton1.TabIndex = 0;
             this.fxButton1.Text = "fxButton1";
             // 
+            // tL_LayerItem1
+            // 
+            this.tL_LayerItem1.clickColor = System.Drawing.Color.White;
+            this.tL_LayerItem1.color = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.tL_LayerItem1.enterColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.tL_LayerItem1.frame_width = 60;
+            this.tL_LayerItem1.Location = new System.Drawing.Point(293, 76);
+            this.tL_LayerItem1.Menu = null;
+            this.tL_LayerItem1.Name = "tL_LayerItem1";
+            this.tL_LayerItem1.selected = false;
+            this.tL_LayerItem1.Size = new System.Drawing.Size(179, 23);
+            this.tL_LayerItem1.srart_frame = 0;
+            this.tL_LayerItem1.TabIndex = 1;
+            this.tL_LayerItem1.Text = "tL_LayerItem1";
+            this.tL_LayerItem1.view_text = true;
+            // 
+            // fxTextbox1
+            // 
+            this.fxTextbox1.Border = true;
+            this.fxTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fxTextbox1.Location = new System.Drawing.Point(615, 243);
+            this.fxTextbox1.Menu = null;
+            this.fxTextbox1.Name = "fxTextbox1";
+            this.fxTextbox1.Size = new System.Drawing.Size(149, 20);
+            this.fxTextbox1.TabIndex = 2;
+            this.fxTextbox1.Text = "fxTextbox1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fxTextbox1);
+            this.Controls.Add(this.tL_LayerItem1);
             this.Controls.Add(this.fxSplitPanels1);
             this.Name = "MainForm";
             this.Text = "theta";
@@ -158,5 +189,7 @@ namespace thetaSuite
         private uidev.Controls.FxSplitPanels fxSplitPanels1;
         private uidev.Controls.FxSplitPanels fxSplitPanels2;
         private uidev.Controls.FxButton fxButton1;
+        private uidev.TimeLineControls.TL_LayerItem tL_LayerItem1;
+        private uidev.Controls.FxTextbox fxTextbox1;
     }
 }

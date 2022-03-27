@@ -393,6 +393,12 @@ namespace uidev.TimeLineControls
                 this.Cursor = Cursors.SizeWE;
                 ChangingLayerSizeNow = true;
             }
+            /*
+            else if (MovingLayerPointNow)
+            {
+                Location = new Point(Location.X - PointToScreen(e.Location).X, Location.Y);
+            }
+            */
             else if (!MouseIsDown)
             {
                 this.Cursor = Cursors.Default;

@@ -120,6 +120,12 @@
     <Compile Include="Controls\FxSplitPanels.Designer.cs">
       <DependentUpon>FxSplitPanels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\FxTextbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FxTextbox.Designer.cs">
+      <DependentUpon>FxTextbox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designs\DesignSample.cs" />
     <Compile Include="Designs\FxSplitPanelsDesigner.cs" />
     <Compile Include="Designs\PanelDesigner.cs" />
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FxSplitPanels.resx">
       <DependentUpon>FxSplitPanels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FxTextbox.resx">
+      <DependentUpon>FxTextbox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TimeLineControls\TL_LayerItem.resx">
       <DependentUpon>TL_LayerItem.cs</DependentUpon>
