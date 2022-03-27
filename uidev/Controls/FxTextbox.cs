@@ -138,15 +138,50 @@ namespace uidev.Controls
             Refresh();
         }
 
+        private void FxTextbox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            verticalBarTimer.Stop();
+            verticalBar = true;
+
+            switch (e.KeyCode)
+            {
+
+                case Keys.Up:
+                case Keys.Left:
+                case Keys.Right:
+                case Keys.Down:
+                case Keys.Tab:
+                    e.IsInputKey = true;
+                    break;
+            }
+
+            verticalBarTimer.Start();
+        }
+
         private void FxTextbox_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
+                case Keys.Up:
+                case Keys.Left:
+                    verticalBarPoint -= 0 < verticalBarPoint ? 1 : 0;
+                    break;
+
+                case Keys.Down:
+                case Keys.Right:
+                    verticalBarPoint += verticalBarPoint < Text.Length ? 1 : 0;
+                    break;
 
                 case Keys.Enter:
                     textEntryMode = false;
                     break;
             }
+            Refresh();
+        }
+
+        private void FxTextbox_Enter(object sender, EventArgs e)
+        {
+            textEntryMode = true;
             Refresh();
         }
 

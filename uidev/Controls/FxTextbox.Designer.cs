@@ -41,12 +41,15 @@ namespace uidev.Controls
             // FxTextbox
             // 
             this.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.Padding = new System.Windows.Forms.Padding(1);
             this.Size = new System.Drawing.Size(50, 20);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FxTextbox_Paint);
+            this.Enter += new System.EventHandler(this.FxTextbox_Enter);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FxTextbox_KeyDown);
             this.Leave += new System.EventHandler(this.FxTextbox_Leave);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FxTextbox_MouseDown);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.FxTextbox_PreviewKeyDown);
             this.ResumeLayout(false);
 
         }
