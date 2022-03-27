@@ -44,6 +44,7 @@ namespace thetaSuite
             this.fxSplitPanels1 = new uidev.Controls.FxSplitPanels();
             this.fxSplitPanels2 = new uidev.Controls.FxSplitPanels();
             this.fxCheckbox2 = new uidev.Controls.FxCheckbox();
+            this.fxInteriorButton1 = new uidev.Controls.FxInteriorButton();
             this.fxSlider3 = new uidev.Controls.FxSlider();
             this.fxSlider2 = new uidev.Controls.FxSlider();
             this.fxButton2 = new uidev.Controls.FxButton();
@@ -258,6 +259,7 @@ namespace thetaSuite
             this.fxSplitPanels2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.fxSplitPanels2.Panel2.Border = true;
             this.fxSplitPanels2.Panel2.Controls.Add(this.fxCheckbox2);
+            this.fxSplitPanels2.Panel2.Controls.Add(this.fxInteriorButton1);
             this.fxSplitPanels2.Panel2.Controls.Add(this.fxSlider3);
             this.fxSplitPanels2.Panel2.Controls.Add(this.fxSlider2);
             this.fxSplitPanels2.Panel2.Controls.Add(this.fxButton2);
@@ -288,6 +290,18 @@ namespace thetaSuite
             this.fxCheckbox2.TabIndex = 3;
             this.fxCheckbox2.Text = "fxCheckbox2";
             this.fxCheckbox2.Value = false;
+            // 
+            // fxInteriorButton1
+            // 
+            this.fxInteriorButton1.Border = false;
+            this.fxInteriorButton1.image = global::thetaSuite.Properties.Resources.記号_cool_再生;
+            this.fxInteriorButton1.ImageDrawSize = 80D;
+            this.fxInteriorButton1.Location = new System.Drawing.Point(46, 129);
+            this.fxInteriorButton1.Menu = null;
+            this.fxInteriorButton1.Name = "fxInteriorButton1";
+            this.fxInteriorButton1.Size = new System.Drawing.Size(20, 20);
+            this.fxInteriorButton1.TabIndex = 8;
+            this.fxInteriorButton1.Text = "fxInteriorButton1";
             // 
             // fxSlider3
             // 
@@ -372,5 +386,6 @@ namespace thetaSuite
         private uidev.Controls.FxSlider fxSlider3;
         private uidev.Controls.FxSlider fxSlider2;
         private uidev.Controls.FxButton fxButton2;
+        private uidev.Controls.FxInteriorButton fxInteriorButton1;
     }
 }

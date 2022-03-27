@@ -83,6 +83,12 @@
     <Compile Include="Controls\FxControl.Designer.cs">
       <DependentUpon>FxControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\FxInteriorButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FxInteriorButton.Designer.cs">
+      <DependentUpon>FxInteriorButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FxMenu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FxControl.resx">
       <DependentUpon>FxControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FxInteriorButton.resx">
+      <DependentUpon>FxInteriorButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FxPanel.resx">
       <DependentUpon>FxPanel.cs</DependentUpon>
