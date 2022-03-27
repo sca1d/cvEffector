@@ -101,6 +101,12 @@
     <Compile Include="Controls\FxPanel.Designer.cs">
       <DependentUpon>FxPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\FxSeparator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FxSeparator.Designer.cs">
+      <DependentUpon>FxSeparator.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FxSlider.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FxPanel.resx">
       <DependentUpon>FxPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FxSeparator.resx">
+      <DependentUpon>FxSeparator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FxSlider.resx">
       <DependentUpon>FxSlider.cs</DependentUpon>

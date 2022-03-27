@@ -48,6 +48,7 @@ namespace thetaSuite
             this.fxSlider3 = new uidev.Controls.FxSlider();
             this.fxSlider2 = new uidev.Controls.FxSlider();
             this.fxButton2 = new uidev.Controls.FxButton();
+            this.fxSeparator1 = new uidev.Controls.FxSeparator();
             this.fxMenu1.SuspendLayout();
             this.fxSplitPanels1.Panel2.SuspendLayout();
             this.fxSplitPanels1.SuspendLayout();
@@ -258,6 +259,7 @@ namespace thetaSuite
             this.fxSplitPanels2.Panel2.AutoScroll = true;
             this.fxSplitPanels2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.fxSplitPanels2.Panel2.Border = true;
+            this.fxSplitPanels2.Panel2.Controls.Add(this.fxSeparator1);
             this.fxSplitPanels2.Panel2.Controls.Add(this.fxCheckbox2);
             this.fxSplitPanels2.Panel2.Controls.Add(this.fxInteriorButton1);
             this.fxSplitPanels2.Panel2.Controls.Add(this.fxSlider3);
@@ -343,6 +345,18 @@ namespace thetaSuite
             this.fxButton2.TabIndex = 0;
             this.fxButton2.Text = "fxButton2";
             // 
+            // fxSeparator1
+            // 
+            this.fxSeparator1.Border = false;
+            this.fxSeparator1.LineWidth = 1.6F;
+            this.fxSeparator1.Location = new System.Drawing.Point(3, 107);
+            this.fxSeparator1.Menu = null;
+            this.fxSeparator1.Name = "fxSeparator1";
+            this.fxSeparator1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.fxSeparator1.Size = new System.Drawing.Size(153, 12);
+            this.fxSeparator1.TabIndex = 9;
+            this.fxSeparator1.Text = "fxSeparator1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -387,5 +401,6 @@ namespace thetaSuite
         private uidev.Controls.FxSlider fxSlider2;
         private uidev.Controls.FxButton fxButton2;
         private uidev.Controls.FxInteriorButton fxInteriorButton1;
+        private uidev.Controls.FxSeparator fxSeparator1;
     }
 }
