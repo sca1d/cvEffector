@@ -113,5 +113,10 @@ namespace uidev.Controls
         {
             Refresh();
         }
+
+        private void FxPanel_ControlAdded(object sender, ControlEventArgs e)
+        {
+
+        }
     }
 }

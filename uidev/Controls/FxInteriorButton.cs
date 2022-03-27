@@ -39,7 +39,7 @@ namespace uidev.Controls
             }
         }
 
-        private double _imageDrawSize = 100;
+        private double _imageDrawSize = 80;
         public double ImageDrawSize
         {
             get

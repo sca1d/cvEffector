@@ -35,6 +35,7 @@ namespace uidev.Controls
             // 
             this.Scroll += new System.Windows.Forms.ScrollEventHandler(this.FxPanel_Scroll);
             this.EnabledChanged += new System.EventHandler(this.FxPanel_EnabledChanged);
+            this.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.FxPanel_ControlAdded);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FxPanel_Paint);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FxPanel_MouseDown);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FxPanel_MouseUp);

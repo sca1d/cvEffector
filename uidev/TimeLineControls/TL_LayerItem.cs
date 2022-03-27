@@ -299,7 +299,7 @@ namespace uidev.TimeLineControls
 
             if (selected)
             {
-                e.Graphics.DrawRectangle(new Pen(Color.Yellow), 0, 0, Width - 1, Height - 1);
+                e.Graphics.DrawRectangle(new Pen(Color.MediumOrchid, 1.3F), 0, 0, Width - 1, Height - 1);
             }
             else
             {
