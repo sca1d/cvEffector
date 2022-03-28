@@ -112,6 +112,7 @@ namespace thetaSuite
             this.fxSplitPanels2.Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fxSplitPanels2.Panel2.Border = true;
+            this.fxSplitPanels2.Panel2.Controls.Add(this.fxTextbox1);
             this.fxSplitPanels2.Panel2.Controls.Add(this.fxButton1);
             this.fxSplitPanels2.Panel2.Enabled = true;
             this.fxSplitPanels2.Panel2.Location = new System.Drawing.Point(0, 152);
@@ -132,10 +133,11 @@ namespace thetaSuite
             // fxButton1
             // 
             this.fxButton1.Border = true;
-            this.fxButton1.Location = new System.Drawing.Point(3, 5);
+            this.fxButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fxButton1.Location = new System.Drawing.Point(0, 0);
             this.fxButton1.Menu = null;
             this.fxButton1.Name = "fxButton1";
-            this.fxButton1.Size = new System.Drawing.Size(159, 23);
+            this.fxButton1.Size = new System.Drawing.Size(165, 23);
             this.fxButton1.TabIndex = 0;
             this.fxButton1.Text = "fxButton1";
             // 
@@ -159,12 +161,13 @@ namespace thetaSuite
             // 
             this.fxTextbox1.Border = true;
             this.fxTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fxTextbox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.fxTextbox1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.fxTextbox1.Location = new System.Drawing.Point(611, 335);
+            this.fxTextbox1.Location = new System.Drawing.Point(0, 23);
             this.fxTextbox1.Menu = null;
             this.fxTextbox1.Name = "fxTextbox1";
             this.fxTextbox1.Padding = new System.Windows.Forms.Padding(1);
-            this.fxTextbox1.Size = new System.Drawing.Size(75, 18);
+            this.fxTextbox1.Size = new System.Drawing.Size(165, 18);
             this.fxTextbox1.TabIndex = 2;
             this.fxTextbox1.Text = "fxTextbox1";
             // 
@@ -173,7 +176,6 @@ namespace thetaSuite
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.fxTextbox1);
             this.Controls.Add(this.tL_LayerItem1);
             this.Controls.Add(this.fxSplitPanels1);
             this.Name = "MainForm";

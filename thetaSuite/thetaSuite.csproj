@@ -37,6 +37,9 @@
   <PropertyGroup>
     <StartupObject>thetaSuite.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'glui_test|AnyCPU'">
+    <OutputPath>bin\glui_test\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
