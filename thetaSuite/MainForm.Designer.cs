@@ -159,10 +159,12 @@ namespace thetaSuite
             // 
             this.fxTextbox1.Border = true;
             this.fxTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.fxTextbox1.Location = new System.Drawing.Point(615, 243);
+            this.fxTextbox1.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.fxTextbox1.Location = new System.Drawing.Point(611, 335);
             this.fxTextbox1.Menu = null;
             this.fxTextbox1.Name = "fxTextbox1";
-            this.fxTextbox1.Size = new System.Drawing.Size(149, 20);
+            this.fxTextbox1.Padding = new System.Windows.Forms.Padding(1);
+            this.fxTextbox1.Size = new System.Drawing.Size(75, 18);
             this.fxTextbox1.TabIndex = 2;
             this.fxTextbox1.Text = "fxTextbox1";
             // 
