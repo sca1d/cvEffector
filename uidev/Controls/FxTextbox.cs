@@ -13,7 +13,7 @@ namespace uidev.Controls
 {
     public partial class FxTextbox : FxBaseControl
     {
-        private TextBox textBox = new TextBox();
+        private FxTextboxBase textBox = new FxTextboxBase();
 
         [DllImport("USER32.dll", CallingConvention = CallingConvention.StdCall)]
         static extern void SetCursorPos(int X, int Y);
@@ -31,6 +31,7 @@ namespace uidev.Controls
 
         private void InitTextBox()
         {
+            textBox.Font = Class.uiCustoms.Font;
             textBox.Visible = false;
             textBox.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             textBox.BorderStyle = BorderStyle.None;
@@ -69,6 +70,31 @@ namespace uidev.Controls
             this.Controls.Add(textBox);
         }
 
+        private Size GetTextSize(string text)
+        {
+            return TextRenderer.MeasureText(text, Class.uiCustoms.Font, Size, TextFormatFlags.NoPadding);
+        }
+
+        private int Mouse2StringPoint(int x)
+        {
+            if (0 < Text.Length)
+            {
+                if (1 < Text.Length)
+                {
+                    for (int i = 1; i <= Text.Length; i++)
+                    {
+                        int half = (int)Math.Round((double)GetTextSize(Text.Substring((i - 1), 1)).Width / 2.0);
+                        if (x < GetTextSize(Text.Substring(0, i)).Width - half)
+                        {
+                            return i - 1;
+                        }
+                    }
+                }
+                return Text.Length;
+            }
+            return 0;
+        }
+
         private void FxTextbox_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.Clear(Class.uiCustoms.DarkColor);
@@ -100,6 +126,8 @@ namespace uidev.Controls
         {
             FocusTextBox();
 
+            textBox.SelectionStart = Mouse2StringPoint(e.X);
+            textBox.SelectionLength = 0;
             //mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
         }
 

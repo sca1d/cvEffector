@@ -126,6 +126,12 @@
     <Compile Include="Controls\FxTextbox.Designer.cs">
       <DependentUpon>FxTextbox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\FxTextboxBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FxTextboxBase.Designer.cs">
+      <DependentUpon>FxTextboxBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designs\DesignSample.cs" />
     <Compile Include="Designs\FxSplitPanelsDesigner.cs" />
     <Compile Include="Designs\PanelDesigner.cs" />

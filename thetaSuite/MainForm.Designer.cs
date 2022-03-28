@@ -145,7 +145,7 @@ namespace thetaSuite
             this.tL_LayerItem1.color = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
             this.tL_LayerItem1.enterColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.tL_LayerItem1.frame_width = 60;
-            this.tL_LayerItem1.Location = new System.Drawing.Point(293, 76);
+            this.tL_LayerItem1.Location = new System.Drawing.Point(259, 79);
             this.tL_LayerItem1.Menu = null;
             this.tL_LayerItem1.Name = "tL_LayerItem1";
             this.tL_LayerItem1.selected = false;
