@@ -24,6 +24,9 @@
     <ClCompile Include="dialogWrap.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="AllMemory.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\thetaLib.h">
@@ -36,6 +39,9 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="include\deflate.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AllMemory.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

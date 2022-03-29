@@ -1,6 +1,8 @@
 #include "include\controlMan.h"
 
 namespace thetaLib {
+namespace MemoryScope {
+namespace Controls {
 
 	ControlManager::ControlManager(Control^ control) {
 
@@ -72,4 +74,6 @@ namespace thetaLib {
 
 	}
 
+}
+}
 }

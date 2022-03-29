@@ -128,11 +128,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AllMemory.cpp" />
     <ClCompile Include="controlMan.cpp" />
     <ClCompile Include="dialogWrap.cpp" />
     <ClCompile Include="thetaLib.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\AllMemory.h" />
     <ClInclude Include="include\controlMan.h" />
     <ClInclude Include="include\deflate.h" />
     <ClInclude Include="include\dialogWrap.h" />

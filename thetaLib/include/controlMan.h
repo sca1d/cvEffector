@@ -6,6 +6,8 @@ using namespace System::Windows;
 using namespace System::Windows::Forms;
 
 namespace thetaLib {
+namespace MemoryScope {
+namespace Controls {
 
 	public ref class ControlManager {
 
@@ -23,4 +25,6 @@ namespace thetaLib {
 
 	};
 
+}
+}
 }

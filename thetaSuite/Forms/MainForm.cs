@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 using uidev.Forms;
 using thetaLib;
+using thetaLib.MemoryScope;
+using thetaLib.MemoryScope.Controls;
 
 namespace thetaSuite.Forms
 {
