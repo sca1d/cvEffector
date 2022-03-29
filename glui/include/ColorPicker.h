@@ -1,4 +1,4 @@
 #pragma once
-#include "delfate.h"
+#include "deflate.h"
 
 DLL_EXPORT int test(void);

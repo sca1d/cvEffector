@@ -6,13 +6,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\delfate.h" />
+    <ClInclude Include="include\deflate.h" />
     <ClInclude Include="include\ColorPicker.h">
+      <Filter>GLBase</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ShaderInfo.h">
       <Filter>GLBase</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\ColorPicker.cpp">
+      <Filter>GLBase</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ShaderInfo.cpp">
       <Filter>GLBase</Filter>
     </ClCompile>
   </ItemGroup>

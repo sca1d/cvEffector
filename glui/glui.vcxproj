@@ -28,10 +28,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ColorPicker.h" />
-    <ClInclude Include="include\delfate.h" />
+    <ClInclude Include="include\deflate.h" />
+    <ClInclude Include="include\ShaderInfo.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\ColorPicker.cpp" />
+    <ClCompile Include="source\ShaderInfo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -105,15 +107,18 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\..\build\Debug</OutDir>
     <IntDir>.\objects\Debug</IntDir>
+    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\..\build\Release</OutDir>
     <IntDir>.\objects\Release</IntDir>
+    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='glui_test|x64'">
     <OutDir>..\..\build\test</OutDir>
     <IntDir>.\objects\Release</IntDir>
+    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

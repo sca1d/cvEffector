@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glui", "glui\glui.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtest", "libtest\libtest.vcxproj", "{81166A71-1978-421A-AEA1-0BC44A1DF483}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "thetaLlib", "thetaLib\thetaLlib.vcxproj", "{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,11 +107,27 @@ Global
 		{81166A71-1978-421A-AEA1-0BC44A1DF483}.glui_test|x86.ActiveCfg = glui_test|Win32
 		{81166A71-1978-421A-AEA1-0BC44A1DF483}.glui_test|x86.Build.0 = glui_test|Win32
 		{81166A71-1978-421A-AEA1-0BC44A1DF483}.Release|Any CPU.ActiveCfg = Release|x64
-		{81166A71-1978-421A-AEA1-0BC44A1DF483}.Release|Any CPU.Build.0 = Release|x64
 		{81166A71-1978-421A-AEA1-0BC44A1DF483}.Release|x64.ActiveCfg = Release|x64
 		{81166A71-1978-421A-AEA1-0BC44A1DF483}.Release|x64.Build.0 = Release|x64
 		{81166A71-1978-421A-AEA1-0BC44A1DF483}.Release|x86.ActiveCfg = Release|Win32
 		{81166A71-1978-421A-AEA1-0BC44A1DF483}.Release|x86.Build.0 = Release|Win32
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.Debug|x64.ActiveCfg = Debug|x64
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.Debug|x64.Build.0 = Debug|x64
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.Debug|x86.ActiveCfg = Debug|Win32
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.Debug|x86.Build.0 = Debug|Win32
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.glui_test|Any CPU.ActiveCfg = Debug|Win32
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.glui_test|Any CPU.Build.0 = Debug|Win32
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.glui_test|x64.ActiveCfg = Debug|x64
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.glui_test|x64.Build.0 = Debug|x64
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.glui_test|x86.ActiveCfg = Debug|Win32
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.glui_test|x86.Build.0 = Debug|Win32
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.Release|Any CPU.ActiveCfg = Release|x64
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.Release|Any CPU.Build.0 = Release|x64
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.Release|x64.ActiveCfg = Release|x64
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.Release|x64.Build.0 = Release|x64
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.Release|x86.ActiveCfg = Release|Win32
+		{BC5366EA-C72A-4AEF-BE73-6845ED29BCA9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
