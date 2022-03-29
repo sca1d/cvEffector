@@ -23,6 +23,7 @@ namespace thetaSuite.Forms
         {
             InitializeComponent();
 
+            this.fxSlider1.Slide += fxSlider1_Slide;
             controlManager = new ControlManager(this.fxControl1);
             //this.fxSplitPanels1.Panel1.Controls.Add(new Button());
         }
@@ -30,6 +31,13 @@ namespace thetaSuite.Forms
         private void fxButton1_Click(object sender, EventArgs e)
         {
             controlManager.OpenVideo();
+            this.fxSlider1.Enabled = true;
+            this.fxSlider1.MaximumValue = controlManager.GetVideoFrames();
+            Console.WriteLine(this.fxSlider1.MaximumValue);
+        }
+        private void fxSlider1_Slide(object sender, uidev.Class.SlideArgs e)
+        {
+            controlManager.ShowMat(e.value);
         }
     }
 }
