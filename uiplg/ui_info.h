@@ -22,11 +22,10 @@ namespace uiplg {
 	private:
 		System::Windows::Forms::Control^ control;
 
-		void hwnd2mat(HWND hwnd, Mat* src);
-		void mat2hwnd(Mat* src, HWND hwnd);
-
 	public:
 		ui_info(System::Windows::Forms::Control^ c);
+		void hwnd2mat(HWND hwnd, Mat* src);
+		void mat2hwnd(Mat* src, HWND hwnd);
 
 	};
 
