@@ -90,6 +90,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\thetaLib\thetaLib.vcxproj">
+      <Project>{696627b4-402f-4cf9-ba37-b7340702d860}</Project>
+      <Name>thetaLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\uidev\uidev.csproj">
       <Project>{1DB54DE5-00AE-4C40-B056-358049EFE1B4}</Project>
       <Name>uidev</Name>

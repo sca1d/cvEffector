@@ -4,6 +4,13 @@
 #include <math.h>
 #include <Windows.h>
 
-#include "AVConvert.h"
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
 
 #include "controlMan.h"
+
+#include "AVConvert.h"
+
+using namespace uiplg;

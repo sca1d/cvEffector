@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using uidev.Forms;
+using thetaLib;
 
 namespace thetaSuite.Forms
 {
@@ -18,6 +19,7 @@ namespace thetaSuite.Forms
         {
             InitializeComponent();
 
+            ControlManager controlManager = new ControlManager(this.fxControl1);
             //this.fxSplitPanels1.Panel1.Controls.Add(new Button());
         }
     }
