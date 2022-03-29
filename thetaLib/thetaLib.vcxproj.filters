@@ -18,9 +18,15 @@
     <ClCompile Include="thetaLib.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="controlMan.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\thetaLib.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="include\controlMan.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
