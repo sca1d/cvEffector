@@ -21,12 +21,21 @@
     <ClCompile Include="controlMan.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="dialogWrap.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\thetaLib.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="include\controlMan.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dialogWrap.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="include\deflate.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

@@ -8,4 +8,15 @@ namespace thetaLib {
 
 	}
 
+	void ControlManager::OpenVideo(void) {
+
+		char* f = "F:\\“®‰æ•ÒW‚ÉŽg‚¤‚â‚Â‚ç\\“®‰æ‚ÉŽg‚¤“®‰æ\\";
+		c_str filepath(f, sizeof(f) / sizeof(f[0]));
+
+		char* got_file = ShowFileFialog(this->hwnd, filepath);
+
+		
+
+	}
+
 }

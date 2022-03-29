@@ -9,8 +9,13 @@
 #include <vector>
 using namespace std;
 
-#include "controlMan.h"
+#include <msclr/marshal_cppstd.h>
 
 #include "AVConvert.h"
 
+#include "dialogWrap.h"
+#include "controlMan.h"
+
 using namespace uiplg;
+
+#include "deflate.h"

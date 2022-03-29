@@ -42,6 +42,7 @@ namespace thetaSuite.Forms
             this.fxButton1.Size = new System.Drawing.Size(75, 23);
             this.fxButton1.TabIndex = 0;
             this.fxButton1.Text = "file open";
+            this.fxButton1.Click += new System.EventHandler(this.fxButton1_Click);
             // 
             // fxControl1
             // 

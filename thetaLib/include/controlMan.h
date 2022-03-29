@@ -10,6 +10,7 @@ namespace thetaLib {
 
 	public:
 		ControlManager(System::Windows::Forms::Control^ control);
+		void OpenVideo(void);
 
 	};
 
