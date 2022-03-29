@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 using uidev.Forms;
 
-namespace thetaSuite
+namespace thetaSuite.Forms
 {
     public partial class MainForm : BaseForm
     {
