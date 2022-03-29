@@ -30,10 +30,15 @@ namespace thetaSuite.Forms
 
         private void fxButton1_Click(object sender, EventArgs e)
         {
-            controlManager.OpenVideo();
+            int ret = controlManager.OpenVideo();
+            if (ret != 0) return;
             this.fxSlider1.Enabled = true;
+
+            this.fxSlider1.MinimumValue = 0;
             this.fxSlider1.MaximumValue = controlManager.GetVideoFrames();
-            Console.WriteLine(this.fxSlider1.MaximumValue);
+            this.fxSlider1.Value = 0;
+
+            controlManager.ShowMat(fxSlider1.Value);
         }
         private void fxSlider1_Slide(object sender, uidev.Class.SlideArgs e)
         {
