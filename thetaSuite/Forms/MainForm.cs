@@ -26,7 +26,7 @@ namespace thetaSuite.Forms
             this.fxSlider1.Slide += fxSlider1_Slide;
             controlManager = new ControlManager(this.fxControl1);
 
-            int ret = controlManager.OpenVideo(1.0 / 4.0);
+            int ret = controlManager.OpenVideo(1.0 / 5.0);
             if (ret != 0) return;
             read = true;
             this.fxSlider1.Enabled = true;
