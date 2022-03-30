@@ -54,6 +54,7 @@ namespace thetaSuite.Forms
             this.fxControl1.Size = new System.Drawing.Size(298, 185);
             this.fxControl1.TabIndex = 1;
             this.fxControl1.Text = "fxControl1";
+            this.fxControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.fxControl1_Paint);
             // 
             // fxSlider1
             // 

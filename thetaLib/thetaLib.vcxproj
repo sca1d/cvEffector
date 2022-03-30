@@ -113,6 +113,9 @@
       <AdditionalDependencies>AVConvert.lib;swscale.lib;swresample.lib;postproc.lib;avutil.lib;avformat.lib;avfilter.lib;avdevice.lib;avcodec.lib;$(opencv_debug_lib);$(opencv_lib);%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>F:\Visual Studio Librarys\Originals\AVConvert\Build\Release;$(ffmpeg)\lib;$(opencv)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "F:\Visual Studio Librarys\Originals\AVConvert\Release\bin\AVConvert.dll" "$(TargetDir)AVConvert.dll"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -127,7 +130,7 @@
       <AdditionalLibraryDirectories>F:\Visual Studio Librarys\Originals\AVConvert\Build\Release;$(ffmpeg)\lib;$(opencv)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>copy "E:\Visual Studio Librarys\Originals\AVConvert\Release\bin\AVConvert.dll" "$(TargetDir)AVConvert.dll"</Command>
+      <Command>copy "F:\Visual Studio Librarys\Originals\AVConvert\Release\bin\AVConvert.dll" "$(TargetDir)AVConvert.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

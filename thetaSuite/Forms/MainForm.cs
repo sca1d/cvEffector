@@ -17,21 +17,18 @@ namespace thetaSuite.Forms
 {
     public partial class MainForm : BaseForm
     {
+        bool read = false;
+
         ControlManager controlManager;
 
-        public MainForm()
+        private void OpenVideoFile()
         {
-            InitializeComponent();
-
             this.fxSlider1.Slide += fxSlider1_Slide;
             controlManager = new ControlManager(this.fxControl1);
-            //this.fxSplitPanels1.Panel1.Controls.Add(new Button());
-        }
 
-        private void fxButton1_Click(object sender, EventArgs e)
-        {
-            int ret = controlManager.OpenVideo();
+            int ret = controlManager.OpenVideo(1.0 / 4.0);
             if (ret != 0) return;
+            read = true;
             this.fxSlider1.Enabled = true;
 
             this.fxSlider1.MinimumValue = 0;
@@ -39,10 +36,31 @@ namespace thetaSuite.Forms
             this.fxSlider1.Value = 0;
 
             controlManager.ShowMat(fxSlider1.Value);
+
+            fxControl1.Refresh();
+        }
+
+        public MainForm()
+        {
+            InitializeComponent();
+
+            OpenVideoFile();
+        }
+
+        private void fxButton1_Click(object sender, EventArgs e)
+        {
+            OpenVideoFile();
         }
         private void fxSlider1_Slide(object sender, uidev.Class.SlideArgs e)
         {
+            if (read)
             controlManager.ShowMat(e.value);
+        }
+
+        private void fxControl1_Paint(object sender, PaintEventArgs e)
+        {
+            if (read)
+                controlManager.ShowMat(fxSlider1.Value);
         }
     }
 }

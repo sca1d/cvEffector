@@ -68,7 +68,9 @@ namespace Controls {
 		//this->cmBase->~ControlManagerBase();
 	}
 
-	int ControlManager::OpenVideo(void) {
+	int ControlManager::OpenVideo(double opening_size) {
+
+		opening_size = opening_size <= 0.0 ? 1.0 : 1.0 < opening_size ? 1.0 : opening_size;
 
 		char* f = "E:\\";
 		c_str filepath(f, sizeof(f) / sizeof(f[0]));
@@ -86,16 +88,17 @@ namespace Controls {
 
 		video_frame_length = frames.size();
 
+		Mat dst;
 		for each (auto i in frames) {
 
-			Mat dst;
 			Frame2Mat(i, &dst);
+			cv::resize(dst, dst, cv::Size(), opening_size, opening_size);
 			video_data.push_back(dst);
 			av_frame_free(&i);
-			dst.release();
 
 		}
 
+		dst.release();
 		frames.clear();
 
 		ShowMat(0);

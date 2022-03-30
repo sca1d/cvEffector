@@ -47,7 +47,7 @@ namespace Controls {
 		ControlManager(Control^ control);
 		~ControlManager(void);
 
-		int OpenVideo(void);
+		int OpenVideo(double opening_size);
 		System::Int32 GetVideoFrames(void);
 
 		void ShowMat(int framenum);
