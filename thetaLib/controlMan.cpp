@@ -1,5 +1,48 @@
 #include "include\controlMan.h"
 
+all_error opening_frames(
+	AVFormatContext* format_context,
+	AVStream* video_stream,
+	AVCodecContext* codec_context,
+	AVFrame* frame,
+	std::vector<Mat>* frames,
+	void* custom
+) {
+
+	if (frame == NULL) {
+		frame = av_frame_alloc();
+	}
+
+	double* d = reinterpret_cast<double*>(custom);
+
+	AVPacket packet = AVPacket();
+	Mat dst;
+	while (av_read_frame(format_context, &packet) == 0) {
+		if (packet.stream_index == video_stream->index) {
+			if (avcodec_send_packet(codec_context, &packet) != 0) {
+				return CAN_NOT_SEND_PACKET;
+			}
+			while (avcodec_receive_frame(codec_context, frame) == 0) {
+
+				AVFrame* new_frame = av_frame_alloc();
+				av_frame_ref(new_frame, frame);
+				Frame2Mat(new_frame, &dst);
+				cv::resize(dst, dst, cv::Size(), *d, *d);
+				frames->push_back(dst);
+				av_frame_free(&new_frame);
+
+			}
+		}
+		av_packet_unref(&packet);
+	}
+	dst.release();
+
+	//av_frame_free(&frame);
+
+	return NOT_ERROR;
+
+}
+
 #pragma region ControlManagerBase
 /*
 ControlManagerBase::~ControlManagerBase(void) {
@@ -78,28 +121,14 @@ namespace Controls {
 		char* got_file = ShowFileFialog(this->hwnd, filepath);
 		if (got_file == nullptr) return all_error::CAN_NOT_OPENED_FILE;
 		
-		std::vector<AVFrame*> frames;
 		decode_data data;
 
-		all_error err = decode(got_file, &frames, &data);
+		all_error err = decodeMat(got_file, &video_data, &data, opening_frames, (void*)(&opening_size));
 		CHECK_ERR(err);
 
 		//std::vector<Mat> mats;
 
-		video_frame_length = frames.size();
-
-		Mat dst;
-		for each (auto i in frames) {
-
-			Frame2Mat(i, &dst);
-			cv::resize(dst, dst, cv::Size(), opening_size, opening_size);
-			video_data.push_back(dst);
-			av_frame_free(&i);
-
-		}
-
-		dst.release();
-		frames.clear();
+		video_frame_length = video_data.size();
 
 		ShowMat(0);
 
