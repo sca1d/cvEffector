@@ -1,30 +1,23 @@
 #pragma once
 #include "thetaLib.h"
 #include "AllMemory.h"
+#include "opening_frames.h"
 
 using namespace System;
 //using namespace System::Windows;
 using namespace System::Windows::Forms;
 
-/*
 class ControlManagerBase {
 
 private:
-	stream_data sdata;
-	decoder_data ddata;
+	std::vector<Mat> preview_video_data;
 
 public:
 	~ControlManagerBase(void);
 
-	all_error get_video_headers(char* filepath);
-	AVFrame* get_video_frame(int framenum);
-	void free_data(void);
-
-	stream_data get_stream_data(void);
-	decoder_data get_decoder_data(void);
+	std::vector<Mat>* GetPreviewVideoData(void);
 
 };
-*/
 
 namespace thetaLib {
 namespace MemoryScope {
@@ -33,7 +26,7 @@ namespace Controls {
 	public ref class ControlManager {
 
 	private:
-		//ControlManagerBase* cmBase;
+		ControlManagerBase* cmBase;
 
 		Control^ control = nullptr;
 		HWND hwnd = nullptr;

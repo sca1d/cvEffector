@@ -137,6 +137,7 @@
     <ClCompile Include="AllMemory.cpp" />
     <ClCompile Include="controlMan.cpp" />
     <ClCompile Include="dialogWrap.cpp" />
+    <ClCompile Include="opening_frames.cpp" />
     <ClCompile Include="thetaLib.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +145,7 @@
     <ClInclude Include="include\controlMan.h" />
     <ClInclude Include="include\deflate.h" />
     <ClInclude Include="include\dialogWrap.h" />
+    <ClInclude Include="include\opening_frames.h" />
     <ClInclude Include="include\thetaLib.h" />
   </ItemGroup>
   <ItemGroup>
