@@ -1,13 +1,6 @@
 #include "include\controlMan.h"
 
-all_error opening_frames(
-	AVFormatContext* format_context,
-	AVStream* video_stream,
-	AVCodecContext* codec_context,
-	AVFrame* frame,
-	std::vector<Mat>* frames,
-	void* custom
-) {
+all_error opening_frames(AVFormatContext* format_context, AVStream* video_stream, AVCodecContext* codec_context, AVFrame* frame, std::vector<Mat>* frames, void* custom) {
 
 	if (frame == NULL) {
 		frame = av_frame_alloc();
