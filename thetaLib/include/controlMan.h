@@ -13,9 +13,11 @@ private:
 	std::vector<Mat> preview_video_data;
 
 public:
+	ControlManagerBase(void);
 	~ControlManagerBase(void);
 
 	std::vector<Mat>* GetPreviewVideoData(void);
+	Mat* GetFrameMat(int frame);
 
 };
 
@@ -26,22 +28,26 @@ namespace Controls {
 	public ref class ControlManager {
 
 	private:
+		// memorys management
 		ControlManagerBase* cmBase;
 
 		Control^ control = nullptr;
 		HWND hwnd = nullptr;
 
 		int video_frame_length = 0;
-		//stream_data sdata = (stream_data*)malloc(sizeof(stream_data));
-		//decoder_data ddata = (decoder_data*)malloc(sizeof(decoder_data));
 
 	public:
 
+		#pragma region Constructor and Destructor
 		ControlManager(Control^ control);
 		~ControlManager(void);
+		#pragma endregion
 
 		int OpenVideo(double opening_size);
+		
+		#pragma region Getter
 		System::Int32 GetVideoFrames(void);
+		#pragma endregion
 
 		void ShowMat(int framenum);
 

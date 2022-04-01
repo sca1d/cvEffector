@@ -51,7 +51,7 @@ namespace thetaSuite.Forms
             this.fxControl1.Location = new System.Drawing.Point(286, 49);
             this.fxControl1.Menu = null;
             this.fxControl1.Name = "fxControl1";
-            this.fxControl1.Size = new System.Drawing.Size(400, 185);
+            this.fxControl1.Size = new System.Drawing.Size(330, 185);
             this.fxControl1.TabIndex = 1;
             this.fxControl1.Text = "fxControl1";
             this.fxControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.fxControl1_Paint);

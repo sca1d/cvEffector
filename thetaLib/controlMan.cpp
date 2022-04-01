@@ -1,12 +1,19 @@
 #include "include\controlMan.h"
 
 #pragma region ControlManagerBase
+ControlManagerBase::ControlManagerBase(void) {
+
+}
 ControlManagerBase::~ControlManagerBase(void) {
 	this->preview_video_data.clear();
 }
 
 std::vector<Mat>* ControlManagerBase::GetPreviewVideoData(void) {
 	return &this->preview_video_data;
+}
+
+Mat* ControlManagerBase::GetFrameMat(int frame) {
+	return 0 <= frame ? frame < this->preview_video_data.size() ? &this->preview_video_data[frame] : nullptr : nullptr;
 }
 #pragma endregion
 
@@ -24,7 +31,7 @@ namespace Controls {
 	}
 	ControlManager::~ControlManager(void) {
 		//video_data.clear();
-		this->cmBase->~ControlManagerBase();
+		delete this->cmBase;
 	}
 
 	int ControlManager::OpenVideo(double opening_size) {
@@ -61,7 +68,8 @@ namespace Controls {
 	void ControlManager::ShowMat(int framenum) {
 
 		HDC hdc = GetDC(this->hwnd);
-		cv::Mat* mat = &this->cmBase->GetPreviewVideoData()->at(framenum);
+		cv::Mat* mat = this->cmBase->GetFrameMat(framenum);
+		if (mat == nullptr) return;
 
 		const int x = mat->cols;
 		const int y = mat->rows;
