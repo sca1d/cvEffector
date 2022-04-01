@@ -16,6 +16,8 @@ public:
 	ControlManagerBase(void);
 	~ControlManagerBase(void);
 
+	void MatToGL(Mat* mat, HWND hwnd);
+
 	std::vector<Mat>* GetPreviewVideoData(void);
 	Mat* GetFrameMat(int frame);
 

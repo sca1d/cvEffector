@@ -1,19 +1,25 @@
 ﻿#include <stdio.h>
-//#include <stdlib.h>
 #include <math.h>
 
-//#include <GL/glut.h>
-//#include <GL/glew.h>
-//#include <GLFW/glfw3.h>
-//#include <glm/glm.hpp>
+#include <opencv2/opencv.hpp>
+
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <vector>
+using namespace std;
+
+#include <GL/glew.h>
+#include <GL/GL.h>
+#include <GLFW/glfw3.h>
 
 #ifdef GL_ES
 precision highp float;
 #endif
 
 
-//#include "ColorPicker.h"
-#include "ShaderInfo.h"
+//#include "ShaderInfo.h"
 
 //using namespace glm;
 
@@ -120,6 +126,7 @@ int main(int argc, char* argv[]) {
 }
 */
 
+/*
 int main(void) {
 
 	if (glfwInit() == GL_FALSE) return -1;
@@ -177,4 +184,165 @@ int main(void) {
 
 	return 0;
 
+}*/
+
+GLint makeShader() {
+	const char* vertex_shader =
+		"#version 400\n"
+		"layout(location = 0) in vec2 position;\n"
+		"layout(location = 1) in vec2 vuv;\n"
+		"out vec2 Flag_uv;\n"
+		"void main(void) {\n"
+		"Flag_uv = vuv;\n"
+		"gl_Position =vec4(position, 0.0, 1.0);\n"
+		"}\n";
+
+
+	const char* fragment_shader =
+		"#version 400\n"
+		"in vec2 Flag_uv;"//頂点シェーダで計算された、テクスチャの残高
+		"uniform sampler2D Texture;" //追加：テクスチャを入手
+		"out vec4 outFragmentColor; \n"
+		"void main(void) {\n"
+		//texture2D関数→指定されたUV座標（Flag_uv）のテクスチャの色を返す関数
+		"outFragmentColor = texture2D(Texture, Flag_uv); \n"
+		"}\n";
+
+
+	GLuint vs, fs;
+	GLuint shader_programme;
+
+	vs = glCreateShader(GL_VERTEX_SHADER);
+	glShaderSource(vs, 1, &vertex_shader, NULL);
+	glCompileShader(vs);
+
+	fs = glCreateShader(GL_FRAGMENT_SHADER);
+	glShaderSource(fs, 1, &fragment_shader, NULL);
+	glCompileShader(fs);
+
+	shader_programme = glCreateProgram();
+	glAttachShader(shader_programme, fs);
+	glAttachShader(shader_programme, vs);
+	glLinkProgram(shader_programme);
+	return shader_programme;
+}
+
+void BindCVMatTexture(cv::Mat* mat, GLuint texID) {
+	// color count : rgb -> 3, rgba ->4
+	glPixelStorei(GL_UNPACK_ALIGNMENT, 3);
+
+	glBindTexture(GL_TEXTURE_2D, texID);
+
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, mat->cols, mat->rows, 0, GL_RGB, GL_UNSIGNED_BYTE, mat->ptr());
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); // 横方向
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT); // 縦方向
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST); // 拡大時
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST); // 縮小時
+}
+
+// texture test
+int main(void) {
+
+	const char* ch = "F:\\SS\\画像148.jpg";
+	printf("%s\n", ch);
+
+	// INITIALIZE OPENCV
+	cv::Mat	mat = cv::imread(ch);
+	if (mat.empty()) return -1;
+
+	cv::cvtColor(mat, mat, cv::COLOR_BGR2RGB);
+
+	int w = mat.cols;
+	int h = mat.rows;
+	//cv::imshow("test", mat);
+	//
+
+	GLFWwindow* window = NULL;
+
+	GLfloat points[] = { 0.8, 0.8, -0.8, 0.8, -0.8, -0.8f, 0.8, -0.8, };
+	GLfloat vertex_uv[] = { 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f };
+
+	if (!glfwInit()) {
+		fprintf(stderr, "ERROR: could not start GLFW3\n");
+		return -1;
+	}
+
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+
+	window = glfwCreateWindow(1200, 675, "Texture", NULL, NULL);
+	if (!window) {
+		fprintf(stderr, "ERROR: could not open window width GLFW3\n");
+		glfwTerminate();
+		return -1;
+	}
+	glfwMakeContextCurrent(window);
+
+	glewExperimental = GL_TRUE;
+	glewInit();
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
+
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	GLint shader = makeShader();
+
+	GLuint vao, vertex_vbo, uv_vbo;
+	glGenVertexArrays(1, &vao);
+	glBindVertexArray(vao);
+
+	glGenBuffers(1, &vertex_vbo);
+	glBindBuffer(GL_ARRAY_BUFFER, vertex_vbo);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(points), points, GL_STATIC_DRAW);
+
+	glGenBuffers(1, &uv_vbo);
+	glBindBuffer(GL_ARRAY_BUFFER, uv_vbo);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertex_uv), vertex_uv, GL_STATIC_DRAW);
+
+
+
+	glEnable(GL_TEXTURE_2D);
+
+	GLuint texID;
+	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+	glGenTextures(1, &texID);
+
+	int textureLocation = glGetUniformLocation(shader, "texture");
+
+	while (!glfwWindowShouldClose(window)) {
+
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		BindCVMatTexture(&mat, texID);
+
+		glUseProgram(shader);
+
+		glEnableVertexAttribArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, vertex_vbo);
+		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, (GLvoid*)0);
+
+		glEnableVertexAttribArray(1);
+		glBindBuffer(GL_ARRAY_BUFFER, uv_vbo);
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (GLvoid*)0);
+
+		glUniform1i(textureLocation, 0);
+		glBindTexture(GL_TEXTURE_2D, texID);
+
+		glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+
+		glDisableVertexAttribArray(0);
+		glDisableVertexAttribArray(1);
+
+		glfwPollEvents();
+		glfwSwapBuffers(window);
+
+	}
+
+	glDeleteTextures(1, &texID);
+	glfwTerminate();
+
+	return 0;
 }

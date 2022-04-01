@@ -94,15 +94,21 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\..\build\Debug</OutDir>
     <IntDir>.\objects\Debug</IntDir>
+    <IncludePath>$(opencv)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(opencv)\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\..\build\Release</OutDir>
     <IntDir>.\objects\Release</IntDir>
+    <IncludePath>$(opencv)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(opencv)\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='glui_test|x64'">
     <OutDir>..\..\build\test</OutDir>
     <IntDir>.\objects\Release</IntDir>
+    <IncludePath>$(opencv)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(opencv)\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -143,7 +149,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glui.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(opencv_debug_lib);opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(opencv)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -161,13 +168,14 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glui.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(opencv_lib);opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(opencv)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='glui_test|x64'">
     <Link>
-      <AdditionalDependencies>opengl32.lib;glui.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>E:\Visual Studio Projects\theta\build\test;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(opencv_debug_lib);$(opencv_lib);opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(opencv)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <ClCompile>
       <AdditionalIncludeDirectories>..\glui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

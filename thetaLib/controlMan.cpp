@@ -8,6 +8,10 @@ ControlManagerBase::~ControlManagerBase(void) {
 	this->preview_video_data.clear();
 }
 
+void ControlManagerBase::MatToGL(Mat* mat, HWND hwnd) {
+
+}
+
 std::vector<Mat>* ControlManagerBase::GetPreviewVideoData(void) {
 	return &this->preview_video_data;
 }

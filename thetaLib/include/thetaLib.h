@@ -9,6 +9,9 @@
 #include <vector>
 using namespace std;
 
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
 #include <msclr/marshal_cppstd.h>
 
 #include "AVConvert.h"
