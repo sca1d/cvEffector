@@ -7,4 +7,6 @@
 #define DLL_EXPORT __declspec(dllexport)
 #endif
 
-DLL_EXPORT int PutInOtherWindow(HWND SetOfHandle, HWND Foundation);
+extern "C" {
+	DLL_EXPORT inline int PutInOtherWindow(HWND SetOfHandle, HWND Foundation);
+}

@@ -1,6 +1,6 @@
 #include "include/windowTools.h"
 
-DLL_EXPORT int PutInOtherWindow(HWND SetOfHandle, HWND Foundation) {
+DLL_EXPORT inline int PutInOtherWindow(HWND SetOfHandle, HWND Foundation) {
 	LONG_PTR ws = ::GetWindowLongPtr(Foundation, GWL_STYLE);
 	ws &= ~(WS_CAPTION | WS_SIZEBOX);
 	::SetWindowLongPtr(Foundation, GWL_STYLE, ws);
