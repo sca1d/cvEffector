@@ -142,6 +142,7 @@
     <ClCompile Include="opening_frames.cpp" />
     <ClCompile Include="PreviewWindow.cpp" />
     <ClCompile Include="thetaLib.cpp" />
+    <ClCompile Include="windowTools.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\AllMemory.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="include\opening_frames.h" />
     <ClInclude Include="include\PreviewWindow.h" />
     <ClInclude Include="include\thetaLib.h" />
+    <ClInclude Include="include\windowTools.h" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

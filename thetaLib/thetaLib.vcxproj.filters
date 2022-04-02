@@ -33,6 +33,9 @@
     <ClCompile Include="PreviewWindow.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="windowTools.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\thetaLib.h">
@@ -54,6 +57,9 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="include\PreviewWindow.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="include\windowTools.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

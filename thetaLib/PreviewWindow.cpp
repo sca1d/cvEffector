@@ -115,6 +115,8 @@ PreviewWindow::PreviewWindow(System::Windows::Forms::Control^ control) {
 	}
 	glfwMakeContextCurrent(this->window);
 
+	PutInOtherWindow(this->hwnd, WindowFromDC(wglGetCurrentDC()));
+
 	glewExperimental = GL_TRUE;
 	glewInit();
 	glEnable(GL_DEPTH_TEST);
@@ -157,12 +159,12 @@ PreviewWindow::~PreviewWindow(void) {
 
 void PreviewWindow::ReDraw(cv::Mat* mat) {
 
-	Mat dst;
-	if (MatInit(mat, &dst) != 0) { printf("error init mat.\n"); return; }
+	//Mat dst;
+	if (MatInit(mat, &this->dst) != 0) { printf("error init mat.\n"); return; }
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	BindCVMatTexture(&dst, this->texID);
+	BindCVMatTexture(&this->dst, this->texID);
 
 	glUseProgram(this->shader);
 

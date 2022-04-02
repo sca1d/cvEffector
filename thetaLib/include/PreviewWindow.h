@@ -17,6 +17,8 @@ using namespace cv;
 #include <GL/GL.h>
 #include <GLFW/glfw3.h>
 
+#include "windowTools.h"
+
 using namespace System;
 
 class PreviewWindow {
@@ -24,6 +26,8 @@ class PreviewWindow {
 private:
 	HWND hwnd;
 	HDC hdc;
+
+	Mat dst;
 
 	GLFWwindow* window = NULL;
 	GLint shader;
