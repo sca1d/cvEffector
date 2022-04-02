@@ -27,15 +27,17 @@ namespace Controls {
 
 	ControlManager::ControlManager(Control^ control) {
 
-		this->cmBase = new ControlManagerBase();
-
 		this->control = control;
 		this->hwnd = (HWND)control->Handle.ToInt32();
+
+		this->cmBase = new ControlManagerBase();
+		this->pWin = new PreviewWindow(control);
 
 	}
 	ControlManager::~ControlManager(void) {
 		//video_data.clear();
 		delete this->cmBase;
+		delete this->pWin;
 	}
 
 	int ControlManager::OpenVideo(double opening_size) {
@@ -71,6 +73,7 @@ namespace Controls {
 
 	void ControlManager::ShowMat(int framenum) {
 
+		/*
 		HDC hdc = GetDC(this->hwnd);
 		cv::Mat* mat = this->cmBase->GetFrameMat(framenum);
 		if (mat == nullptr) return;
@@ -102,6 +105,12 @@ namespace Controls {
 			DIB_RGB_COLORS,
 			SRCCOPY
 		);
+		*/
+
+		cv::Mat* mat = this->cmBase->GetFrameMat(framenum);
+		if (mat == nullptr) return;
+
+		this->pWin->ReDraw(mat);
 
 	}
 

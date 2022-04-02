@@ -10,6 +10,7 @@
 using namespace std;
 
 #include <GL/glew.h>
+#include <GL/GL.h>
 #include <GLFW/glfw3.h>
 
 #include <msclr/marshal_cppstd.h>

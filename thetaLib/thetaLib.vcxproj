@@ -108,9 +108,11 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>F:\Visual Studio Librarys\Originals\AVConvert\AVConvert\AVConvert\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>AVConvert.lib;swscale.lib;swresample.lib;postproc.lib;avutil.lib;avformat.lib;avfilter.lib;avdevice.lib;avcodec.lib;$(opencv_debug_lib);$(opencv_lib);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;AVConvert.lib;swscale.lib;swresample.lib;postproc.lib;avutil.lib;avformat.lib;avfilter.lib;avdevice.lib;avcodec.lib;$(opencv_debug_lib);$(opencv_lib);%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>F:\Visual Studio Librarys\Originals\AVConvert\Build\Release;$(ffmpeg)\lib;$(opencv)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -126,7 +128,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>AVConvert.lib;swscale.lib;swresample.lib;postproc.lib;avutil.lib;avformat.lib;avfilter.lib;avdevice.lib;avcodec.lib;$(opencv_debug_lib);$(opencv_lib);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;AVConvert.lib;swscale.lib;swresample.lib;postproc.lib;avutil.lib;avformat.lib;avfilter.lib;avdevice.lib;avcodec.lib;$(opencv_debug_lib);$(opencv_lib);%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>F:\Visual Studio Librarys\Originals\AVConvert\Build\Release;$(ffmpeg)\lib;$(opencv)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -138,6 +140,7 @@
     <ClCompile Include="controlMan.cpp" />
     <ClCompile Include="dialogWrap.cpp" />
     <ClCompile Include="opening_frames.cpp" />
+    <ClCompile Include="PreviewWindow.cpp" />
     <ClCompile Include="thetaLib.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +149,7 @@
     <ClInclude Include="include\deflate.h" />
     <ClInclude Include="include\dialogWrap.h" />
     <ClInclude Include="include\opening_frames.h" />
+    <ClInclude Include="include\PreviewWindow.h" />
     <ClInclude Include="include\thetaLib.h" />
   </ItemGroup>
   <ItemGroup>

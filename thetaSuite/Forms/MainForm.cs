@@ -55,6 +55,8 @@ namespace thetaSuite.Forms
         {
             if (read)
             controlManager.ShowMat(e.value);
+            Console.WriteLine("max:" + controlManager.GetVideoFrames());
+            Console.WriteLine("slider:" + e.value.ToString());
         }
 
         private void fxControl1_Paint(object sender, PaintEventArgs e)

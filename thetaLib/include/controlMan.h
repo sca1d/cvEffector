@@ -2,6 +2,7 @@
 #include "thetaLib.h"
 #include "AllMemory.h"
 #include "opening_frames.h"
+#include "PreviewWindow.h"
 
 using namespace System;
 //using namespace System::Windows;
@@ -32,6 +33,7 @@ namespace Controls {
 	private:
 		// memorys management
 		ControlManagerBase* cmBase;
+		PreviewWindow* pWin;
 
 		Control^ control = nullptr;
 		HWND hwnd = nullptr;
