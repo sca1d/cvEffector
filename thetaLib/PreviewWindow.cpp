@@ -1,5 +1,7 @@
 #include "include/PreviewWindow.h"
 
+PreviewWindow* pw;
+
 GLfloat points[] = { 0.8, 0.8, -0.8, 0.8, -0.8, -0.8f, 0.8, -0.8, };
 GLfloat vertex_uv[] = { 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f };
 
@@ -92,9 +94,45 @@ int PreviewWindow::MatInit(cv::Mat* src, cv::Mat* dst) {
 	return 0;
 
 }
+
+#pragma region EVENT FUNC
+void PreviewWindow::cursor_enter(GLFWwindow* const window, int enterd) {
+
+	if (enterd) {
+
+		glClear(GL_COLOR_BUFFER_BIT);
+		glColor3d(1.0, 0.0, 0.0);
+		glBegin(GL_LINE_LOOP);
+
+		for (int p = 0; p < sizeof(points) / sizeof(points[0]); p += 2) {
+			glVertex2d(points[p], points[p+1]);
+		}
+
+		glEnd();
+		glFlush();
+
+	}
+	else if (!enterd) {
+
+	}
+
+	//pw->WindowUpdate();
+
+}
+void PreviewWindow::resize(GLFWwindow* const window, int w, int h) {
+
+	int fbWidth, fbHeight;
+	glfwGetFramebufferSize(window, &fbWidth, &fbHeight);
+	glViewport(0, 0, fbWidth, fbHeight);
+
+}
+#pragma endregion
+
 #pragma endregion
 
 PreviewWindow::PreviewWindow(System::Windows::Forms::Control^ control) {
+
+	pw = this;
 
 	this->hwnd = (HWND)control->Handle.ToInt32();
 	this->hdc = GetDC(this->hwnd);
@@ -125,6 +163,9 @@ PreviewWindow::PreviewWindow(System::Windows::Forms::Control^ control) {
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
+	glfwSetCursorEnterCallback(this->window, cursor_enter);
+	glfwSetWindowSizeCallback(this->window, resize);
+
 	ResetPoints(0.9, 0.9);
 
 	this->shader = makeShader();
@@ -149,6 +190,11 @@ PreviewWindow::PreviewWindow(System::Windows::Forms::Control^ control) {
 
 	glfwSwapInterval(0);
 
+	/*
+	auto mainloop_thread = std::thread([] { glutMainLoop(); });
+	mainloop_thread.join();
+	*/
+
 }
 PreviewWindow::~PreviewWindow(void) {
 
@@ -157,14 +203,23 @@ PreviewWindow::~PreviewWindow(void) {
 
 }
 
-void PreviewWindow::ReDraw(cv::Mat* mat) {
-
-	//Mat dst;
-	if (MatInit(mat, &this->dst) != 0) { printf("error init mat.\n"); return; }
+void PreviewWindow::WindowUpdate(void) {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glLoadIdentity();
 
-	BindCVMatTexture(&this->dst, this->texID);
+	/*
+	glColor3d(1.0, 0.0, 0.0);
+	glBegin(GL_POLYGON);
+
+	glVertex2d(1.0, 1.0);
+	glVertex2d(1.0, -1.0);
+	glVertex2d(-1.0, -1.0);
+	glVertex2d(-1.0, 1.0);
+
+	glEnd();
+	glFlush();
+	*/
 
 	glUseProgram(this->shader);
 
@@ -186,6 +241,17 @@ void PreviewWindow::ReDraw(cv::Mat* mat) {
 
 	glfwPollEvents();
 	glfwSwapBuffers(this->window);
+
+}
+
+void PreviewWindow::ReDraw(cv::Mat* mat) {
+
+	Mat dst;
+	if (MatInit(mat, &dst) != 0) { printf("error init mat.\n"); return; }
+
+	BindCVMatTexture(&dst, this->texID);
+
+	WindowUpdate();
 
 	dst.release();
 

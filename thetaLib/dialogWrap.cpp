@@ -35,6 +35,7 @@ DLL_EXPORT char* ShowFileFialog(HWND hwnd, c_str filepath) {
     static OPENFILENAME     ofn;
     static TCHAR* def_path = Char2Cstr(filepath).string;
     static TCHAR* got_file = (TCHAR*)malloc(sizeof(TCHAR) * MAX_PATH);
+    memset(got_file, 0, sizeof(got_file));
 
     if (def_path[0] == TEXT('\0')) {
         GetCurrentDirectory(MAX_PATH, def_path);

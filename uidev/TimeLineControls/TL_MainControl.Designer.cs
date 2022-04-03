@@ -1,7 +1,7 @@
 ﻿
-namespace thetaSuite.Forms
+namespace uidev.TimeLineControls
 {
-    partial class MainForm
+    partial class TL_MainControl
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -21,22 +21,20 @@ namespace thetaSuite.Forms
             base.Dispose(disposing);
         }
 
-        #region Windows フォーム デザイナーで生成されたコード
+        #region コンポーネント デザイナーで生成されたコード
 
         /// <summary>
-        /// デザイナー サポートに必要なメソッドです。このメソッドの内容を
+        /// デザイナー サポートに必要なメソッドです。このメソッドの内容を 
         /// コード エディターで変更しないでください。
         /// </summary>
         private void InitializeComponent()
         {
             this.SuspendLayout();
             // 
-            // MainForm
+            // TL_MainControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(892, 402);
-            this.Name = "MainForm";
-            this.Text = "theta";
+            this.EnabledChanged += new System.EventHandler(this.TL_MainControl_EnabledChanged);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TL_MainControl_Paint);
             this.ResumeLayout(false);
 
         }

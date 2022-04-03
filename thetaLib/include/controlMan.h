@@ -44,6 +44,7 @@ namespace Controls {
 
 		#pragma region Constructor and Destructor
 		ControlManager(Control^ control);
+		ControlManager(Control^ control, Control^ parent_window);
 		~ControlManager(void);
 		#pragma endregion
 
@@ -53,6 +54,7 @@ namespace Controls {
 		System::Int32 GetVideoFrames(void);
 		#pragma endregion
 
+		void Update(void);
 		void ShowMat(int framenum);
 
 	};

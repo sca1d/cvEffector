@@ -1,7 +1,7 @@
 ﻿
-namespace thetaSuite.Forms
+namespace uidev.Forms
 {
-    partial class MainForm
+    partial class BaseDockForm
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -31,12 +31,11 @@ namespace thetaSuite.Forms
         {
             this.SuspendLayout();
             // 
-            // MainForm
+            // BaseDockForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(892, 402);
-            this.Name = "MainForm";
-            this.Text = "theta";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.HideOnClose = true;
+            this.Name = "BaseDockForm";
             this.ResumeLayout(false);
 
         }

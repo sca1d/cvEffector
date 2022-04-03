@@ -34,6 +34,15 @@ namespace Controls {
 		this->pWin = new PreviewWindow(control);
 
 	}
+	ControlManager::ControlManager(Control^ control, Control^ parent_window) {
+
+		this->control = control;
+		this->hwnd = (HWND)parent_window->Handle.ToInt32();
+
+		this->cmBase = new ControlManagerBase();
+		this->pWin = new PreviewWindow(control);
+
+	}
 	ControlManager::~ControlManager(void) {
 		//video_data.clear();
 		delete this->cmBase;
@@ -71,6 +80,9 @@ namespace Controls {
 		return this->video_frame_length;//t.den / t.num;
 	}
 
+	void ControlManager::Update(void) {
+		this->pWin->WindowUpdate();
+	}
 	void ControlManager::ShowMat(int framenum) {
 
 		/*

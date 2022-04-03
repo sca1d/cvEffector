@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +17,8 @@ using uiplg;
 
 namespace uidev.Forms
 {
-    public partial class BaseForm : System.Windows.Forms.Form
+
+    public partial class BaseForm : BaseDockForm
     {
         
         public BaseForm()
@@ -46,6 +48,22 @@ namespace uidev.Forms
             this.ActiveControl = null;
             AllRefresh();
         }
+        private void BaseForm_Resize(object sender, EventArgs e)
+        {
+            AllRefresh();
+        }
+        private void dockPanel_Resize(object sender, EventArgs e)
+        {
+            AllRefresh();
+        }
+        private void dockPanel_ActiveAutoHideContentChanged(object sender, EventArgs e)
+        {
+            AllRefresh();
+        }
+        private void dockPanel_ActiveContentChanged(object sender, EventArgs e)
+        {
+            AllRefresh();
+        }
 
         private void BaseForm_Paint(object sender, PaintEventArgs e)
         {
@@ -53,5 +71,12 @@ namespace uidev.Forms
             AllRefresh();
             //ui_info info = new ui_info(this);
         }
+
+        private void dockPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.ActiveControl = null;
+            AllRefresh();
+        }
+
     }
 }
